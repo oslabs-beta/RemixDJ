@@ -4,7 +4,8 @@
   "description": "Developer tools for REMIX",
   "version": "1.0",
   "action": {
-    "default_popup": "hello.html",
-    "default_icon": "hello_extension.png"
-  }
+    "default_popup": "html/hello.html",
+    "default_icon": "assets/hello_extension.png"
+  },
+  "devtools_page": "html/devtools.html"
 }
