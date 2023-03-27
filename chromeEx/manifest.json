@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "REMIX DJ",
+  "description": "Developer tools for REMIX",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "hello_extension.png"
+  }
+}
