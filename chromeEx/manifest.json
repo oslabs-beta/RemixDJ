@@ -9,6 +9,7 @@
   },
   "content_scripts": [
     {
+      "run_at": "document_end",
       "matches": ["https://*/*"],
       "js": ["./js/contentscript.js"]
   }
