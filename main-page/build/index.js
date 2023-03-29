@@ -79,29 +79,34 @@ function Root() {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { children: "Welcome to Remix DJ-THE devtool for RemixJS" }, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h1", { children: "Welcome to Remix DJ-THE devtool for RemixJS*" }, void 0, !1, {
         fileName: "app/root.jsx",
         lineNumber: 37,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { children: "*This is going to be the permanent header" }, void 0, !1, {
         fileName: "app/root.jsx",
         lineNumber: 38,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.ScrollRestoration, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
         fileName: "app/root.jsx",
         lineNumber: 39,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Scripts, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.ScrollRestoration, {}, void 0, !1, {
         fileName: "app/root.jsx",
         lineNumber: 40,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.LiveReload, {}, void 0, !1, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Scripts, {}, void 0, !1, {
         fileName: "app/root.jsx",
         lineNumber: 41,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.LiveReload, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 42,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
@@ -124,7 +129,7 @@ __export(index_exports, {
 var import_react3 = require("@remix-run/react"), import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
 function Main() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { children: "I figured it out" }, void 0, !1, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h1", { children: "This will be the landing page" }, void 0, !1, {
       fileName: "app/routes/_index.tsx",
       lineNumber: 5,
       columnNumber: 7
@@ -132,6 +137,11 @@ function Main() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react3.Outlet, {}, void 0, !1, {
       fileName: "app/routes/_index.tsx",
       lineNumber: 6,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_react3.LiveReload, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 7,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
@@ -141,51 +151,154 @@ function Main() {
   }, this);
 }
 
-// app/routes/about.tsx
-var about_exports = {};
-__export(about_exports, {
-  default: () => Test
+// app/routes/about.$name.tsx
+var about_name_exports = {};
+__export(about_name_exports, {
+  default: () => Team,
+  loader: () => loader
 });
 var import_react4 = require("@remix-run/react"), import_jsx_dev_runtime4 = require("react/jsx-dev-runtime");
-function Test() {
+function loader({ params }) {
+  return console.log(params.name), params.name;
+}
+function Team() {
+  let data = (0, import_react4.useLoaderData)();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: "Let's goooooo" }, void 0, !1, {
-      fileName: "app/routes/about.tsx",
-      lineNumber: 6,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { children: data }, void 0, !1, {
+      fileName: "app/routes/about.$name.tsx",
+      lineNumber: 12,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react4.Outlet, {}, void 0, !1, {
-      fileName: "app/routes/about.tsx",
-      lineNumber: 7,
+    /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(import_react4.LiveReload, {}, void 0, !1, {
+      fileName: "app/routes/about.$name.tsx",
+      lineNumber: 13,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
-    fileName: "app/routes/about.tsx",
+    fileName: "app/routes/about.$name.tsx",
+    lineNumber: 11,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/about_.tsx
+var about_exports = {};
+__export(about_exports, {
+  default: () => About
+});
+var import_react5 = require("@remix-run/react"), import_jsx_dev_runtime5 = require("react/jsx-dev-runtime");
+function About() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { children: "About Us" }, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 6,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { children: "Adam" }, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 7,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { children: "Matt" }, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 8,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { children: "Molly" }, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 9,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { children: "Tim" }, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 10,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h3", { children: "Victoria" }, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 11,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react5.Outlet, {}, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 12,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(import_react5.LiveReload, {}, void 0, !1, {
+      fileName: "app/routes/about_.tsx",
+      lineNumber: 13,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/about_.tsx",
     lineNumber: 5,
     columnNumber: 5
   }, this);
 }
 
-// app/routes/about.test.tsx
-var about_test_exports = {};
-__export(about_test_exports, {
-  default: () => About
+// app/routes/testimonial.tsx
+var testimonial_exports = {};
+__export(testimonial_exports, {
+  default: () => Testimonial
 });
-var import_jsx_dev_runtime5 = require("react/jsx-dev-runtime");
-function About() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("h1", { children: "For Real" }, void 0, !1, {
-    fileName: "app/routes/about.test.tsx",
+var import_react6 = require("@remix-run/react"), import_jsx_dev_runtime6 = require("react/jsx-dev-runtime");
+function Testimonial() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h1", { children: "This is where testimonials will be" }, void 0, !1, {
+      fileName: "app/routes/testimonial.tsx",
+      lineNumber: 5,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_react6.Outlet, {}, void 0, !1, {
+      fileName: "app/routes/testimonial.tsx",
+      lineNumber: 6,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/testimonial.tsx",
+    lineNumber: 4,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/testimonial.feedback.tsx
+var testimonial_feedback_exports = {};
+__export(testimonial_feedback_exports, {
+  default: () => Feedback
+});
+var import_jsx_dev_runtime7 = require("react/jsx-dev-runtime");
+function Feedback() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime7.jsxDEV)("h2", { children: "This will be a form?" }, void 0, !1, {
+    fileName: "app/routes/testimonial.feedback.tsx",
     lineNumber: 4,
     columnNumber: 7
   }, this) }, void 0, !1, {
-    fileName: "app/routes/about.test.tsx",
+    fileName: "app/routes/testimonial.feedback.tsx",
+    lineNumber: 3,
+    columnNumber: 5
+  }, this);
+}
+
+// app/routes/tutorial.tsx
+var tutorial_exports = {};
+__export(tutorial_exports, {
+  default: () => Tutorial
+});
+var import_jsx_dev_runtime8 = require("react/jsx-dev-runtime");
+function Tutorial() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime8.jsxDEV)("h1", { children: "This is where the tutorial will be" }, void 0, !1, {
+    fileName: "app/routes/tutorial.tsx",
+    lineNumber: 4,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/routes/tutorial.tsx",
     lineNumber: 3,
     columnNumber: 5
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "dd28ff26", entry: { module: "/build/entry.client-SMEYNPFD.js", imports: ["/build/_shared/chunk-L5I5ERLF.js", "/build/_shared/chunk-EETRBLDB.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-3USXKAMZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-AVCAHGBT.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-RTUZTQ4D.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/about.test": { id: "routes/about.test", parentId: "routes/about", path: "test", index: void 0, caseSensitive: void 0, module: "/build/routes/about.test-INVHM4VQ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-DD28FF26.js" };
+var assets_manifest_default = { version: "1f3aaab3", entry: { module: "/build/entry.client-Q5SS26LR.js", imports: ["/build/_shared/chunk-XYPIKOIY.js", "/build/_shared/chunk-EETRBLDB.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-XHVIYRHE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-MN3Q2WVD.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/about.$name": { id: "routes/about.$name", parentId: "root", path: "about/:name", index: void 0, caseSensitive: void 0, module: "/build/routes/about.$name-ULOBW63N.js", imports: void 0, hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/about_": { id: "routes/about_", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about_-UNQWNLNL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/testimonial": { id: "routes/testimonial", parentId: "root", path: "testimonial", index: void 0, caseSensitive: void 0, module: "/build/routes/testimonial-7ZDPMU5Q.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/testimonial.feedback": { id: "routes/testimonial.feedback", parentId: "routes/testimonial", path: "feedback", index: void 0, caseSensitive: void 0, module: "/build/routes/testimonial.feedback-B4PUDDU2.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/tutorial": { id: "routes/tutorial", parentId: "root", path: "tutorial", index: void 0, caseSensitive: void 0, module: "/build/routes/tutorial-CKX2D4GY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, cssBundleHref: void 0, hmr: void 0, url: "/build/manifest-1F3AAAB3.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, unstable_cssSideEffectImports: !1, unstable_dev: !1, unstable_postcss: !1, unstable_tailwind: !1, unstable_vanillaExtract: !1, v2_errorBoundary: !1, v2_meta: !1, v2_routeConvention: !0 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -205,21 +318,45 @@ var assetsBuildDirectory = "public/build", future = { unstable_cssModules: !1, u
     caseSensitive: void 0,
     module: index_exports
   },
-  "routes/about": {
-    id: "routes/about",
+  "routes/about.$name": {
+    id: "routes/about.$name",
+    parentId: "root",
+    path: "about/:name",
+    index: void 0,
+    caseSensitive: void 0,
+    module: about_name_exports
+  },
+  "routes/about_": {
+    id: "routes/about_",
     parentId: "root",
     path: "about",
     index: void 0,
     caseSensitive: void 0,
     module: about_exports
   },
-  "routes/about.test": {
-    id: "routes/about.test",
-    parentId: "routes/about",
-    path: "test",
+  "routes/testimonial": {
+    id: "routes/testimonial",
+    parentId: "root",
+    path: "testimonial",
     index: void 0,
     caseSensitive: void 0,
-    module: about_test_exports
+    module: testimonial_exports
+  },
+  "routes/testimonial.feedback": {
+    id: "routes/testimonial.feedback",
+    parentId: "routes/testimonial",
+    path: "feedback",
+    index: void 0,
+    caseSensitive: void 0,
+    module: testimonial_feedback_exports
+  },
+  "routes/tutorial": {
+    id: "routes/tutorial",
+    parentId: "root",
+    path: "tutorial",
+    index: void 0,
+    caseSensitive: void 0,
+    module: tutorial_exports
   }
 };
 // Annotate the CommonJS export names for ESM import in node:
