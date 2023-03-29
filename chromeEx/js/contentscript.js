@@ -19,6 +19,16 @@ injectScript(chrome.runtime.getURL('js/detect_remix.js'), 'body');
 
 // listen for event from injected script
 window.addEventListener("getRemixData", (e) => {
+	// const port = chrome.runtime.connect({ name: "remixDJ" });
 	console.log('eventlistener')
 	console.log(e.detail)
+	chrome.runtime.sendMessage({test: 'test'})
+	console.log('message sent')
+	// port.postMessage({ data: e.detail })
+	// port.onMessage.addListener(function(msg) {
+	// 	if (msg.question === "Who's there?")
+	// 		port.postMessage({ answer: "Madame" });
+	// 	else if (msg.question === "Madame who?")
+	// 		port.postMessage({ answer: "Madame... Bovary" });
+	// });
 }, false)

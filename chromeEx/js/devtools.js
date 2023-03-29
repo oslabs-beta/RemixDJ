@@ -1,9 +1,9 @@
  // todo: add more comments later
 chrome.devtools.panels.create('REMIX', null, '/html/panel.html', null);
-chrome.devtools.inspectedWindow.getResources((reso)=> console.log(reso))
-console.log('after')
-const tabId = chrome.devtools.inspectedWindow.tabId;
-console.log(tabId)
+// chrome.devtools.inspectedWindow.getResources((reso)=> console.log(reso))
+// console.log('after')
+// const tabId = chrome.devtools.inspectedWindow.tabId;
+// console.log(tabId)
 // const test = document.createElement('div')
 // test.innerText='TEST INPUT'
 // document.body.appendChild(test)
