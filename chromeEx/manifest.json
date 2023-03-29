@@ -9,13 +9,25 @@
   },
   "content_scripts": [
     {
-      "run_at": "document_end",
       "matches": ["https://*/*"],
       "js": ["./js/contentscript.js"]
-  }
+    }
   ],
+  "web_accessible_resources": [
+        {
+            "resources": [
+                "js/detect_remix.js"
+            ],
+            "matches": [
+                "https://*/*"
+            ]
+        }
+    ],
   "devtools_page": "html/devtools.html",
   "background": {
     "service_worker": "./js/background.js"
-  }
+  },
+  "permissions": [
+    "scripting"
+  ]
 }
