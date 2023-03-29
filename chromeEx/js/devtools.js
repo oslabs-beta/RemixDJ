@@ -1,3 +1,4 @@
+ // todo: add more comments later
 chrome.devtools.panels.create('REMIX', null, '/html/panel.html', null);
 chrome.devtools.inspectedWindow.getResources((reso)=> console.log(reso))
 console.log('after')
