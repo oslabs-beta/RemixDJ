@@ -1,8 +1,7 @@
 console.log('hi from SW')
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-	console.log('got message')
-	console.log(message, sender)
-})
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+// 	console.log(message)
+// })
 // chrome.runtime.onConnect.addListener(function(port) {
 // 	console.log('port opened')
 // 	console.assert(port.name === "remixDJ");

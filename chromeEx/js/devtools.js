@@ -1,4 +1,4 @@
- // todo: add more comments later
+// todo: add more comments later
 chrome.devtools.panels.create('REMIX', null, '/html/panel.html', null);
 // chrome.devtools.inspectedWindow.getResources((reso)=> console.log(reso))
 // console.log('after')
@@ -11,3 +11,8 @@ chrome.devtools.panels.create('REMIX', null, '/html/panel.html', null);
 // 	sidebar.setPage('../html/panel.html')
 // 	sidebar.setObject({data: "data to show"})
 // })
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+	console.log('hi form dev')
+	console.log(message)
+	console.log(sender)
+})

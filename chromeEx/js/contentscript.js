@@ -20,9 +20,13 @@ injectScript(chrome.runtime.getURL('js/detect_remix.js'), 'body');
 // listen for event from injected script
 window.addEventListener("getRemixData", (e) => {
 	// const port = chrome.runtime.connect({ name: "remixDJ" });
-	console.log('eventlistener')
-	console.log(e.detail)
-	chrome.runtime.sendMessage({test: 'test'})
+	// console.log('eventlistener')
+	// console.log(e.detail)
+	chrome.runtime.sendMessage('data', (res) => {
+		console.log('recieved user data', (res) => {
+
+		})
+	})
 	console.log('message sent')
 	// port.postMessage({ data: e.detail })
 	// port.onMessage.addListener(function(msg) {
