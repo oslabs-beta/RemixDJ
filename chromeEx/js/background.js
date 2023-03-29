@@ -1,4 +1,4 @@
-console.log('hi from SW')
+// console.log('hi from SW')
 // chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // 	console.log(message)
 // })

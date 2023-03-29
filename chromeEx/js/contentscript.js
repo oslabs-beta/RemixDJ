@@ -22,17 +22,7 @@ window.addEventListener("getRemixData", (e) => {
 	// const port = chrome.runtime.connect({ name: "remixDJ" });
 	// console.log('eventlistener')
 	// console.log(e.detail)
-	chrome.runtime.sendMessage('data', (res) => {
-		console.log('recieved user data', (res) => {
-
-		})
+	chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
+		console.log('recieved user data', res)
 	})
-	console.log('message sent')
-	// port.postMessage({ data: e.detail })
-	// port.onMessage.addListener(function(msg) {
-	// 	if (msg.question === "Who's there?")
-	// 		port.postMessage({ answer: "Madame" });
-	// 	else if (msg.question === "Madame who?")
-	// 		port.postMessage({ answer: "Madame... Bovary" });
-	// });
 }, false)
