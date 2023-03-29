@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/routes/about.test.tsx"],
+  "sourcesContent": ["export default function About() {\n  return (\n    <div>\n      <h1>For Real</h1>\n    </div>\n  )\n}"],
+  "mappings": ";;;;;;AAGM;AAHS,SAAR,QAAyB;AAC9B,SACE,mDAAC,SACC,6DAAC,QAAG,wBAAJ;AAAA;AAAA;AAAA;AAAA,SAAY,KADd;AAAA;AAAA;AAAA;AAAA,SAEA;AAEJ;",
+  "names": []
+}

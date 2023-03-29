@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/routes/_index.tsx"],
+  "sourcesContent": ["import { Outlet } from \"@remix-run/react\"\nexport default function Main() {\n  return (\n    <div>\n      <h1>I figured it out</h1>\n      < Outlet />\n    </div>\n  )\n}"],
+  "mappings": ";;;;;;;;;AAIM;AAHS,SAAR,OAAwB;AAC7B,SACE,mDAAC,SACC;AAAA,uDAAC,QAAG,gCAAJ;AAAA;AAAA;AAAA;AAAA,WAAoB;AAAA,IACpB,mDAAE,YAAF;AAAA;AAAA;AAAA;AAAA,WAAS;AAAA,OAFX;AAAA;AAAA;AAAA;AAAA,SAGA;AAEJ;",
+  "names": []
+}
