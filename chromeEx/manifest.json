@@ -7,5 +7,14 @@
     "default_popup": "html/hello.html",
     "default_icon": "assets/hello_extension.png"
   },
-  "devtools_page": "html/devtools.html"
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["./js/contentscript.js"]
+  }
+  ],
+  "devtools_page": "html/devtools.html",
+  "background": {
+    "service_worker": "./js/background.js"
+  }
 }
