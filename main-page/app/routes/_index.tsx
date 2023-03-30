@@ -14,6 +14,7 @@ export default function Main() {
   return (
     <div>
       <h1>This will be the landing page</h1>
+      <button>About the DJ Team (aka the jockeys)</button>
       < Outlet />
       < LiveReload />
     </div>

@@ -44,7 +44,7 @@ export default function Root() {
       </head>
       <body>
         <h1>Welcome to Remix DJ-THE devtool for RemixJS*</h1>
-        <h2>*This is going to be the permanent header</h2>
+        <p>*This will be our permanent header</p>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
