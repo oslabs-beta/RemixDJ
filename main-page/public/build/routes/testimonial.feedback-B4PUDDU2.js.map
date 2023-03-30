@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/routes/testimonial.feedback.tsx"],
-  "sourcesContent": ["export default function Feedback() {\n  return (\n    <div>\n      <h2>This will be a form?</h2>\n    </div>\n  )\n}"],
-  "mappings": ";;;;;;AAGM;AAHS,SAAR,WAA4B;AACjC,SACE,mDAAC,SACC,6DAAC,QAAG,oCAAJ;AAAA;AAAA;AAAA;AAAA,SAAwB,KAD1B;AAAA;AAAA;AAAA;AAAA,SAEA;AAEJ;",
-  "names": []
-}
