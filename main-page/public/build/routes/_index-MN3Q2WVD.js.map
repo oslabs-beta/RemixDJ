@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/routes/_index.tsx"],
-  "sourcesContent": ["import { Outlet, LiveReload } from \"@remix-run/react\"\nexport default function Main() {\n  return (\n    <div>\n      <h1>This will be the landing page</h1>\n      < Outlet />\n      < LiveReload />\n    </div>\n  )\n}"],
-  "mappings": ";;;;;;;;;;AAIM;AAHS,SAAR,OAAwB;AAC7B,SACE,mDAAC,SACC;AAAA,uDAAC,QAAG,6CAAJ;AAAA;AAAA;AAAA;AAAA,WAAiC;AAAA,IACjC,mDAAE,YAAF;AAAA;AAAA;AAAA;AAAA,WAAS;AAAA,IACT,mDAAE,gBAAF;AAAA;AAAA;AAAA;AAAA,WAAa;AAAA,OAHf;AAAA;AAAA;AAAA;AAAA,SAIA;AAEJ;",
-  "names": []
-}

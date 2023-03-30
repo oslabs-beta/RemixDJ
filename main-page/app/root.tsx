@@ -16,6 +16,7 @@
 //     </html>
 //   )
 // }
+import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -24,6 +25,14 @@ import {
   ScrollRestoration,
   LiveReload
 } from "@remix-run/react";
+// @ts-expect-error
+import mainStylesheetUrl from './styles/global.css'
+
+export const links: LinksFunction = () => {
+  return [
+    {rel: 'stylesheet', href: mainStylesheetUrl}
+  ]
+}
 
 export default function Root() {
   return (
