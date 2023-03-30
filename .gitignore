@@ -1,0 +1,13 @@
+dist/
+build/
+node_modules/
+
+# Environement secrets
+.env
+
+# Ignore cache and temp files
+.cache/
+.temp/
+
+# Ignore Adam's example folders
+example*/
