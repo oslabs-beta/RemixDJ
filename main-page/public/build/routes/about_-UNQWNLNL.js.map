@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/routes/about_.tsx"],
+  "sourcesContent": ["import { Outlet, LiveReload } from \"@remix-run/react\";\n\nexport default function About() {\n  return (\n    <div>\n      <h1>About Us</h1>\n      <h3>Adam</h3>\n      <h3>Matt</h3>\n      <h3>Molly</h3>\n      <h3>Tim</h3>\n      <h3>Victoria</h3>\n      <Outlet />\n      <LiveReload />\n    </div>\n  )\n}"],
+  "mappings": ";;;;;;;;;;AAKM;AAHS,SAAR,QAAyB;AAC9B,SACE,mDAAC,SACC;AAAA,uDAAC,QAAG,wBAAJ;AAAA;AAAA;AAAA;AAAA,WAAY;AAAA,IACZ,mDAAC,QAAG,oBAAJ;AAAA;AAAA;AAAA;AAAA,WAAQ;AAAA,IACR,mDAAC,QAAG,oBAAJ;AAAA;AAAA;AAAA;AAAA,WAAQ;AAAA,IACR,mDAAC,QAAG,qBAAJ;AAAA;AAAA;AAAA;AAAA,WAAS;AAAA,IACT,mDAAC,QAAG,mBAAJ;AAAA;AAAA;AAAA;AAAA,WAAO;AAAA,IACP,mDAAC,QAAG,wBAAJ;AAAA;AAAA;AAAA;AAAA,WAAY;AAAA,IACZ,mDAAC,YAAD;AAAA;AAAA;AAAA;AAAA,WAAQ;AAAA,IACR,mDAAC,gBAAD;AAAA;AAAA;AAAA;AAAA,WAAY;AAAA,OARd;AAAA;AAAA;AAAA;AAAA,SASA;AAEJ;",
+  "names": []
+}
