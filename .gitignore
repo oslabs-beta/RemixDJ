@@ -1,6 +1,18 @@
+
 main-page/.cache
 main-page/build
 main-page/public/build
 node_modules
 /*/node_modules
+dist/
+build/
+
+# Environement secrets
+.env
+
+# Ignore cache and temp files
+.cache/
+.temp/
+
+# Ignore Adam's example folders
 example*/
