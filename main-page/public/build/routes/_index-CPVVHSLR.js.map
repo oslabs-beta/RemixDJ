@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../app/routes/_index.tsx"],
+  "sourcesContent": ["import { Outlet, LiveReload } from \"@remix-run/react\"\nimport type { LinksFunction } from \"@remix-run/node\"\n\n// @ts-expect-error\nimport stylesUrl from '../styles/index.css'\n\nexport const links: LinksFunction = () => {\n  return [\n    {rel: 'stylesheet', href: stylesUrl}\n  ]\n}\n\nexport default function Main() {\n  return (\n    <div>\n      <h1>This will be the landing page</h1>\n      <button>About the DJ Team (aka the jockeys)</button>\n      < Outlet />\n      < LiveReload />\n    </div>\n  )\n}"],
+  "mappings": ";;;;;;;;;;;;;AAeM;AATC,IAAM,QAAuB,MAAM;AACxC,SAAO;AAAA,IACL,EAAC,KAAK,cAAc,MAAM,eAAS;AAAA,EACrC;AACF;AAEe,SAAR,OAAwB;AAC7B,SACE,mDAAC,SACC;AAAA,uDAAC,QAAG,6CAAJ;AAAA;AAAA;AAAA;AAAA,WAAiC;AAAA,IACjC,mDAAC,YAAO,mDAAR;AAAA;AAAA;AAAA;AAAA,WAA2C;AAAA,IAC3C,mDAAE,YAAF;AAAA;AAAA;AAAA;AAAA,WAAS;AAAA,IACT,mDAAE,gBAAF;AAAA;AAAA;AAAA;AAAA,WAAa;AAAA,OAJf;AAAA;AAAA;AAAA;AAAA,SAKA;AAEJ;",
+  "names": []
+}
