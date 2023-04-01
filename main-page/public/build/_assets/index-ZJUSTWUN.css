@@ -1,0 +1,5 @@
+/* app/styles/index.css */
+body {
+  color: #fff;
+  background-image: radial-gradient(circle, rgb(20, 20, 23) 0%, rgb(29, 29, 35) 35%, rgb(12, 12, 13) 100%);
+}

@@ -1,6 +1,11 @@
+
+main-page/.cache
+main-page/build
+main-page/public/build
+node_modules
+/*/node_modules
 dist/
 build/
-node_modules/
 
 # Environement secrets
 .env
