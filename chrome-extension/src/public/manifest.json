@@ -20,7 +20,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "./detect_remix.js"
+        "detect_remix.js"
       ],
       "matches": [
         "<all_urls>"
