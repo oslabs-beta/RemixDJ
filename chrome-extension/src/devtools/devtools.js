@@ -1,5 +1,6 @@
 // todo: add more comments later
 chrome.devtools.panels.create('RemixDJ', null, '/html/panel.html', null);
+console.log('hello')
 // chrome.devtools.inspectedWindow.getResources((reso)=> console.log(reso))
 // console.log(tabId)
 // chrome.devtools.panels.elements.createSidebarPane('test', (sidebar) => {

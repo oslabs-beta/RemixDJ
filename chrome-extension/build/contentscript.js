@@ -9,7 +9,7 @@ function injectScript(file, node) {
 
 // pass it through the chrome runtime API
 // params = (file, node to append to)
-injectScript(chrome.runtime.getURL('js/detect_remix.js'), 'body');
+injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
 
 // listen for event from injected script
 window.addEventListener("getRemixData", (e) => {

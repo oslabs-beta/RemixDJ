@@ -58,10 +58,11 @@ module.exports = {
 	},
 	plugins: [
 		// Generates an HTML file based on the template we pass in to serve our webpack files
+		// the chunks are no working properly and we have a hacky solution to our problem. Eventually should fix this
 		new HtmlWebpackPlugin({
 			filename: "devtools/devtools.html",
 			template: path.resolve(__dirname, "./src/devtools/devtools.html"),
-			chunks: ["devtools-devtools"]
+			chunks: ["devtools/devtools"]
 		}),
 		new HtmlWebpackPlugin({
 			filename: "popup/popup.html",
