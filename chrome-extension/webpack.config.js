@@ -5,7 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: { 
-	 "devtools/devtools" : path.resolve(__dirname, "src/devtools/index.tsx") ,
+	 "panel/panel" : path.resolve(__dirname, "src/panel/index.tsx") ,
 	 "popup/popup": path.resolve(__dirname, "src/popup/index.tsx") 
 	},
 	
@@ -59,14 +59,14 @@ module.exports = {
 	plugins: [
 		// Generates an HTML file based on the template we pass in to serve our webpack files
 		new HtmlWebpackPlugin({
-			filename: "devtools/devtools.html",
-			template: path.resolve(__dirname, "./src/devtools/devtools.html"),
-			chunks: ["devtools-devtools"]
+			filename: "panel/panel.html",
+			template: path.resolve(__dirname, "./src/panel/panel.html"),
+			chunks: ["panel/panel"]
 		}),
 		new HtmlWebpackPlugin({
 			filename: "popup/popup.html",
 			template: path.resolve(__dirname, "./src/popup/popup.html"),
-			chunks: ["popup"]
+			chunks: ["popup/popup"]
 		}),
 		new CopyPlugin({
 			patterns: [
