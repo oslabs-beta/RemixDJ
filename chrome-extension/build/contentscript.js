@@ -1,9 +1,3 @@
-// window.addEventListener("load", (e) => {
-// 	console.log('event')
-// 	console.log(window)
-// 	console.log(window["__remixContext"])
-// })
-
 // declare injectable script as function
 function injectScript(file, node) {
 	var th = document.getElementsByTagName(node)[0];
@@ -21,7 +15,6 @@ injectScript(chrome.runtime.getURL('js/detect_remix.js'), 'body');
 window.addEventListener("getRemixData", (e) => {
 	// const port = chrome.runtime.connect({ name: "remixDJ" });
 	// console.log('eventlistener')
-	// console.log(e.detail)
 	chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
 		console.log('recieved user data', res)
 	})

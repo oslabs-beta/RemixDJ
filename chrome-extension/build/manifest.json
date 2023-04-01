@@ -4,32 +4,32 @@
   "description": "Developer tools for the Remix framework",
   "version": "1.0",
   "action": {
-    "default_popup": "html/hello.html",
+    "default_popup": "popup/popup.html",
     "default_icon": "assets/hello_extension.png"
   },
   "content_scripts": [
     {
       "matches": [
-        "https://*/*"
+        "<all_urls>"
       ],
       "js": [
-        "./js/contentscript.js"
+        "./contentscript.js"
       ]
     }
   ],
   "web_accessible_resources": [
     {
       "resources": [
-        "js/detect_remix.js"
+        "./detect_remix.js"
       ],
       "matches": [
-        "https://*/*"
+        "<all_urls>"
       ]
     }
   ],
-  "devtools_page": "html/devtools.html",
+  "devtools_page": "devtools/devtools.html",
   "background": {
-    "service_worker": "./js/background.js"
+    "service_worker": "./background.js"
   },
   "permissions": [
     "scripting"
