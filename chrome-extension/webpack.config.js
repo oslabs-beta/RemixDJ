@@ -5,13 +5,13 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: { 
-	 "panel/panel" : path.resolve(__dirname, "src/panel/index.tsx") ,
-	 "popup/popup": path.resolve(__dirname, "src/popup/index.tsx") 
+	 "panel" : path.resolve(__dirname, "src/panel/index.tsx") ,
+	 "popup": path.resolve(__dirname, "src/popup/index.tsx") 
 	},
 	
 	output: {
 		path: path.resolve(__dirname, "build"),
-		filename: "[name].bundle.js",
+		filename: "[name]/[name].bundle.js",
 		publicPath: "/",
 	},
 	devtool: "inline-source-map",
@@ -62,12 +62,12 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			filename: "panel/panel.html",
 			template: path.resolve(__dirname, "./src/panel/panel.html"),
-			chunks: ["panel/panel"]
+			chunks: ["panel"]
 		}),
 		new HtmlWebpackPlugin({
 			filename: "popup/popup.html",
 			template: path.resolve(__dirname, "./src/popup/popup.html"),
-			chunks: ["popup/popup"]
+			chunks: ["popup"]
 		}),
 		new CopyPlugin({
 			patterns: [
