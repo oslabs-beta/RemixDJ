@@ -3,7 +3,6 @@ import React from "react";
 export default () => {
 	return (
 		<div>
-			THIS WORKS
 		</div>
 
 	)
