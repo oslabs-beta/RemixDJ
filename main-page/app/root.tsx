@@ -19,14 +19,14 @@
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
+  LiveReload,
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration,
-  LiveReload
+  ScrollRestoration
 } from "@remix-run/react";
 // @ts-expect-error
-import mainStylesheetUrl from './styles/global.css'
+import mainStylesheetUrl from './styles/global.css';
 
 export const links: LinksFunction = () => {
   return [
