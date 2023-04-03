@@ -1,6 +1,7 @@
 main-page/.cache
 main-page/build
 main-page/public/build
-node_modules
-/*/node_modules
+**/node_modules
+**/build
+**/.cache
 example*/
