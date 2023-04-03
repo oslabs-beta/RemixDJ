@@ -1,4 +1,5 @@
-build/
+**/build/
+**/node_modules/
 example*/
-/node_modules/
-/*/node_modules/
+main-age/node_modules/
+main-page/.cache/
