@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/routes/about.$name.tsx"],
-  "sourcesContent": ["import { LiveReload, useLoaderData } from \"@remix-run/react\"\n\nexport function loader({ params }) {\n  console.log(params.name)\n  return params.name;\n}\n\nexport default function Team() {\n  const data = useLoaderData<typeof loader>()\n  return (\n    <div>\n      <h1>{data}</h1>\n      <LiveReload />\n    </div>\n  )\n}"],
-  "mappings": ";;;;;;;;;;AAWM;AAJS,SAAR,OAAwB;AAC7B,QAAM,OAAO,cAA6B;AAC1C,SACE,mDAAC,SACC;AAAA,uDAAC,QAAI,kBAAL;AAAA;AAAA;AAAA;AAAA,WAAU;AAAA,IACV,mDAAC,gBAAD;AAAA;AAAA;AAAA;AAAA,WAAY;AAAA,OAFd;AAAA;AAAA;AAAA;AAAA,SAGA;AAEJ;",
-  "names": []
-}
