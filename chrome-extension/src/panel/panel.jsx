@@ -1,10 +1,10 @@
 import React from "react";
-import App from "../App.js" 
+import Tree from "../Tree.js" 
 
 export default () => {
 	return (
 		<div>
-			<App/>
+			<Tree/>
 		</div>
 	)
 }
