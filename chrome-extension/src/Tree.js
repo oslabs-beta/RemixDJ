@@ -8,7 +8,7 @@ import { useRef, useEffect } from 'react';
 import remixManifest from './treeRender/mockData';
 import parseData from './treeRender/parseDataFunc';
 
-function App() {
+function Tree() {
   
   // function Tree() {
 
@@ -99,4 +99,4 @@ function App() {
   );
 }
 
-export default App;
+export default Tree;
