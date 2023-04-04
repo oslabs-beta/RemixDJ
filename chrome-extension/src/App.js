@@ -15,7 +15,6 @@ function App() {
   const ref = useRef()
   useEffect(() => {
     const treeData = parseData(remixManifest)
-    console.log(treeData)
 
     // const svgElement = d3.select(ref.current)
     // svgElement.append("circle")

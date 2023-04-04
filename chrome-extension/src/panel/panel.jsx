@@ -4,9 +4,8 @@ import App from "../App.js"
 export default () => {
 	return (
 		<div>
-			<App />
+			<App/>
 		</div>
-
 	)
 }
 // let data;
