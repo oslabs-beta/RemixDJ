@@ -9,6 +9,6 @@
 
 
   },
-  "include": ["src/", "../panel.js"],
+  "include": ["src/"],
   "exclude": ["node_modules/"]
 }

@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import * as d3 from 'https://unpkg.com/d3?module'
+import * as d3 from 'd3'
 // import remixManifest from './test-data';
 // import { render } from 'react-dom';
 import { useRef, useEffect } from 'react';
@@ -23,7 +24,7 @@ function App() {
     //   .attr("r",  50)
 
     const margin = { top: 10, right: 120, bottom: 10, left: 40 },
-            width = d3.width || 960,
+            width = 960,
             height = 500 - margin.top - margin.bottom;
 
     const treemap = d3.tree().size([height, width]);

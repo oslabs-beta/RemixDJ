@@ -5,7 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: { 
-	 "panel" : path.resolve(__dirname, "src/panel/index.tsx") ,
+	 "panel" : path.resolve(__dirname, "src/panel/index.jsx") ,
 	 "popup": path.resolve(__dirname, "src/popup/index.tsx") 
 	},
 	
@@ -32,9 +32,9 @@ module.exports = {
 			},
 			{
 				// Testing for any .css/.scss files so that webpack can fulfill the style import in 'index.js'
-				test: /\.(scss)$/i,
+				test: /\.(css)$/i,
 				exclude: /(node_modules)/,
-				use: ["style-loader", "css-loader", "sass-loader"],
+				use: ["style-loader", "css-loader"],
 			},
 			{
 				test: /\.(ts|tsx)$/,
