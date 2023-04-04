@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "REMIX DJ",
+  "description": "Developer tools for the Remix framework",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "assets/hello_extension.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "./contentscript.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "detect_remix.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "devtools_page": "devtools/devtools.html",
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "permissions": [
+    "scripting"
+  ]
+}

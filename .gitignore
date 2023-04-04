@@ -1,11 +1,10 @@
-
-main-page/.cache
-main-page/build
+<<<<<<< HEAD
+**/build/
+**/node_modules/
+example*/
+main-page/.cache/
 main-page/public/build
-node_modules
-**/node_modules
 **/dist
-**/build
 .DS_Store
 
 
