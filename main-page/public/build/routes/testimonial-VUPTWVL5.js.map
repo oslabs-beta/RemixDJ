@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/routes/testimonial.tsx"],
-  "sourcesContent": ["import { Outlet } from \"@remix-run/react\"\n\nexport default function Testimonial() {\n  return (\n    <div>\n      <h1>This is where testimonials will be</h1>\n      <Outlet />\n    </div>\n  )\n}"],
-  "mappings": ";;;;;;;;;AAKM;AAHS,SAAR,cAA+B;AACpC,SACE,mDAAC,SACC;AAAA,uDAAC,QAAG,kDAAJ;AAAA;AAAA;AAAA;AAAA,WAAsC;AAAA,IACtC,mDAAC,YAAD;AAAA;AAAA;AAAA;AAAA,WAAQ;AAAA,OAFV;AAAA;AAAA;AAAA;AAAA,SAGA;AAEJ;",
-  "names": []
-}

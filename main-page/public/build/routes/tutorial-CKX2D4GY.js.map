@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../app/routes/tutorial.tsx"],
-  "sourcesContent": ["export default function Tutorial() {\n  return (\n    <div>\n      <h1>This is where the tutorial will be</h1>\n    </div>\n  )\n}"],
-  "mappings": ";;;;;;AAGM;AAHS,SAAR,WAA4B;AACjC,SACE,mDAAC,SACC,6DAAC,QAAG,kDAAJ;AAAA;AAAA;AAAA;AAAA,SAAsC,KADxC;AAAA;AAAA;AAAA;AAAA,SAEA;AAEJ;",
-  "names": []
-}

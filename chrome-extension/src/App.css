@@ -1,0 +1,53 @@
+body {
+  background-color: rgb(26, 23, 24);
+
+  height: 100vh;
+  margin: 10px;
+}
+
+.display {
+  margin: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+g > text {
+  fill: white;
+  text-shadow: 0 1px 0 rgb(26, 23, 24), 0 -1px 0 rgb(26, 23, 24), 1px 0 0 rgb(26, 23, 24), -1px 0 0 rgb(26, 23, 24)
+}
+
+.link {
+  fill: none;
+  stroke: white;
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+}
+
+
+/* .node circle {
+  fill: #999;
+}
+.node text {
+  font: 10px sans-serif;
+}
+.node--internal circle {
+  fill: #555555;
+}
+.node--internal text {
+  text-shadow: 0 1px 0 black, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
+}
+.link {
+  fill: none;
+  stroke: #555;
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+}
+form {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+label {
+  display: block;
+} */

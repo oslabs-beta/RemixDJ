@@ -1,12 +1,9 @@
-
-main-page/.cache
-main-page/build
-main-page/public/build
-node_modules
 **/node_modules
 **/dist/
 **/build/
 **/pnpm-lock.yaml
+**/dist
+.DS_Store
 
 # Environement secrets
 .env

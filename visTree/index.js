@@ -1,4 +1,4 @@
-import * as d3 from 'https://unpkg.com/d3?module'
+import * as d3 from 'https://unpkg.com/d3?module';
 
 const testingManifest = {
   version: 'bec3e4ad',
@@ -1027,7 +1027,8 @@ function routeLayouts(remixManifest) {
     let pathString = 'newObj.children';
     for (let j = 0; j < myKeys[i].length; j++) {
       // Now we evaluate the pathString as an actual JS command with eval
-      let path = eval(pathString);
+      let path = pathString;
+
       // This checks if in the current path there is an object with a name key with the value of the current route we are on
       // If this is not true we then push the object to the current childrens array
       if (!path.find((e) => e.name === myKeys[i][j])) {
@@ -1037,7 +1038,7 @@ function routeLayouts(remixManifest) {
           newObj.children.push({
             name: myKeys[i][j],
             value: 7.5,
-            type: 'grey',
+            type: 'white',
             level: 'black',
             children: [],
           });
@@ -1045,7 +1046,7 @@ function routeLayouts(remixManifest) {
           path.push({
             name: myKeys[i][j],
             value: 7.5,
-            type: 'grey',
+            type: 'white',
             level: 'black',
             children: [],
           });
@@ -1059,7 +1060,7 @@ function routeLayouts(remixManifest) {
           numbah = k;
           // Then using numbah and some string manipulation we go deeper into the object by adding that numbah and the .children notation
           // So that when we go back through the second loop again we are now one deeper into it which is what we want.
-          pathString += `[${numbah}]` + '.children';
+          pathString = pathString[numbah][children];
         }
       }
     }
@@ -1068,7 +1069,6 @@ function routeLayouts(remixManifest) {
 }
 
 let testObj = routeLayouts(testingManifest);
-
 
 const margin = { top: 10, right: 120, bottom: 10, left: 40 };
 const width = d3.width || 960;
@@ -1092,26 +1092,26 @@ root.descendants().forEach((d, i) => {
 tree(root);
 
 const svg = d3
-  .create("svg")
-  .attr("viewBox", [-margin.left, -margin.top, width, dx])
-  .style("font", "10px sans-serif")
-  .style("user-select", "none");
+  .create('svg')
+  .attr('viewBox', [-margin.left, -margin.top, width, dx])
+  .style('font', '10px sans-serif')
+  .style('user-select', 'none');
 
 const gLink = svg
-  .append("g")
-  .attr("fill", "none")
-  .attr("stroke", "#555")
-  .attr("stroke-opacity", 0.4)
-  .attr("stroke-width", 1.5);
+  .append('g')
+  .attr('fill', 'none')
+  .attr('stroke', '#555')
+  .attr('stroke-opacity', 0.4)
+  .attr('stroke-width', 1.5);
 
 const gNode = svg
-  .append("g")
-  .attr("cursor", "pointer")
-  .attr("pointer-events", "all");
+  .append('g')
+  .attr('cursor', 'pointer')
+  .attr('pointer-events', 'all');
 
 update(root);
 
-document.querySelector("#app").appendChild(svg.node());
+document.querySelector('#app').appendChild(svg.node());
 
 function update(source) {
   const duration = d3.event && d3.event.altKey ? 2500 : 250;
@@ -1132,83 +1132,83 @@ function update(source) {
   const transition = svg
     .transition()
     .duration(duration)
-    .attr("viewBox", [-margin.left, left.x - margin.top, width, height])
+    .attr('viewBox', [-margin.left, left.x - margin.top, width, height])
     .tween(
-      "resize",
-      window.ResizeObserver ? null : () => () => svg.dispatch("toggle")
+      'resize',
+      window.ResizeObserver ? null : () => () => svg.dispatch('toggle')
     );
 
   // Update the nodes…
-  const node = gNode.selectAll("g").data(nodes, (d) => d.id);
+  const node = gNode.selectAll('g').data(nodes, (d) => d.id);
 
   // Enter any new nodes at the parent's previous position.
   const nodeEnter = node
     .enter()
-    .append("g")
-    .attr("transform", (d) => `translate(${source.y0},${source.x0})`)
-    .attr("fill-opacity", 0)
-    .attr("stroke-opacity", 0)
-    .on("click", (event, d) => {
+    .append('g')
+    .attr('transform', (d) => `translate(${source.y0},${source.x0})`)
+    .attr('fill-opacity', 0)
+    .attr('stroke-opacity', 0)
+    .on('click', (event, d) => {
       d.children = d.children ? null : d._children;
       update(d);
     });
 
   nodeEnter
-    .append("circle")
-    .attr("r", 2.5)
-    .attr("fill", (d) => (d._children ? "#555" : "#999"))
-    .attr("stroke-width", 10);
+    .append('circle')
+    .attr('r', 2.5)
+    .attr('fill', (d) => (d._children ? '555' : '999'))
+    .attr('stroke-width', 10);
 
   nodeEnter
-    .append("text")
-    .attr("dy", "0.31em")
-    .attr("x", (d) => (d._children ? -6 : 6))
-    .attr("text-anchor", (d) => (d._children ? "end" : "start"))
+    .append('text')
+    .attr('dy', '0.31em')
+    .attr('x', (d) => (d._children ? -6 : 6))
+    .attr('text-anchor', (d) => (d._children ? 'end' : 'start'))
     .text((d) => d.data.name)
     .clone(true)
     .lower()
-    .attr("stroke-linejoin", "round")
-    .attr("stroke-width", 3)
-    .attr("stroke", "white");
+    .attr('stroke-linejoin', 'round')
+    .attr('stroke-width', 3)
+    .attr('stroke', 'white');
 
   // Transition nodes to their new position.
   node
     .merge(nodeEnter)
     .transition(transition)
-    .attr("transform", (d) => `translate(${d.y},${d.x})`)
-    .attr("fill-opacity", 1)
-    .attr("stroke-opacity", 1);
+    .attr('transform', (d) => `translate(${d.y},${d.x})`)
+    .attr('fill-opacity', 1)
+    .attr('stroke-opacity', 1);
 
   // Transition exiting nodes to the parent's new position.
   node
     .exit()
     .transition(transition)
     .remove()
-    .attr("transform", (d) => `translate(${source.y},${source.x})`)
-    .attr("fill-opacity", 0)
-    .attr("stroke-opacity", 0);
+    .attr('transform', (d) => `translate(${source.y},${source.x})`)
+    .attr('fill-opacity', 0)
+    .attr('stroke-opacity', 0);
 
   // Update the links…
-  const link = gLink.selectAll("path").data(links, (d) => d.target.id);
+  const link = gLink.selectAll('path').data(links, (d) => d.target.id);
 
   // Enter any new links at the parent's previous position.
   const linkEnter = link
     .enter()
-    .append("path")
-    .attr("d", (d) => {
+    .append('path')
+    .attr('d', (d) => {
       const o = { x: source.x0, y: source.y0 };
       return diagonal({ source: o, target: o });
     });
 
   // Transition links to their new position.
-  link.merge(linkEnter).transition(transition).attr("d", diagonal);
+  link.merge(linkEnter).transition(transition).attr('d', diagonal);
 
   // Transition exiting nodes to the parent's new position.
   link
     .exit()
     .transition(transition)
     .remove()
-    .attr("d", (d) => {
+    .attr('d', (d) => {
       const o = { x: source.x, y: source.y };
       return diagonal({ source: o, target: o });
     });
