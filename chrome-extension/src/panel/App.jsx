@@ -1,10 +1,9 @@
 // import logo from './logo.svg';
-import React from 'react';
+import * as d3 from 'd3';
 import './App.css';
-import * as d3 from 'd3'
 // import remixManifest from './test-data';
 // import { render } from 'react-dom';
-import { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import remixManifest from './treeRender/mockData';
 import parseData from './treeRender/parseDataFunc';
 
@@ -27,8 +26,7 @@ function App() {
             height = 500 - margin.top - margin.bottom;
 
     const treemap = d3.tree().size([height, width]);
-    let nodes = d3.hierarchy(treeData, d => d.children);
-    nodes = treemap(nodes);
+    let nodes = treemap(d3.hierarchy(treeData, d => d.children));
 
     const svg = d3.select(ref.current).append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -90,13 +88,12 @@ function App() {
   
   return (
     <div>
-      <body>
-        <svg
-          ref={ref} class="display"
-        />
-      </body>
+      <svg
+        ref={ref} class="display"
+      />
     </div>
   );
+
 }
 
 export default App;
