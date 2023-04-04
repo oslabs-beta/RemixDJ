@@ -1,6 +1,11 @@
 @font-face {
+<<<<<<< HEAD
   font-family: "roboto";
   src: url("/fonts/roboto/Roboto-Medium.ttf") format("ttf");
+=======
+  font-family: "baloo";
+  src: url("/fonts/baloo/baloo.woff") format("woff");
+>>>>>>> 67711852fa467e9b9af1588c90a608f7c7805b6a
   font-weight: normal;
   font-style: normal;
 }
@@ -8,21 +13,33 @@
 :root {
   --hs-links: 48 100%;
   --color-foreground: hsl(0, 0%, 100%);
+<<<<<<< HEAD
   --color-background: hsl(264, 12%, 8%);
+=======
+  --color-background: hsl(278, 73%, 19%);
+>>>>>>> 67711852fa467e9b9af1588c90a608f7c7805b6a
   --color-links: hsl(var(--hs-links) 50%);
   --color-links-hover: hsl(var(--hs-links) 45%);
   --color-border: hsl(277, 85%, 38%);
   --color-invalid: hsl(356, 100%, 71%);
   --gradient-background: radial-gradient(
     circle,
+<<<<<<< HEAD
     rgb(5, 9, 70) 0%,
+=======
+    rgba(152, 11, 238, 1) 0%,
+>>>>>>> 67711852fa467e9b9af1588c90a608f7c7805b6a
     rgba(118, 15, 181, 1) 35%,
     rgba(58, 13, 85, 1) 100%
   );
   --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica,
     Roboto, Arial, sans-serif, system-ui, "Apple Color Emoji",
     "Segoe UI Emoji";
+<<<<<<< HEAD
   --font-display: roboto, var(--font-body);
+=======
+  --font-display: baloo, var(--font-body);
+>>>>>>> 67711852fa467e9b9af1588c90a608f7c7805b6a
 }
 
 html {
