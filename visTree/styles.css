@@ -1,24 +1,41 @@
 .node circle {
-    fill: #999;
+    /* fill: #999; */
+    fill: red;
+
   }
+
+  .node text {
+    fill: red
+  }
+
+  g > text {
+    fill: red;
+  }
+
+  gLink {
+    stroke-width: 100px;
+  }
+
   
   .node text {
-    font: 10px sans-serif;
+    font: 10px sans-serif red;
   }
   
   .node--internal circle {
-    fill: #555;
+    /* fill: #555555; */
+    fill: white;
   }
   
   .node--internal text {
     text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+    fill: red;
   }
   
   .link {
-    fill: none;
+    fill: red;
     stroke: #555;
     stroke-opacity: 0.4;
-    stroke-width: 1.5px;
+    stroke-width: 100px;
   }
   
   form {
