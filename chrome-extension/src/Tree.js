@@ -32,7 +32,7 @@ function Tree(props) {
     //   .attr("r",  50)
 
     const margin = { top: 10, right: 120, bottom: 10, left: 40 },
-      width = 960,
+      width = 960 - margin.right - margin.left,
       height = 500 - margin.top - margin.bottom;
 
     const treemap = d3.tree().size([height, width]);
@@ -98,7 +98,7 @@ function Tree(props) {
     <div>
       <body>
         <svg
-          ref={ref} class="display"
+          ref={ref} class="display" viewBox='0 0 960 500' preserveAspectRatio='XMidYMid'
         />
       </body>
     </div>
