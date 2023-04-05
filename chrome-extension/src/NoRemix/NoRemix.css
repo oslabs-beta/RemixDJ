@@ -1,0 +1,8 @@
+@font-face {
+  font-family: grotesk;
+  src: '/Users/timothymuller/Downloads/KlimTestFonts/Test desktop fonts (OTF)/Test Founders Grotesk Collection/Test Founders Grotesk/TestFoundersGrotesk-Bold.otf';
+}
+
+.alert {
+  font-family: grotesk;
+}
