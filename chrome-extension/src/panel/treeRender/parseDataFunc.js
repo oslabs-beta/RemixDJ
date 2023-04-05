@@ -1054,6 +1054,10 @@ function keySplitter(remixManifest) {
                 // if / or . comes after [ and before ] do NOT split by that key
                 const splitKeyDot = key.split('.')
                 console.log(splitKeyDot)
+                for (let i = 0; i < splitKeyDot.length; i++) {
+
+                }
+                console.log(splitKeyDot);
                 const splitKeySlash = key.split('/')
                 console.log(splitKeySlash)
                 // if el i ends with [ and next index el begins with ] concat those two els back together w missing char in middle
