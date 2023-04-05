@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Tree from "../Tree.js" 
-import List from "../List.js";
-import './style.css'
+import React, { useState } from "react";
+import List from "./component/List";
+import Tree from "./component/Tree";
+import './styles/style.css';
 
 export default () => {
 	// let renderItem = <Tree />;
