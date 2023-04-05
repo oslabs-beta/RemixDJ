@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from "react";
-import Tree from "../Tree.js"
-
-// let data;
-// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-// 	data = JSON.parse(message);
-// 	console.log('ran from panel.js');
-// 	const test = document.createElement('div');
-// 	test.innerText = JSON.stringify(data);
-// 	document.body.appendChild(test);
-// })
+import Tree from "../Tree.js" 
+import List from "../List.js";
+import './style.css'
+import { useState } from "react";
 
 export default () => {
+	// let renderItem = <Tree />;
+	const [comp, setComp] = useState(<Tree />)
 
-	const [flag, setFlag] = useState(true);
-
-
-	// useEffect(() => {
-	// }, [])
-
-	const handleClick = () => {
-		setFlag(!flag)
+	const changeTree = () => {
+		setComp(<Tree />)
+	}
+	const changeList = () => {
+		setComp(<List />)
 	}
 
 	return (
 		<div>
-			<div>{`hi`}</div>
-			<Tree />
-			<button color='white' onClick={handleClick}>Click</button>
+			<div class="tabs">
+				<button onClick={changeTree}>Tree</button>
+				<button onClick={changeList}>List</button>
+			</div>
+			<div>
+				{comp}
+			</div>
+			<div>
+			</div>
 		</div>
 	)
 }
+// let data;
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+// 	data = JSON.parse(message);
+// 	console.log('ran fr`om panel.js');
+// 	const test = docume`nt.createElement('div');
+// 	test.innerText = JSON.stringify(data);
+// 	document.body.appendChild(test);
+// })

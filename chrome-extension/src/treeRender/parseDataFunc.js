@@ -17,14 +17,14 @@ export default function parseData(remixManifest) {
 
     // cache for colors:
     const colors = {
-        0: 'rgb(224, 92, 115)',
-        1: 'rgb(225, 81, 86)', // red
-        2: 'orange',
-        3: 'rgb(246, 206, 75)', // yellow
-        4: 'rgb(135, 214, 117)', // green
-        5: 'rgb(121, 236, 232)', // blue
-        6: 'rgb(82, 144, 247)', // dark blue
-        7: 'rgb(199, 72, 204)', // violet
+        0: 'rgb(225, 81, 86)', // red
+        1: 'rgb(246, 206, 75)', // yellow
+        2: 'rgb(135, 214, 117)', // greene
+        3: 'rgb(121, 236, 232)', // turequoise
+        4: 'rgb(82, 144, 247)', // dark blue
+        5: 'rgb(199, 72, 204)', // magenta
+        6: 'rgb(230, 134, 149)', // lt pink
+        7: 'rgb(224, 92, 115)', // dk pink
     }
 
 

@@ -92,10 +92,7 @@ function Tree(props) {
 
     const nodesAndText = d3.selectAll('.node', '.text');
     nodesAndText.raise()
-
   }, [manifest])
-
-
 
   return (
     <div>
