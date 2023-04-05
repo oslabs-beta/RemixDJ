@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import remixManifest from './treeRender/mockData';
+import remixManifest from '../treeRender/mockData';
 
 function List() {
   const [data, setData] = useState(remixManifest);
