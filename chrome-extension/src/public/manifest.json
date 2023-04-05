@@ -32,6 +32,7 @@
     "service_worker": "./background.js"
   },
   "permissions": [
-    "scripting"
+    "scripting",
+    "storage"
   ]
 }
