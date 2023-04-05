@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Tree from "../Tree.js" 
 import List from "../List.js";
 import './style.css'
-import { useState } from "react";
 
 export default () => {
 	// let renderItem = <Tree />;
