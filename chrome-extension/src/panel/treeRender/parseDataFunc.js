@@ -1053,7 +1053,6 @@ function keySplitter(remixManifest) {
             } if (key.includes('[')) {
                 // if / or . comes after [ and before ] do NOT split by that key
                 const splitKeyDot = key.split('.')
-
                 console.log(splitKeyDot)
                 const splitKeySlash = key.split('/')
                 console.log(splitKeySlash)
