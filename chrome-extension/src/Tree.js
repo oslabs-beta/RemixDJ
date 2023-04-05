@@ -5,7 +5,6 @@ import * as d3 from 'd3'
 // import remixManifest from './test-data';
 // import { render } from 'react-dom';
 import { useRef, useEffect } from 'react';
-import remixManifest from './treeRender/mockData';
 import parseData from './treeRender/parseDataFunc';
 
 function Tree(props) {
@@ -13,6 +12,7 @@ function Tree(props) {
 
   useEffect(() => {
     async function fetchData() {
+      // getting data from chrome localstorage
       await chrome.storage.local.get(["remixManifest"]).then(res => {
         setManifest(res.remixManifest);
       })

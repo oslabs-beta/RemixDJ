@@ -1,8 +1,16 @@
-import React, { useState } from "react";
-import remixManifest from './treeRender/mockData';
+import React, { useEffect, useState } from "react";
 
-function List() {
-  const [data, setData] = useState(remixManifest);
+function List(props) {
+  const [manifest, setManifest] = useState({});
+  useEffect(() => {
+    async function fetchData() {
+    // getting data from chrome localstorage
+    await chrome.storage.local.get(["remixManifest"]).then(res => {
+      setManifest(res.remixManifest);
+    })
+  }
+  fetchData();
+  }, [])
   // recursively render the data in a collapsible list
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details 
   const renderData = (data) => {
@@ -30,7 +38,7 @@ function List() {
   return (
     <div>
       <h1> List </h1>
-      <span id="listData"> { renderData(data) } </span>
+      <span id="listData"> { renderData(manifest) } </span>
     </div>
   )
 }
