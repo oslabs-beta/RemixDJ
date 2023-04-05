@@ -1,21 +1,22 @@
-// declare injectable script as function
-function injectScript(file, node) {
-	var th = document.getElementsByTagName(node)[0];
-	var s = document.createElement('script');
-	s.setAttribute('type', 'text/javascript');
-	s.setAttribute('src', file);
-	th.appendChild(s);
-}
+window.addEventListener("DOMContentLoaded", () => {
+	// declare injectable script as function
+	const node = document.getElementsByTagName(node)[0];
+	// defining the script node
+	const script = document.createElement('script');
+	script.src = chrome.runtime.getURL('detect_remix.js');
+	script.setAttribute('type', 'text/javascript');
+	// adding the node to the dom
+	node.appendChild(s);
+});
 
-// pass it through the chrome runtime API
-// params = (file, node to append to)
-injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
+
 
 // listen for event from injected script
-window.addEventListener("getRemixData", (e) => {
+window.addEventListener("RemixData", (e) => {
 	// const port = chrome.runtime.connect({ name: "remixDJ" });
 	// console.log('eventlistener')
-	chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
-		console.log('recieved user data', res)
+	// once the event is recieved, callback will send a message to the background script
+	chrome.runtime.sendMessage(JSON.stringify(e.detail), (response) => {
+		console.log('recieved user data', response)
 	})
 }, false)

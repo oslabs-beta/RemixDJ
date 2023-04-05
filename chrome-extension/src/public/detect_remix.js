@@ -1,4 +1,10 @@
 if (window["__remixContext"]) {
 	console.log("feefifofum, i smell remix in the dom")
-	window.dispatchEvent(new CustomEvent("getRemixData", {detail: window.__remixManifest}));
+
+	// create a new event using dispatchEvent with a custom event type
+	const data = {
+		detail: window.__remixManifest,
+	}
+
+	window.dispatchEvent(new CustomEvent("RemixData", data));
 }
