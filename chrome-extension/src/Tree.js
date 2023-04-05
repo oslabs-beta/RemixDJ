@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import * as d3 from 'd3'
 // import remixManifest from './test-data';
@@ -8,13 +8,22 @@ import { useRef, useEffect } from 'react';
 import remixManifest from './treeRender/mockData';
 import parseData from './treeRender/parseDataFunc';
 
-function Tree() {
+function Tree(props) {
+  const [manifest, setManifest] = useState({});
 
+  useEffect(() => {
+    async function fetchData() {
+      await chrome.storage.local.get(["remixManifest"]).then(res => {
+        setManifest(res.remixManifest);
+      })
+    }
+    fetchData();
+  }, [])
   // function Tree() {
 
   const ref = useRef()
   useEffect(() => {
-    const treeData = parseData(remixManifest)
+    const treeData = parseData(manifest.routes)
 
     // const svgElement = d3.select(ref.current)
     // svgElement.append("circle")
@@ -83,10 +92,7 @@ function Tree() {
 
     const nodesAndText = d3.selectAll('.node', '.text');
     nodesAndText.raise()
-
-  }, [])
-
-
+  }, [manifest])
 
   return (
     <div>
