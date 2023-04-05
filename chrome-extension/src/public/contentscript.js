@@ -15,7 +15,10 @@ injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
 window.addEventListener("getRemixData", (e) => {
 	// const port = chrome.runtime.connect({ name: "remixDJ" });
 	// console.log('eventlistener')
-	chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
-		console.log('recieved user data', res)
-	})
+	chrome.storage.local.set({remixManifest: e.detail}).then(()=> {
+	});
+	// chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
+	// 	console.log('recieved page data: ', e.detail) 
+	// 	// console.log('recieved user data', res)
+	// })
 }, false)
