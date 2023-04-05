@@ -1,14 +1,15 @@
 body {
   background-color: rgb(30, 30, 30);
-
   height: 100vh;
   margin: 10px;
+  overflow-x: scroll;
 }
 
 .display {
   margin: 10px;
   height: 100%;
   width: 100%;
+  overflow-x: scroll;
 }
 
 g>text {
@@ -23,6 +24,9 @@ g>text {
   stroke-width: 1.5px;
 }
 
+svg {
+  overflow-x: scroll;
+}
 
 /* .node circle {
   fill: #999;
