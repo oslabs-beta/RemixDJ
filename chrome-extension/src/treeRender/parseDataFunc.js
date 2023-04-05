@@ -1152,11 +1152,10 @@ console.log(keySplitter(manifestData))
 // [ ] Conditional coloring of text for $s? 
 
 // Tidying:
-// [ ] Remove data and console log
+// [ ] Remove mock data chunks, calls, and console log(s)
 
 // Question for the group:
 // How do we best incorporate conditionals for URL/Layout into the broader app?
     // Conditional logic inside of function?
     // Seperate functions for URL and layout? <- sounds easiest to me? 
-
 
