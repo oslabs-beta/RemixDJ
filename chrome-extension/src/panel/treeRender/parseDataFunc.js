@@ -995,6 +995,7 @@ export default function parseData(remixManifest) {
             if (!key.includes('[')) {
                 myKeys.push(key.split(/[/.]/))
             } if (key.includes('[')) {
+
                 // 2) If key does include [ do NOT split by . or / if these chars are within the brackets
                 // split 
             }
@@ -1054,9 +1055,22 @@ function keySplitter(remixManifest) {
                 // if / or . comes after [ and before ] do NOT split by that key
                 const splitKeyDot = key.split('.')
                 console.log(splitKeyDot)
+                // hold elements with [ and ] to join together later
+                const temp = []
                 for (let i = 0; i < splitKeyDot.length; i++) {
-
+                    let currentEl = splitKeyDot[i];
+                    let nextEl = splitKeyDot[i + 1];
+                    if (currentEl[currentEl.length - 1] === '[') {
+                        temp.push([currentEl, nextEl])
+                    }
                 }
+                // current thoughts - scrap this and be pushing to a string?
+                console.log(temp);
+                // loop thru temp and concat 
+                temp.forEach((el) => {
+
+                })
+
                 console.log(splitKeyDot);
                 const splitKeySlash = key.split('/')
                 console.log(splitKeySlash)
