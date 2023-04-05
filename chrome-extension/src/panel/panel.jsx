@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import Tree from '../Tree.js';
-import List from '../List.js';
+import React, { useEffect, useState } from "react";
+import List from "./component/List";
+import Tree from "./component/Tree";
+import './styles/style.css';
 import NoRemix from '../NoRemix/NoRemix.js';
-import './style.css';
 
 export default () => {
   const [comp, setComp] = useState(<Tree />);
