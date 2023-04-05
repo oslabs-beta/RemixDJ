@@ -1,5 +1,6 @@
 
 export default function parseData(remixManifest) {
+    console.log('parseDataRun', remixManifest)
     let myKeys = [];
     for (const key in remixManifest) {
         // Root is omitted as root exists in all projects and will be hard coded into tree object
