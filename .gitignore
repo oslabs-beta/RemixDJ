@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 **/build/
 **/node_modules/
 example*/
-main-age/node_modules/
 main-page/.cache/
+main-page/public/build
+**/dist
+.DS_Store
+
+
+# Environement secrets
+.env
+
+# Ignore cache and temp files
+.cache/
+.temp/
+
+# Ignore Adam's example folders
+example*/

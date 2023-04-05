@@ -8,14 +8,13 @@ import { useRef, useEffect } from 'react';
 import remixManifest from './treeRender/mockData';
 import parseData from './treeRender/parseDataFunc';
 
-function App() {
+function Tree() {
   
   // function Tree() {
 
   const ref = useRef()
   useEffect(() => {
     const treeData = parseData(remixManifest)
-    console.log(treeData)
 
     // const svgElement = d3.select(ref.current)
     // svgElement.append("circle")
@@ -100,4 +99,4 @@ function App() {
   );
 }
 
-export default App;
+export default Tree;
