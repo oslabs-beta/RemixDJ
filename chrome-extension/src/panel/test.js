@@ -18,9 +18,11 @@ function renderData(data) {
         if(!routes['children']) {
           routes['children'] = {};
         }
+
         if(!routes['children'][subroutes[i]]) {
           routes['children'][subroutes[i]] = {};
         }
+
         
       }
     }

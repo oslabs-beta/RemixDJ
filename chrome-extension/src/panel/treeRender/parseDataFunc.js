@@ -1,3 +1,4 @@
+import remixManifest from './mockData';
 
 export default function parseData(remixManifest) {
     const myKeys = [];
@@ -47,6 +48,4 @@ export default function parseData(remixManifest) {
     return treeData;
 }
 
-
-
-
+console.log(parseData(remixManifest));
