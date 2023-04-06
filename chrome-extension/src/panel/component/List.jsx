@@ -37,7 +37,7 @@ function List(props) {
   }
   return (
     <div>
-      <h1> List </h1>
+      <br></br>
       <span id="listData"> { renderData(manifest) } </span>
     </div>
   )
