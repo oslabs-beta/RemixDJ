@@ -988,6 +988,8 @@ const remixManifest = {
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
 export default function parseData(remixManifest) {
     let myKeys = [];
+
+    // REPLACE THIS WITH JOINER AND KEYSPLITTER:
     for (const key in remixManifest) {
         // Root is omitted as root exists in all projects and will be hard coded into tree object
         if (key != 'root') {
@@ -1043,112 +1045,107 @@ export default function parseData(remixManifest) {
     return treeData
 }
 
+// For re-joining split keys with escape brackets:
+function joiner(arrOfStrings, char, i = 0) {
+
+    if (i === arrOfStrings.length) return arrOfStrings
+
+    let temp = ''
+    let currentEl = arrOfStrings[i];
+    let nextEl = arrOfStrings[i + 1];
+
+    if (currentEl[currentEl.length - 1] === '[') {
+        temp += (currentEl + char + nextEl);
+        arrOfStrings.splice(i, 2, temp)
+        return joiner(arrOfStrings, char, i);
+    }
+
+    else return joiner(arrOfStrings, char, i += 1);
+}
+
+
 function keySplitter(remixManifest) {
+
     let myKeys = [];
     for (const key in remixManifest) {
-        // Root is omitted as root exists in all projects and will be hard coded into tree object
         if (key != 'root') {
-            // 1) If key does not include [ split keys and push into myKeys array <-- don't wase time looping through key arrays that we know don't have char;
+
+            // For keys without escape brackets, split by '.' or '/' and push into myKeys array
             if (!key.includes('[')) {
                 myKeys.push(key.split(/[/.]/))
-            } if (key.includes('[')) {
-                // if / or . comes after [ and before ] do NOT split by that key
-                const splitKeyDot = key.split('.')
-                console.log(splitKeyDot)
-                // hold elements with [ and ] to join together later
-                const temp = []
-                for (let i = 0; i < splitKeyDot.length; i++) {
-                    let currentEl = splitKeyDot[i];
-                    let nextEl = splitKeyDot[i + 1];
-                    if (currentEl[currentEl.length - 1] === '[') {
-                        temp.push([currentEl, nextEl])
-                    }
-                }
-                // current thoughts - scrap this and be pushing to a string?
-                console.log(temp);
-                // loop thru temp and concat 
-                temp.forEach((el) => {
-
-                })
-
-                console.log(splitKeyDot);
-                const splitKeySlash = key.split('/')
-                console.log(splitKeySlash)
-                // if el i ends with [ and next index el begins with ] concat those two els back together w missing char in middle
-                // will have to seperate splitting by / and splitting by .
             }
-            // also if there are brackets WITHIN brackets, ignore one set of brackets
-            // Account for single brackets and weird case of double brackets ([so weird])
-            console.log(myKeys)
+
+            // For keys with escape brackets:
+            if (key.includes('[')) {
+                // Split by dot to account for potentially non-escaped dots
+                if (key.includes('.')) { }
+                let splitKeyDot = key.split('.')
+                // Re-join with joiner function
+                splitKeyDot = joiner(splitKeyDot, '.');
+                // After splitting and re-joining by dots, do the same for slashes
+                const holder = [];
+                splitKeyDot.forEach((el) => {
+                    if (!el.includes('/')) {
+                        holder.push(el);
+                    }
+                    if (el.includes('/')) {
+                        let splitKeySlash = el.split('/')
+                        splitKeySlash = joiner(splitKeySlash, '/')
+                        holder.push(...splitKeySlash)
+                    }
+                })
+                myKeys.push(holder);
+            }
         }
     }
+    return myKeys;
 }
 
 const manifestData = {
-    "routes/blog.list": {
+    "routes/blog/list/new": { // all slashes
         "id": "routes/blog.list",
-        "parentId": "root",
-        "path": "blog/list",
-        "module": "/build/routes/blog.list-LS3ABAHH.js",
-        "imports": [
-            "/build/_shared/chunk-W7JHG62I.js"
-        ],
-        "hasAction": false,
-        "hasLoader": true,
-        "hasCatchBoundary": false,
-        "hasErrorBoundary": false
     },
-    "routes/blog.rss[.]xml": {
-        "id": "routes/blog.rss[.]xml",
-        "parentId": "root",
-        "path": "blog/rss.xml",
-        "module": "/build/routes/blog.rss[.]xml-PHKRZMD5.js",
-        "hasAction": false,
-        "hasLoader": true,
-        "hasCatchBoundary": false,
-        "hasErrorBoundary": false
+    "routes.blog.list.new": { // all dots
+        "id": "routes/blog.list",
     },
-    "routes/blog[.]json": {
-        "id": "routes/blog[.]json",
-        "parentId": "root",
-        "path": "blog.json",
-        "module": "/build/routes/blog[.]json-KTYXALR4.js",
-        "hasAction": false,
-        "hasLoader": true,
-        "hasCatchBoundary": false,
-        "hasErrorBoundary": false
+    "routes/blog.list/new": { // combo dot slashes
+        "id": "routes/blog.list",
     },
-    "routes/cache.admin": {
-        "id": "routes/cache.admin",
-        "parentId": "root",
-        "path": "cache/admin",
-        "module": "/build/routes/cache.admin-KXI6YGFZ.js",
-        "imports": [
-            "/build/_shared/chunk-YDUHKSCS.js",
-            "/build/_shared/chunk-SJ325QDX.js"
-        ],
-        "hasAction": true,
-        "hasLoader": true,
-        "hasCatchBoundary": false,
-        "hasErrorBoundary": true
+    "routes.blog/list.new": { // combo dot slashes
+        "id": "routes/blog.list",
     },
-    "routes/calls": {
-        "id": "routes/calls",
-        "parentId": "root",
-        "path": "calls",
-        "module": "/build/routes/calls-445IT2EW.js",
-        "imports": [
-            "/build/_shared/chunk-VWZSV745.js",
-            "/build/_shared/chunk-JDO4MP4T.js",
-            "/build/_shared/chunk-4RUJV5CA.js",
-            "/build/_shared/chunk-IPCABCS3.js",
-            "/build/_shared/chunk-GFXDFTN7.js",
-            "/build/_shared/chunk-E6UGQ7RR.js"
-        ],
-        "hasAction": false,
-        "hasLoader": true,
-        "hasCatchBoundary": false,
-        "hasErrorBoundary": false
+    "routes[/]blog/list/new": { // early escaped slash
+        "id": "routes/blog.list",
+    },
+    "routes/blog/list[/]new": { // late escaped slash
+        "id": "routes/blog.list",
+    },
+    "routes[/]blog[/]list/new": { // multiple escaped slashes
+        "id": "routes/blog.list",
+    },
+    "routes[/]blog[/]list[/]new": { // all escaped slashes 
+        "id": "routes/blog.list",
+    },
+    "routes.blog/list.new": {
+        "id": "routes/blog.list", //<-- this is a problem! (full breaks not showing up when they did earlier) 9
+    },
+    "routes[.]blog.list.new": { // early escaped dot
+        "id": "routes/blog.list",
+    },
+    "routes.blog.list[.]new": { // late escaped dot
+        "id": "routes/blog.list",
+    },
+    "routes[.]blog[.]list[.]new": { // all escaped dots 
+        "id": "routes/blog.list",
+    },
+    "routes.blog[.]list[.]new": {
+        "id": "routes/blog.list",
+    },
+    "routes[.]blog[/]list.new": {
+        "id": "routes/blog.list",
+    },
+    "routes/blog[.]list[/]new": {
+        "id": "routes/blog.list",
     },
 }
 
