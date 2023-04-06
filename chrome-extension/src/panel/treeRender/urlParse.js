@@ -1,9 +1,9 @@
 export default function routeUrls(remixManifest) {
-  let routesObj = remixManifest.routes;
+  const routesObj = remixManifest.routes;
   // This makes an array of arrays of the keys of the remixManifest broken up into an array based off splitting it up
   // Wherever a '/' is (AKA splitting it by the path). Will reformat this in a bit to work with v2 of remix and all the
   // other route naming conventions
-  let myKeys = [];
+  const myKeys = [];
   for (const key in routesObj) {
     // Root is omitted as root exists in all projects and will be hard coded into tree object
     if (key !== 'root') {
@@ -12,7 +12,7 @@ export default function routeUrls(remixManifest) {
   }
 
   // The newObj which will contain all of our routes. Starts with a root which has children which will house the routes.
-  let newObj = {
+  const newObj = {
     name: 'root',
     children: [],
   };
@@ -35,7 +35,7 @@ export default function routeUrls(remixManifest) {
     let pathString = 'newObj.children';
     for (let j = 0; j < myKeys[i].length; j++) {
       // Now we evaluate the pathString as an actual JS command with eval
-      let path = pathString;
+      const path = pathString;
 
       // This checks if in the current path there is an object with a name key with the value of the current route we are on
       // If this is not true we then push the object to the current childrens array
@@ -56,7 +56,7 @@ export default function routeUrls(remixManifest) {
           numbah = k;
           // Then using numbah and some string manipulation we go deeper into the object by adding that numbah and the .children notation
           // So that when we go back through the second loop again we are now one deeper into it which is what we want.
-          pathString = pathString[numbah][children];
+          pathString = pathString[numbah]['children'];
         }
       }
     }

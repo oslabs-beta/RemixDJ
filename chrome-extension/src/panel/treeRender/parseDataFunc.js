@@ -1,6 +1,6 @@
 
 export default function parseData(remixManifest) {
-    let myKeys = [];
+    const myKeys = [];
     for (const key in remixManifest) {
         // Root is omitted as root exists in all projects and will be hard coded into tree object
         if (key !== 'root') {
@@ -9,10 +9,10 @@ export default function parseData(remixManifest) {
     }
 
     // The newObj which will contain all of our routes. Starts with a root which has children which will house the routes.
-    let newObj = {
+    const newObj = {
         'name': 'root',
         'children': []
-    }
+    };
 
     // cache for colors:
     const colors = {
@@ -24,13 +24,13 @@ export default function parseData(remixManifest) {
         5: 'rgb(199, 72, 204)', // magenta
         6: 'rgb(230, 134, 149)', // lt pink
         7: 'rgb(224, 92, 115)', // dk pink
-    }
+    };
 
 
     for (let i = 0; i < myKeys.length; i++) {
         let pathString = newObj.children;
         for (let j = 0; j < myKeys[i].length; j++) {
-            let path = pathString;
+            const path = pathString;
             if (!(path.find(e => e.name === myKeys[i][j]))) {
                 path.push({ 'name': myKeys[i][j], 'children': [], level: (colors[j % 8]) });
             }
@@ -44,7 +44,7 @@ export default function parseData(remixManifest) {
         }
     }
     const treeData = newObj;
-    return treeData
+    return treeData;
 }
 
 

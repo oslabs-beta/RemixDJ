@@ -3,14 +3,15 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    chrome: true,
+    webextensions: true,
     amd: true
   },
   extends: [
-    'eslint:recommended'
+    'eslint:recommended',
+    'plugin:react/recommended'
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true
