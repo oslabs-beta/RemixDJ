@@ -1,10 +1,7 @@
 // import logo from './logo.svg';
 import * as d3 from 'd3';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Tree.css';
-// import remixManifest from './test-data';
-// import { render } from 'react-dom';
-import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
 
 function Tree(props) {

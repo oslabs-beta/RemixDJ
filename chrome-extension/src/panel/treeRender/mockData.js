@@ -1,6 +1,7 @@
 const remixManifest = {
   "root": {
       "id": "root",
+      // blank route
       "path": "",
       "module": "/build/root-ZBV4FVNT.js",
       "imports": [
@@ -142,6 +143,7 @@ const remixManifest = {
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
   },
+  // this path with use a variable slug which will probably be defined in a file
   "routes/blog.$slug": {
       "id": "routes/blog.$slug",
       "parentId": "root",
@@ -528,6 +530,7 @@ const remixManifest = {
       "hasCatchBoundary": false,
       "hasErrorBoundary": false
   },
+  // splat route
   "routes/docs/$lang.$ref/$": {
       "id": "routes/docs/$lang.$ref/$",
       "parentId": "routes/docs/$lang.$ref",
