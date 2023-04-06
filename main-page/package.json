@@ -10,7 +10,7 @@
     "dev": "remix dev",
     "start": "cross-env NODE_ENV=production remix-serve ./build"
   },
-  "author": "Victoria",
+  "author": "RemixDJ",
   "license": "MIT",
   "dependencies": {
     "@prisma/client": "^4.12.0",
