@@ -1009,7 +1009,9 @@ export default function parseData(remixManifest) {
     // The newObj will contain all of our routes. Starts with a root node which has a child array for additional routes
     let newObj = {
         'name': 'root',
-        'children': []
+        'children': [],
+        'max' : 0,
+        'widthSet': 1,
     }
 
     // cache for color assignment to each node. colors are matched to the remix.run website color scheme. 
@@ -1029,10 +1031,12 @@ export default function parseData(remixManifest) {
         let pathString = newObj.children;
         for (let j = 0; j < myKeys[i].length; j++) {
             let path = pathString;
+            newObj.widthSet = j;
             if (!(path.find(e => e.name === myKeys[i][j]))) {
                 path.push({ 'name': myKeys[i][j], 'children': [], level: (colors[j % 8]) });
             }
             let numbah;
+            newObj.max = Math.max(newObj.max, path.length)
             for (let k = 0; k < path.length; k++) {
                 if (path[k].name === myKeys[i][j]) {
                     numbah = k;
