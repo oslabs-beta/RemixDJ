@@ -63,8 +63,7 @@ function List() {
       }
     }
 
-    // recursively render the routes in a collapsible list
-    // the parent of this the routes list will be called Routes
+    // recursively render properties in data as a list, with each property containing children which are their subproperties
     const renderRoutes = routes => {
       for(const [key, value] of Object.entries(routes)){
         

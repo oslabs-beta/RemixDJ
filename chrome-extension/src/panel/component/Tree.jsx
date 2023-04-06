@@ -97,7 +97,7 @@ function Tree(props) {
     <div>
       <body>
         <svg
-          ref={ref} class="display" viewBox='0 0 960 500' preserveAspectRatio='XMidYMid'
+          ref={ref} className="display" viewBox='0 0 960 500' preserveAspectRatio='XMidYMid'
         />
       </body>
     </div>
