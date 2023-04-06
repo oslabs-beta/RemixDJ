@@ -55,11 +55,3 @@ export default () => {
 
   return <div>{mainComp}</div>;
 };
-// let data;
-// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-// 	data = JSON.parse(message);
-// 	console.log('ran fr`om panel.js');
-// 	const test = docume`nt.createElement('div');
-// 	test.innerText = JSON.stringify(data);
-// 	document.body.appendChild(test);
-// })
