@@ -1,15 +1,19 @@
 body {
   background-color: rgb(30, 30, 30);
-  height: 100vh;
+  /* height: 800px; */
   margin: 10px;
-  overflow-x: scroll;
 }
 
 .display {
   margin: 10px;
-  height: 100%;
-  width: 100%;
-  overflow-x: scroll;
+  /* height: 6000;
+  width: 1000; */
+  overflow: scroll;
+  position: relative;
+}
+
+.svg {
+  position: absolute;
 }
 
 g>text {
