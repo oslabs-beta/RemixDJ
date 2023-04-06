@@ -11,7 +11,8 @@ export default function parseData(remixManifest) {
     // The newObj which will contain all of our routes. Starts with a root which has children which will house the routes.
     let newObj = {
         'name': 'root',
-        'children': []
+        'children': [],
+        'max' : 0,
     }
 
     // cache for colors:
@@ -35,6 +36,7 @@ export default function parseData(remixManifest) {
                 path.push({ 'name': myKeys[i][j], 'children': [], level: (colors[j % 8]) });
             }
             let numbah;
+            newObj.max = Math.max(newObj.max, path.length)
             for (let k = 0; k < path.length; k++) {
                 if (path[k].name === myKeys[i][j]) {
                     numbah = k;

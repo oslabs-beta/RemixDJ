@@ -34,7 +34,7 @@ function Tree(props) {
     if (treeData.children.length !== 0){
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
       width = 960 - margin.right - margin.left,
-      height = 500 - margin.top - margin.bottom;
+      height = (treeData.max * 70) - margin.top - margin.bottom;
 
       const treemap = d3.tree().size([height, width]);
       let nodes = d3.hierarchy(treeData, d => d.children);
@@ -100,7 +100,7 @@ function Tree(props) {
     <div>
       <body>
         <svg
-          ref={ref} class="display" viewBox='0 0 960 500' preserveAspectRatio='XMidYMid'
+          ref={ref} class="display" 
         />
       </body>
     </div>
