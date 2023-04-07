@@ -1,8 +1,8 @@
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
-export default function parseData(remixManifest) {
+export default function parseData(remixManifest: {[key: string]: any}) {
 
     // This function is used in the 'keySplitter' function below to re-join array elements with opening & closing brackets
-    function joiner(arrOfStrings, char, i = 0) {
+    function joiner(arrOfStrings: string[], char: string, i = 0): string[] {
 
         if (i === arrOfStrings.length) return arrOfStrings
 
@@ -20,7 +20,7 @@ export default function parseData(remixManifest) {
     }
 
     // This function generates an array of arrays, with each subarray containing routes broken up with '.' or '/' (outside of []'s)
-    function keySplitter(remixManifest) {
+    function keySplitter(remixManifest: {[key: string]: any}) {
 
         let myKeys = [];
         for (const key in remixManifest) {
@@ -39,7 +39,7 @@ export default function parseData(remixManifest) {
                     // Re-join with joiner function
                     splitKeyDot = joiner(splitKeyDot, '.');
                     // After splitting and re-joining by dots, do the same for slashes
-                    const holder = [];
+                    const holder: string[] = [];
                     splitKeyDot.forEach((el) => {
                         if (!el.includes('/')) {
                             holder.push(el);
@@ -61,6 +61,7 @@ export default function parseData(remixManifest) {
     // The newObj will contain all of our routes. Starts with a root node which has a child array for additional routes
     let newObj = {
         'name': 'root',
+        // @ts-ignore
         'children': [],
         'max': 0,
         'widthSet': 1,

@@ -7,7 +7,7 @@ import '../styles/Tree.css';
 import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
 
-function Tree(props) {
+function Tree() {
   const [manifest, setManifest] = useState<{[key: string]: any} | null>({});
   const [cssHeight, setCssHeight] = useState(1000);
   const [cssWidth, setCssWidth] = useState(1000)
@@ -82,9 +82,9 @@ function Tree(props) {
 
       node.append("text")
         .attr("dy", "0.31em")
-        .attr("x", (d) => (d._children ? -9 : 9))
-        .attr("text-anchor", (d) => (d._children ? "end" : "start"))
-        .text((d) => d.data.name)
+        .attr("x", (d: {[key: string]: any}) => (d._children ? -9 : 9))
+        .attr("text-anchor", (d: {[key:string]: any}) => (d._children ? "end" : "start"))
+        .text((d: {[key:string]: any}) => d.data.name)
         .clone(true)
         .lower()
         // .attr("fill", "white")
@@ -107,7 +107,7 @@ function Tree(props) {
     <div>
       <body>
         <svg
-          ref={ref} class="display" style={{height: cssHeight, width: cssWidth}}
+          ref={ref} className="display" style={{height: cssHeight, width: cssWidth}}
         />
       </body>
     </div>
