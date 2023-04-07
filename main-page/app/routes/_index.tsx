@@ -1,7 +1,7 @@
 import { LinksFunction } from '@remix-run/node';
 import { Link, LiveReload, Outlet } from '@remix-run/react';
 
-// @ts-expect-error
+// @ts-expect-error: idk what this does
 import stylesUrl from '../styles/index.css';
 
 export const links: LinksFunction = () => {
