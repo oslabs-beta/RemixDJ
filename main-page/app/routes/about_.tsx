@@ -1,4 +1,4 @@
-import { Outlet, LiveReload } from "@remix-run/react";
+import { LiveReload, Outlet } from '@remix-run/react';
 
 export default function About() {
   return (
@@ -12,5 +12,5 @@ export default function About() {
       <Outlet />
       <LiveReload />
     </div>
-  )
+  );
 }

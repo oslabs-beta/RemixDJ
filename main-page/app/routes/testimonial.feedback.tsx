@@ -3,5 +3,5 @@ export default function Feedback() {
     <div>
       <h2>This will be a form</h2>
     </div>
-  )
+  );
 }
