@@ -1,4 +1,4 @@
-import { LiveReload, useLoaderData, Link } from "@remix-run/react"
+import { Link, LiveReload, useLoaderData } from "@remix-run/react";
 
 export function loader({ params }) {
   return params.name;
