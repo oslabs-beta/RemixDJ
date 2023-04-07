@@ -29,6 +29,6 @@ module.exports = {
     quotes: [
       'error',
       'single'
-    ]
+    ],
   }
 };
