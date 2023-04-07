@@ -6,6 +6,8 @@ import parseData from '../treeRender/parseDataFunc';
 
 function Tree(props) {
   const [manifest, setManifest] = useState({});
+  const [cssHeight, setCssHeight] = useState(1000);
+  const [cssWidth, setCssWidth] = useState(1000)
 
   useEffect(() => {
     async function fetchData() {
@@ -30,8 +32,8 @@ function Tree(props) {
 
     if (treeData.children.length !== 0){
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
-      width = 960 - margin.right - margin.left,
-      height = 500 - margin.top - margin.bottom;
+      width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
+      height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
 
       const treemap = d3.tree().size([height, width]);
       let nodes = d3.hierarchy(treeData, d => d.children);
@@ -89,7 +91,12 @@ function Tree(props) {
       // .attr("stroke", "rgb(26, 23, 24)")
 
       const nodesAndText = d3.selectAll('.node', '.text');
-      nodesAndText.raise();
+      nodesAndText.raise()
+
+      // const cssHeight = height * 10 
+      setCssHeight(height + 15)
+      setCssWidth(width + 150)
+
     }
   }, [manifest]);
 
@@ -97,7 +104,7 @@ function Tree(props) {
     <div>
       <body>
         <svg
-          ref={ref} className="display" viewBox='0 0 960 500' preserveAspectRatio='XMidYMid'
+          ref={ref} class="display" style={{height: cssHeight, width: cssWidth}}
         />
       </body>
     </div>

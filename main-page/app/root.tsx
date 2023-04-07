@@ -1,24 +1,7 @@
-// import * as React from 'react'
-// import { Scripts } from '@remix-run/react'
-
-// export default function App() {
-//   const [count, setCount] = React.useState(0)
-//   return (
-//     <html>
-//       <head>
-//         <title>Remix DJ</title>
-//       </head>
-//       <body>
-//         <p>Welcome to DJ Remix - THE devtool for RemixJS</p>
-//         <button onClick={() => setCount(c => c + 1)}>{count}</button>
-//         <Scripts />
-//       </body>
-//     </html>
-//   )
-// }
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
+  Link,
   Meta,
   Outlet,
   Scripts,
@@ -45,6 +28,12 @@ export default function Root() {
       <body>
         <h1>Welcome to Remix DJ-THE devtool for RemixJS*</h1>
         <p>*This will be our permanent header</p>
+        <Link
+        to="/"
+        className="text-xl text-blue-600 underline"
+      >
+        Home
+      </Link>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
