@@ -4,13 +4,13 @@ export default function parseData(remixManifest: {[key: string]: any}) {
     // This function is used in the 'keySplitter' function below to re-join array elements with opening & closing brackets
     function joiner(arrOfStrings: string[], char: string, i = 0): string[] {
 
-        if (i === arrOfStrings.length) return arrOfStrings
+        if (i === arrOfStrings.length - 1) return arrOfStrings
 
         let temp = ''
         let currentEl = arrOfStrings[i];
         let nextEl = arrOfStrings[i + 1];
 
-        if (currentEl[currentEl.length - 1] === '[') {
+        if (currentEl.includes('[') && nextEl.includes(']')) {
             temp += (currentEl + char + nextEl);
             arrOfStrings.splice(i, 2, temp)
             return joiner(arrOfStrings, char, i);
