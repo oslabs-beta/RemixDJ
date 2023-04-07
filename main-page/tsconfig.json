@@ -12,7 +12,7 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noImplicitAny": true
   },
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"]
 }
