@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function List(props) {
+function List() {
   const [manifest, setManifest] = useState({});
   useEffect(() => {
     async function fetchData() {
@@ -13,7 +13,7 @@ function List(props) {
   }, [])
   // recursively render the data in a collapsible list
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details 
-  const renderData = (data) => {
+  const renderData = (data: string | boolean| {[key: string]: any}) => {
     if( typeof data === 'string' ) {
       return <li>{data}</li>
     }

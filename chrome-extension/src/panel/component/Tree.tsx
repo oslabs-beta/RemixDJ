@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
 
 function Tree(props) {
-  const [manifest, setManifest] = useState({});
+  const [manifest, setManifest] = useState<{[key: string]: any} | null>({});
   const [cssHeight, setCssHeight] = useState(1000);
   const [cssWidth, setCssWidth] = useState(1000)
 
@@ -39,7 +39,7 @@ function Tree(props) {
       height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
 
       const treemap = d3.tree().size([height, width]);
-      let nodes = d3.hierarchy(treeData, d => d.children);
+      let nodes = d3.hierarchy(treeData, (d: ({ name: string, children: [] } | null)) => d.children);
       nodes = treemap(nodes);
 
       const svg = d3.select(ref.current).append("svg")
@@ -52,9 +52,9 @@ function Tree(props) {
       const node = g.selectAll(".node")
       .data(nodes.descendants())
       .enter().append("g")
-      .attr("class", d => "node" + (d.children ? " node--internal"
+      .attr("class", (d: ({ name: string, children: [] } | null)) => "node" + (d.children ? " node--internal"
         : " node--leaf"))
-      .attr("transform", d => "translate(" + d.y + "," +
+      .attr("transform", (d: { [key: string]: number }) => "translate(" + d.y + "," +
         d.x + ")");
 
       const link = g.selectAll(".link")
@@ -74,9 +74,9 @@ function Tree(props) {
       node.append("circle")
         // .attr("r", d => 6)
         .attr('r', 2.5)
-        .style("stroke", d => d.data.level)
-        .style("fill", d => d.data.level)
-        .attr('fill', (d) => (d._children ? '#555' : '#999'))
+        .style("stroke", (d: {[key: string]: any }) => d.data.level)
+        .style("fill", (d: {[key: string]: any }) => d.data.level)
+        .attr('fill', (d: {[key: string]: any }) => (d._children ? '#555' : '#999'))
         .attr('stroke-width', 10)
 
 
