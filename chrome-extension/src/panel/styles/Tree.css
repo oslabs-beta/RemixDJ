@@ -1,0 +1,61 @@
+body {
+  background-color: rgb(30, 30, 30);
+  /* height: 800px; */
+  margin: 10px;
+}
+
+.display {
+  margin: 10px;
+  /* height: 6000;
+  width: 1000; */
+  overflow: scroll;
+  position: relative;
+}
+
+.svg {
+  position: absolute;
+}
+
+g>text {
+  fill: white;
+  text-shadow: 0 1px 0 rgb(30, 30, 30), 0 -1px 0 rgb(30, 30, 30), 1px 0 0 rgb(30, 30, 30), -1px 0 0 rgb(30, 30, 30)
+}
+
+.link {
+  fill: none;
+  stroke: white;
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+}
+
+svg {
+  overflow-x: scroll;
+}
+
+/* .node circle {
+  fill: #999;
+}
+.node text {
+  font: 10px sans-serif;
+}
+.node--internal circle {
+  fill: #555555;
+}
+.node--internal text {
+  text-shadow: 0 1px 0 black, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
+}
+.link {
+  fill: none;
+  stroke: #555;
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
+}
+form {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+label {
+  display: block;
+} */
