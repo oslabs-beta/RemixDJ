@@ -98,4 +98,4 @@ export default function parseData(remixManifest) {
     }
     const treeData = newObj;
     return treeData
-}
+};

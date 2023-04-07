@@ -2,20 +2,33 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    node: true,
+    webextensions: true,
+    amd: true
   },
   extends: [
     'eslint:recommended',
-    'google',
+    'plugin:react/recommended'
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   rules: {
     'no-console': 'off',
     'no-alert': 'off',
     'no-unused-vars': 'warn',
     'prefer-const': 'warn',
-    'semi': ['error', 'always'],
-    'quotes': ['error', 'single'],
-  },
+    semi: [
+      'error',
+      'always'
+    ],
+    quotes: [
+      'error',
+      'single'
+    ],
+  }
 };
