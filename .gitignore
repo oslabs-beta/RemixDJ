@@ -1,7 +1,19 @@
-main-page/.cache
-main-page/build
+<<<<<<< HEAD
+**/build/
+**/node_modules/
+example*/
+main-page/.cache/
 main-page/public/build
-**/node_modules
-**/build
-**/.cache
+**/dist
+.DS_Store
+pnpm-lock.yaml
+
+# Environement secrets
+.env
+
+# Ignore cache and temp files
+.cache/
+.temp/
+
+# Ignore Adam's example folders
 example*/

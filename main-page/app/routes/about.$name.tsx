@@ -1,7 +1,6 @@
-import { LiveReload, useLoaderData } from "@remix-run/react"
+import { LiveReload, useLoaderData, Link } from "@remix-run/react"
 
 export function loader({ params }) {
-  console.log(params.name)
   return params.name;
 }
 
@@ -10,6 +9,12 @@ export default function Team() {
   return (
     <div>
       <h1>{data}</h1>
+      <Link
+        to="/about"
+        className="text-xl text-blue-600 underline"
+      >
+       Back to the team!
+      </Link>
       <LiveReload />
     </div>
   )

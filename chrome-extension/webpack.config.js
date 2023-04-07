@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const tailwindcss = require('tailwindcss');
 
 module.exports = {
 	entry: { 
@@ -60,8 +59,6 @@ module.exports = {
 	plugins: [
 		// Generates an HTML file based on the template we pass in to serve our webpack files
 		// the chunks are no working properly and we have a hacky solution to our problem. Eventually should fix this
-		'postcss-preset-env',
-		tailwindcss,
 		new HtmlWebpackPlugin({
 			filename: 'panel/panel.html',
 			template: path.resolve(__dirname, './src/panel/panel.html'),

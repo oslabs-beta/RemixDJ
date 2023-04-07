@@ -11,7 +11,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "noImplicitAny": true,
   },
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"]
 }

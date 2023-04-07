@@ -2,6 +2,9 @@
   "name": "remix-dj",
   "version": "1.0.0",
   "description": "A devtool for RemixJS",
+  "prisma": {
+    "seed": "node --require esbuild-register prisma/seed.ts"
+  },
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
@@ -10,6 +13,7 @@
   "author": "Victoria",
   "license": "MIT",
   "dependencies": {
+    "@prisma/client": "^4.12.0",
     "@remix-run/react": "^1.14.3",
     "@remix-run/serve": "^1.14.3",
     "cross-env": "^7.0.3",
@@ -18,6 +22,8 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^1.14.3",
+    "esbuild-register": "^3.4.2",
+    "prisma": "^4.12.0",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "eslint": "^8.37.0",
