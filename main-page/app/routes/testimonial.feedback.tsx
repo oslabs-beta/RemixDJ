@@ -1,20 +1,20 @@
-import type { ActionArgs } from "@remix-run/node"
-import { redirect } from "@remix-run/node"
-import { db } from "../utils/db.server"
+import type { ActionArgs } from '@remix-run/node';
+import { redirect } from '@remix-run/node';
+import { db } from '../utils/db.server';
 
 export const action = async ({request}: ActionArgs) => {
   const form = await request.formData();
-  const name = form.get("name");
-  const content = form.get("content");
+  const name = form.get('name');
+  const content = form.get('content');
 
   if (
-    typeof name !== "string" ||
-    typeof content !== "string"
-  ) {throw new Error('Fill out the form better')}
+    typeof name !== 'string' ||
+    typeof content !== 'string'
+  ) {throw new Error('Fill out the form better');}
   const fields = { name, content };
   const feedback = await db.feedback.create({ data: fields });
-  return redirect('/testimonial')
-}
+  return redirect('/testimonial');
+};
 
 export default function Feedback() {
   return (

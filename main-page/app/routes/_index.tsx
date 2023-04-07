@@ -1,14 +1,14 @@
-import { Outlet, LiveReload, Link } from "@remix-run/react"
-import { LinksFunction } from "@remix-run/node"
+import { LinksFunction } from '@remix-run/node';
+import { Link, LiveReload, Outlet } from '@remix-run/react';
 
 // @ts-expect-error
-import stylesUrl from '../styles/index.css'
+import stylesUrl from '../styles/index.css';
 
 export const links: LinksFunction = () => {
   return [
     {rel: 'stylesheet', href: stylesUrl}
-  ]
-}
+  ];
+};
 
 export default function Main() {
   return (
@@ -37,5 +37,5 @@ export default function Main() {
       < Outlet />
       < LiveReload />
     </div>
-  )
+  );
 }
