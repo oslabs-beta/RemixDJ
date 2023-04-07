@@ -7,6 +7,9 @@ import '../styles/Tree.css';
 import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
 
+interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[]};
+interface nodeObj{parent: null | nodeObj, children?: nodeObj[], x: number, y: number, descendants(): any}
+
 function Tree() {
   const [manifest, setManifest] = useState<{[key: string]: any} | null>({});
   const [cssHeight, setCssHeight] = useState(1000);
@@ -33,14 +36,15 @@ function Tree() {
     //   .attr("cy", 70)
     //   .attr("r",  50)
 
+
     if (treeData.children.length !== 0){
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
       width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
       height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
 
       const treemap = d3.tree().size([height, width]);
-      let nodes = d3.hierarchy(treeData, (d: ({ name: string, children: [] } | null)) => d.children);
-      nodes = treemap(nodes);
+      let nodesEarly = d3.hierarchy(treeData, (d: manifestObj) => d.children);
+      let nodes: nodeObj = treemap(nodesEarly);
 
       const svg = d3.select(ref.current).append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -52,19 +56,20 @@ function Tree() {
       const node = g.selectAll(".node")
       .data(nodes.descendants())
       .enter().append("g")
-      .attr("class", (d: ({ name: string, children: [] } | null)) => "node" + (d.children ? " node--internal"
+      .attr("class", (d: manifestObj) => "node" + (d.children ? " node--internal"
         : " node--leaf"))
       .attr("transform", (d: { [key: string]: number }) => "translate(" + d.y + "," +
         d.x + ")");
 
-      const link = g.selectAll(".link")
+      // @ts-expect-error
+      const link: nodeObj = g.selectAll(".link")
       .data(nodes.descendants().slice(1))
       .enter().append("path")
       .attr("class", "link")
       .style("stroke", 'white')
       .style("stroke-width", 1)
       .style("fill", 'none')
-      .attr("d", d => {
+      .attr("d", (d: nodeObj) => {
         return "M" + d.y + "," + d.x
           + "C" + (d.y + d.parent.y) / 2 + "," + d.x
           + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
@@ -93,6 +98,7 @@ function Tree() {
       // .attr("stroke", "black")
       // .attr("stroke", "rgb(26, 23, 24)")
 
+      // @ts-expect-error
       const nodesAndText = d3.selectAll('.node', '.text');
       nodesAndText.raise()
 

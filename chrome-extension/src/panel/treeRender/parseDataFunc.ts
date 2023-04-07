@@ -1,5 +1,7 @@
+interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[]};
+
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
-export default function parseData(remixManifest: {[key: string]: any}) {
+export default function parseData(remixManifest: manifestObj) {
 
     // This function is used in the 'keySplitter' function below to re-join array elements with opening & closing brackets
     function joiner(arrOfStrings: string[], char: string, i = 0): string[] {
@@ -68,7 +70,7 @@ export default function parseData(remixManifest: {[key: string]: any}) {
     }
 
     // cache for color assignment to each node. colors are matched to the remix.run website color scheme. 
-    const colors = {
+    const colors: {[key: string]: string} = {
         0: 'rgb(225, 81, 86)', // red
         1: 'rgb(246, 206, 75)', // yellow
         2: 'rgb(135, 214, 117)', // green
