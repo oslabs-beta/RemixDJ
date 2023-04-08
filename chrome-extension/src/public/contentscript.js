@@ -1,7 +1,5 @@
-interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[]};
-interface detailsObj{detail: {[key: string]: any}}
 // declare injectable script as function
-function injectScript(file: string, node: string) {
+function injectScript(file, node) {
 	var th = document.getElementsByTagName(node)[0];
 	var s = document.createElement('script');
 	s.setAttribute('type', 'text/javascript');
@@ -14,7 +12,7 @@ function injectScript(file: string, node: string) {
 injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
 
 // listen for event from injected script
-window.addEventListener("getRemixData", (e: {[key:string]: any}) => {
+window.addEventListener("getRemixData", (e) => {
 	// const port = chrome.runtime.connect({ name: "remixDJ" });
 	// console.log('eventlistener')
 	chrome.storage.local.set({remixManifest: e.detail}).then(()=> {

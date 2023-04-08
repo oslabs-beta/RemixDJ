@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import List from "./component/List";
 import Tree from "./component/Tree";
 import './styles/style.css';
-import NoRemix from '../NoRemix/NoRemix';
+import NoRemix from '../NoRemix/NoRemix.js';
 
 export default () => {
-  const [comp, setComp] = useState<JSX.Element>(<Tree />);
-  const [mainComp, setMainComp] = useState<JSX.Element | null>(null);
-  const [content, setContent] = useState<{[key: string]: any} | null>(null);
+  const [comp, setComp] = useState(<Tree />);
+  const [mainComp, setMainComp] = useState();
+  const [content, setContent] = useState();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
