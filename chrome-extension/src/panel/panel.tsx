@@ -4,15 +4,18 @@ import Tree from "./component/Tree";
 import './styles/style.css';
 import NoRemix from '../NoRemix/NoRemix';
 
+interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[], x: number, y: number};
+interface windowObj{remixManifest: {routes: manifestObj}}
 export default () => {
   const [comp, setComp] = useState<JSX.Element>(<Tree />);
   const [mainComp, setMainComp] = useState<JSX.Element | null>(null);
-  const [content, setContent] = useState<{[key: string]: any} | null>(null);
+  const [content, setContent] = useState<windowObj | null | Record<string, never>>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
-      await chrome.storage.local.get(['remixManifest']).then((res) => {
+      await chrome.storage.local.get(['remixManifest']).then((res: windowObj) => {
+        console.log('res in panel', res);
         setContent(res);
         setLoading(false);
       });
@@ -21,6 +24,7 @@ export default () => {
   }, []);
 
   useEffect(() => {
+    console.log(content);
     if (
       !loading &&
       content &&

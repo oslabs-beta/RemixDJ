@@ -1,4 +1,4 @@
-interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[]};
+interface manifestObj{name: string, max?: number, widthSet?: number, level: null | string, children: null| manifestObj[]};
 
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
 export default function layoutParse(remixManifest: manifestObj) {
@@ -61,12 +61,12 @@ export default function layoutParse(remixManifest: manifestObj) {
   const myKeys = keySplitter(remixManifest);
 
   // The newObj will contain all of our routes. Starts with a root node which has a child array for additional routes
-  let newObj = {
+  let newObj: manifestObj = {
     'name': 'root',
-    // @ts-ignore
     'children': [],
     'max': 0,
     'widthSet': 1,
+    'level': null
   }
 
   // cache for color assignment to each node. colors are matched to the remix.run website color scheme. 

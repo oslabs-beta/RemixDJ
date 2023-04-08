@@ -1,5 +1,6 @@
 interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[]};
-interface detailsObj{detail: {[key: string]: any}}
+interface windowObj{__remixManifest: {routes: manifestObj}}
+interface detailsObj{detail: windowObj}
 // declare injectable script as function
 function injectScript(file: string, node: string) {
 	var th = document.getElementsByTagName(node)[0];

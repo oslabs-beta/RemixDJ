@@ -7,11 +7,13 @@ import '../styles/Tree.css';
 import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
 
-interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[]};
-interface nodeObj{parent: null | nodeObj, children?: nodeObj[], x: number, y: number, descendants(): any}
+interface manifestObj{name: string, max: number, widthSet: number, level: string, children: null| manifestObj[], x: number, y: number};
+interface nodeObj{parent: null | nodeObj, children?: nodeObj[], x: number, y: number, descendants(): {name: string}[]}
+interface listObj{name: string, y: number, x: number, parent: null | listObj}
+interface circleObj{name: string, level: number, data: null | circleObj, _children: circleObj[]}
 
 function Tree() {
-  const [manifest, setManifest] = useState<{[key: string]: any} | null>({});
+  const [manifest, setManifest] = useState<{routes: manifestObj} | null | Record<string, never>>({});
   const [cssHeight, setCssHeight] = useState(1000);
   const [cssWidth, setCssWidth] = useState(1000)
 
@@ -28,6 +30,7 @@ function Tree() {
 
   const ref = useRef()
   useEffect(() => {
+    console.log('manifest in tree', manifest)
     const treeData = parseData(manifest.routes)
 
     // const svgElement = d3.select(ref.current)
@@ -58,18 +61,18 @@ function Tree() {
       .enter().append("g")
       .attr("class", (d: manifestObj) => "node" + (d.children ? " node--internal"
         : " node--leaf"))
-      .attr("transform", (d: { [key: string]: number }) => "translate(" + d.y + "," +
+      .attr("transform", (d: manifestObj) => "translate(" + d.y + "," +
         d.x + ")");
 
-      // @ts-expect-error
-      const link: nodeObj = g.selectAll(".link")
+      
+      const link = g.selectAll(".link")
       .data(nodes.descendants().slice(1))
       .enter().append("path")
       .attr("class", "link")
       .style("stroke", 'white')
       .style("stroke-width", 1)
       .style("fill", 'none')
-      .attr("d", (d: nodeObj) => {
+      .attr("d", (d: listObj) => {
         return "M" + d.y + "," + d.x
           + "C" + (d.y + d.parent.y) / 2 + "," + d.x
           + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
@@ -79,17 +82,17 @@ function Tree() {
       node.append("circle")
         // .attr("r", d => 6)
         .attr('r', 2.5)
-        .style("stroke", (d: {[key: string]: any }) => d.data.level)
-        .style("fill", (d: {[key: string]: any }) => d.data.level)
-        .attr('fill', (d: {[key: string]: any }) => (d._children ? '#555' : '#999'))
+        .style("stroke", (d: circleObj) => d.data.level)
+        .style("fill", (d: circleObj) => d.data.level)
+        .attr('fill', (d: circleObj) => (d._children ? '#555' : '#999'))
         .attr('stroke-width', 10)
 
 
       node.append("text")
         .attr("dy", "0.31em")
-        .attr("x", (d: {[key: string]: any}) => (d._children ? -9 : 9))
-        .attr("text-anchor", (d: {[key:string]: any}) => (d._children ? "end" : "start"))
-        .text((d: {[key:string]: any}) => d.data.name)
+        .attr("x", (d: circleObj) => (d._children ? -9 : 9))
+        .attr("text-anchor", (d: circleObj) => (d._children ? "end" : "start"))
+        .text((d: circleObj) => d.data.name)
         .clone(true)
         .lower()
         // .attr("fill", "white")

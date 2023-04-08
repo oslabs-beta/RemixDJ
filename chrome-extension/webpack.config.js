@@ -5,7 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	entry: { 
-	 "panel" : path.resolve(__dirname, "src/panel/index.jsx") ,
+	 "panel" : path.resolve(__dirname, "src/panel/index.tsx") ,
 	 "popup": path.resolve(__dirname, "src/popup/index.tsx") 
 	},
 	
