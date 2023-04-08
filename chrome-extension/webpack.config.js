@@ -2,14 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const tailwindcss = require('tailwindcss');
-
 module.exports = {
 	entry: { 
-	 'panel' : path.resolve(__dirname, 'src/panel/index.jsx') ,
-	 'popup': path.resolve(__dirname, 'src/popup/index.tsx') 
+	 'panel' : path.resolve(__dirname, 'src/panel/index.jsx'),
+	 'popup': path.resolve(__dirname, 'src/popup/index.tsx'),
 	},
-	
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: '[name]/[name].bundle.js',
@@ -33,9 +30,11 @@ module.exports = {
 			},
 			{
 				// Testing for any .css/.scss files so that webpack can fulfill the style import in 'index.js'
+				// In order to use Tailwindcss, we need to use the 'postcss-loader' to process the css file
+				// postcss-loader will use the 'postcss.config.js' file to process the css file and is configured with tailwindcss
 				test: /\.(css)$/i,
 				exclude: /(node_modules)/,
-				use: ['style-loader', 'css-loader'],
+				use: ['style-loader', 'css-loader', 'postcss-loader'],
 			},
 			{
 				test: /\.(ts|tsx)$/,
@@ -58,10 +57,9 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new webpack.ProgressPlugin(),
 		// Generates an HTML file based on the template we pass in to serve our webpack files
 		// the chunks are no working properly and we have a hacky solution to our problem. Eventually should fix this
-		'postcss-preset-env',
-		tailwindcss,
 		new HtmlWebpackPlugin({
 			filename: 'panel/panel.html',
 			template: path.resolve(__dirname, './src/panel/panel.html'),
@@ -78,7 +76,7 @@ module.exports = {
 					from:'src/public',
 				}
 			]
-		})
+		}),
 	],
 	resolve: {
 		// Enable importing .js and .jsx files without specifying their extension
