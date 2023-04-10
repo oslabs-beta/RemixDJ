@@ -1,0 +1,16 @@
+#listData {
+    color: whitesmoke;
+}
+#listData ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#listData details, li {
+    margin-left: 20px;
+}
+
+#listContainer {
+    margin: 5em;
+    padding: 0;
+    border: 1px solid whitesmoke;
+}
