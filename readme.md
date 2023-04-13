@@ -22,7 +22,7 @@ Until then:
 
 - View sites nested layout or URL structure as a tree, list, or raw data
 
-## Team
+## The Team
 
 Adam Liang
 - https://github.com/adamsherpa
