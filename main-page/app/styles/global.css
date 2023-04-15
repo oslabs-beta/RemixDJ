@@ -13,12 +13,10 @@
   --color-links-hover: hsl(var(--hs-links) 45%);
   --color-border: hsl(277, 85%, 38%);
   --color-invalid: hsl(356, 100%, 71%);
-  --gradient-background: radial-gradient(
-    circle,
-    rgb(5, 9, 70) 0%,
-    rgba(118, 15, 181, 1) 35%,
-    rgba(58, 13, 85, 1) 100%
-  );
+  --gradient-background: radial-gradient(circle,
+      rgb(5, 9, 70) 0%,
+      rgba(118, 15, 181, 1) 35%,
+      rgba(58, 13, 85, 1) 100%);
   --font-body: -apple-system, "Segoe UI", Helvetica Neue, Helvetica,
     Roboto, Arial, sans-serif, system-ui, "Apple Color Emoji",
     "Segoe UI Emoji";
@@ -64,6 +62,7 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
   min-height: calc(100vh - env(safe-area-inset-bottom));
+  margin: 20px;
 }
 
 a {
@@ -166,8 +165,7 @@ h6 {
   box-shadow: 0 var(--shadow-size) 0 0 var(--shadow-color);
   outline-offset: 2px;
   transform: translateY(0);
-  transition: background-color 50ms ease-out, box-shadow
-      50ms ease-out,
+  transition: background-color 50ms ease-out, box-shadow 50ms ease-out,
     transform 100ms cubic-bezier(0.3, 0.6, 0.8, 1.25);
 }
 
@@ -175,17 +173,13 @@ h6 {
   --raise: 1px;
   color: var(--color-background);
   text-decoration: none;
-  box-shadow: 0 calc(var(--shadow-size) + var(--raise)) 0 0 var(
-      --shadow-color
-    );
+  box-shadow: 0 calc(var(--shadow-size) + var(--raise)) 0 0 var(--shadow-color);
   transform: translateY(calc(var(--raise) * -1));
 }
 
 .button:active {
   --press: 1px;
-  box-shadow: 0 calc(var(--shadow-size) - var(--press)) 0 0 var(
-      --shadow-color
-    );
+  box-shadow: 0 calc(var(--shadow-size) - var(--press)) 0 0 var(--shadow-color);
   transform: translateY(var(--press));
   background-color: var(--color-links-hover);
 }
@@ -332,13 +326,13 @@ label {
   margin: 0;
 }
 
-[type="checkbox"] + label,
-[type="radio"] + label {
+[type="checkbox"]+label,
+[type="radio"]+label {
   margin-left: 0.5rem;
 }
 
-label > [type="checkbox"],
-label > [type="radio"] {
+label>[type="checkbox"],
+label>[type="radio"] {
   margin-right: 0.5rem;
 }
 
