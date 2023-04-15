@@ -26,12 +26,3 @@ h1 {
   color: whitesmoke;
   font-size: 5em;
 }
-
-#listData {
-  color: whitesmoke;
-}
-
-#listData ul,
-li {
-  list-style-type: none;
-}
