@@ -3,5 +3,5 @@ if (window["__remixContext"]) {
 	window.dispatchEvent(new CustomEvent("getRemixData", {detail: window.__remixManifest}));
 } else {
 	console.log('❌💔 no 🚫🥺 remix😔❌');
-	window.dispatchEvent(new CustomEvent("getRemixData", {detail: {}}));
+	window.dispatchEvent(new CustomEvent("getRemixData", {detail: false}));
 }
