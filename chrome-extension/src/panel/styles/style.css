@@ -2,6 +2,10 @@
   background-color: rgb(25, 24, 24);
 } */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 button {
   background-color: rgb(39, 38, 38);
   color: whitesmoke;
@@ -21,13 +25,4 @@ p {
 h1 {
   color: whitesmoke;
   font-size: 5em;
-}
-
-#listData {
-  color: whitesmoke;
-}
-
-#listData ul,
-li {
-  list-style-type: none;
 }
