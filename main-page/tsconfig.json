@@ -14,5 +14,5 @@
     "moduleResolution": "node",
     "noImplicitAny": true
   },
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/routes/tutorial.tsx"]
 }
