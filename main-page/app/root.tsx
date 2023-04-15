@@ -9,11 +9,13 @@ import {
   LiveReload
 } from "@remix-run/react";
 // @ts-expect-error
-import mainStylesheetUrl from './styles/global.css'
+import mainStylesheetUrl from './styles/global.css';
+import stylesheet from './styles/tailwind.css';
 
 export const links: LinksFunction = () => {
   return [
-    {rel: 'stylesheet', href: mainStylesheetUrl}
+    {rel: 'stylesheet', href: mainStylesheetUrl},
+    {rel: 'stylesheet', href: stylesheet}
   ]
 }
 
