@@ -20,11 +20,5 @@ window.addEventListener("getRemixData", (e) => {
 		chrome.storage.local.set({ remixManifest: e.detail }).then(() => {
 		});
 		chrome.runtime.sendMessage(JSON.stringify({message: 'remixDetected'}))
-		// chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
-		// 	console.log('recieved page data: ', e.detail)
-		// })
 	}
-		// chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
-		// 	console.log('recieved page data: ', e.detail)
-		// })
 }, false)

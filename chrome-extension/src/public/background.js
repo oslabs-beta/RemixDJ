@@ -15,13 +15,3 @@ chrome.runtime.onMessage.addListener(async(message, sender, sendResponse) => {
 		})
 	}
 })
-// chrome.runtime.onConnect.addListener(function(port) {
-// 	console.log('port opened')
-// 	console.assert(port.name === "remixDJ");
-// 	port.onMessage.addListener(function(msg) {
-// 		if (msg.data) {
-// 			console.log('background.js')
-// 			console.log(msg.data)
-// 		}
-// 	});
-// });
