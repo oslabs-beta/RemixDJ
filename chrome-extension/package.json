@@ -44,9 +44,15 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "beautify": "^0.0.8",
+    "code-beautifier": "^1.1.0",
     "d3": "^7.8.4",
+    "highlight.js": "^11.7.0",
+    "json-beautify": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-json-beautify": "^1.0.0",
+    "react-json-tree": "^0.18.0",
     "react-svg-pan-zoom": "^3.12.1"
   }
 }
