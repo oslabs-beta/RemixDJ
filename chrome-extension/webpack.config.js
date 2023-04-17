@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
 	entry: { 
-	 'panel' : path.resolve(__dirname, 'src/panel/index.jsx'),
-	 'popup': path.resolve(__dirname, 'src/popup/index.tsx'),
+	  'panel' : path.resolve(__dirname, 'src/panel/index.jsx'),
+	  'popup': path.resolve(__dirname, 'src/popup/index.tsx'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
