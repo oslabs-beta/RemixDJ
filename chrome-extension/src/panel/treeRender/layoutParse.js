@@ -1,9 +1,8 @@
-import { parseObj } from "../../types";
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
-export default function layoutParse(remixManifest: parseObj) {
+export default function layoutParse(remixManifest) {
 
   // This function is used in the 'keySplitter' function below to re-join array elements with opening & closing brackets
-  function joiner(arrOfStrings: string[], char: string, i = 0): string[] {
+  function joiner(arrOfStrings, char, i = 0) {
 
     if (i === arrOfStrings.length) return arrOfStrings
 
@@ -21,7 +20,7 @@ export default function layoutParse(remixManifest: parseObj) {
   }
 
   // This function generates an array of arrays, with each subarray containing routes broken up with '.' or '/' (outside of []'s)
-  function keySplitter(remixManifest: parseObj) {
+  function keySplitter(remixManifest) {
 
     let myKeys = [];
     for (const key in remixManifest) {
@@ -40,7 +39,7 @@ export default function layoutParse(remixManifest: parseObj) {
           // Re-join with joiner function
           splitKeyDot = joiner(splitKeyDot, '.');
           // After splitting and re-joining by dots, do the same for slashes
-          const holder: string[] = [];
+          const holder = [];
           splitKeyDot.forEach((el) => {
             if (!el.includes('/')) {
               holder.push(el);
@@ -60,16 +59,15 @@ export default function layoutParse(remixManifest: parseObj) {
   const myKeys = keySplitter(remixManifest);
 
   // The newObj will contain all of our routes. Starts with a root node which has a child array for additional routes
-  let newObj: parseObj = {
+  let newObj = {
     'name': 'root',
     'children': [],
     'max': 0,
     'widthSet': 1,
-    'level': null
   }
 
   // cache for color assignment to each node. colors are matched to the remix.run website color scheme. 
-  const colors: {[key: string]: string} = {
+  const colors = {
     0: 'rgb(225, 81, 86)', // red
     1: 'rgb(246, 206, 75)', // yellow
     2: 'rgb(135, 214, 117)', // green
@@ -86,7 +84,7 @@ export default function layoutParse(remixManifest: parseObj) {
       let path = pathString;
       newObj.widthSet = j;
       if (!(path.find(e => e.name === myKeys[i][j]))) {
-        if (myKeys[i][j].slice(0) !== '_') {
+        if (myKeys[i][j].slice(-1) !== '_') {
           path.push({ 'name': myKeys[i][j], 'children': [], level: (colors[j % 8]) });
         }
       }
