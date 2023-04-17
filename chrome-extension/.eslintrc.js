@@ -30,5 +30,6 @@ module.exports = {
       'error',
       'single'
     ],
+    'react/display-name': 'off',
   }
 };
