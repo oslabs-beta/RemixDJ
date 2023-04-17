@@ -1,8 +1,10 @@
+import { manifestObj, parseObj } from "../../types";
+
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
-export default function parseData(remixManifest) {
+export default function parseData(remixManifest: parseObj) {
 
     // This function is used in the 'keySplitter' function below to re-join array elements with opening & closing brackets
-    function joiner(arrOfStrings, char, i = 0) {
+    function joiner(arrOfStrings: string[], char: string, i = 0): string[] {
 
         if (i === arrOfStrings.length - 1) return arrOfStrings;
 
@@ -20,7 +22,7 @@ export default function parseData(remixManifest) {
     }
 
     // This function generates an array of arrays, with each subarray containing routes broken up with '.' or '/' (outside of []'s)
-    function keySplitter(remixManifest) {
+    function keySplitter(remixManifest: parseObj) {
 
         const myKeys = [];
         for (const key in remixManifest) {
@@ -39,7 +41,7 @@ export default function parseData(remixManifest) {
                     // Re-join with joiner function
                     splitKeyDot = joiner(splitKeyDot, '.');
                     // After splitting and re-joining by dots, do the same for slashes
-                    const holder = [];
+                    const holder: string[] = [];
                     splitKeyDot.forEach((el) => {
                         if (!el.includes('/')) {
                             holder.push(el);
@@ -59,15 +61,16 @@ export default function parseData(remixManifest) {
     const myKeys = keySplitter(remixManifest);
 
     // The newObj will contain all of our routes. Starts with a root node which has a child array for additional routes
-    const newObj = {
+    const newObj: parseObj = {
         'name': 'root',
         'children': [],
         'max': 0,
         'widthSet': 1,
+        'level': null
     };
 
     // cache for color assignment to each node. colors are matched to the remix.run website color scheme. 
-    const colors = {
+    const colors: {[key: string]: string} = {
         0: 'rgb(225, 81, 86)', // red
         1: 'rgb(246, 206, 75)', // yellow
         2: 'rgb(135, 214, 117)', // green
