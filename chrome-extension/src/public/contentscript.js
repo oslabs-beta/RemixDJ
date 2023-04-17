@@ -17,11 +17,15 @@ window.addEventListener("getRemixData", (e) => {
 	// console.log('eventlistener')
 	if (!e.detail) {
 	} else {
+		console.log('there is remix')
 		chrome.storage.local.set({ remixManifest: e.detail }).then(() => {
 		});
+		chrome.runtime.sendMessage(JSON.stringify({message: 'remixDetected'}))
+		// chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
+		// 	console.log('recieved page data: ', e.detail)
+		// })
 	}
-	// chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
-	// 	console.log('recieved page data: ', e.detail) 
-	// 	// console.log('recieved user data', res)
-	// })
+		// chrome.runtime.sendMessage(JSON.stringify(e.detail), (res) => {
+		// 	console.log('recieved page data: ', e.detail)
+		// })
 }, false)
