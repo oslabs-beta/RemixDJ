@@ -17,7 +17,6 @@ window.addEventListener("getRemixData", (e) => {
 	// console.log('eventlistener')
 	if (!e.detail) {
 	} else {
-		console.log('there is remix')
 		chrome.storage.local.set({ remixManifest: e.detail }).then(() => {
 		});
 		chrome.runtime.sendMessage(JSON.stringify({message: 'remixDetected'}))

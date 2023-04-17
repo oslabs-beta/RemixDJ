@@ -41,7 +41,6 @@
     "scripting",
     "storage",
     "tabs",
-    "activeTab",
-    "background"
+    "activeTab"
   ]
 }
