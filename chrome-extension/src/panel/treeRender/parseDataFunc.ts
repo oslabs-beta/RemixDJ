@@ -1,4 +1,4 @@
-import { manifestObj, parseObj } from "../../types";
+import { parseObj } from "../../types";
 
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
 export default function parseData(remixManifest: parseObj) {

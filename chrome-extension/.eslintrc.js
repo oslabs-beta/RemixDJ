@@ -6,6 +6,20 @@ module.exports = {
     webextensions: true,
     amd: true
   },
+  overrides: [
+    {    
+      files: ['*.ts', '*.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: 'chrome-extension/tsconfig.json'
+      },
+      plugins: ['@typescript-eslint'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:@typescript-eslint/recommended-requiring-type-checking'
+      ],
+    },
+  ],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended'
@@ -31,5 +45,10 @@ module.exports = {
       'single'
     ],
     'react/display-name': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 };

@@ -1,5 +1,3 @@
-import { NumberValue } from "d3";
-
 export type dataType = string | boolean | { [key: string]: any };
 
 export type manifestObj = {

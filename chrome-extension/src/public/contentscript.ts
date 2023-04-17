@@ -1,4 +1,4 @@
-import { manifestObj, windowObjUnderscore } from "../types";
+import { windowObjUnderscore } from "../types";
 interface detailsObj{detail: windowObjUnderscore};
 
 // declare injectable script as function

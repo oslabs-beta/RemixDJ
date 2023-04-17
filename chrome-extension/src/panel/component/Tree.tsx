@@ -5,8 +5,8 @@ import '../styles/Tree.css';
 // import remixManifest from './test-data';
 // import { render } from 'react-dom';
 import { useEffect, useRef } from 'react';
+import { circleObj, listObj, manifestObj, nodeObj } from '../../types';
 import parseData from '../treeRender/parseDataFunc';
-import { manifestObj, nodeObj, circleObj, listObj } from '../../types';
 
 function Tree() {
   const [manifest, setManifest] = useState<{routes: manifestObj} | null | Record<string, never>>({});
