@@ -6,9 +6,10 @@ import '../styles/Tree.css';
 // import { render } from 'react-dom';
 import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
+import { manifestObj, nodeObj, circleObj, listObj } from '../../types';
 
-function Tree(props) {
-  const [manifest, setManifest] = useState({});
+function Tree() {
+  const [manifest, setManifest] = useState<{routes: manifestObj} | null | Record<string, never>>({});
   const [cssHeight, setCssHeight] = useState(1000);
   const [cssWidth, setCssWidth] = useState(1000)
 
@@ -39,8 +40,8 @@ function Tree(props) {
       height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
 
       const treemap = d3.tree().size([height, width]);
-      let nodes = d3.hierarchy(treeData, d => d.children);
-      nodes = treemap(nodes);
+      let nodesEarly = d3.hierarchy(treeData, (d: manifestObj) => d.children);
+      let nodes: nodeObj = treemap(nodesEarly);
 
       const svg = d3.select(ref.current).append("svg")
       .attr("width", width + margin.left + margin.right)
@@ -52,9 +53,9 @@ function Tree(props) {
       const node = g.selectAll(".node")
       .data(nodes.descendants())
       .enter().append("g")
-      .attr("class", d => "node" + (d.children ? " node--internal"
+      .attr("class", (d: manifestObj) => "node" + (d.children ? " node--internal"
         : " node--leaf"))
-      .attr("transform", d => "translate(" + d.y + "," +
+      .attr("transform", (d: manifestObj) => "translate(" + d.y + "," +
         d.x + ")");
 
       const link = g.selectAll(".link")
@@ -64,7 +65,7 @@ function Tree(props) {
       .style("stroke", 'white')
       .style("stroke-width", 1)
       .style("fill", 'none')
-      .attr("d", d => {
+      .attr("d", (d: listObj) => {
         return "M" + d.y + "," + d.x
           + "C" + (d.y + d.parent.y) / 2 + "," + d.x
           + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
@@ -74,17 +75,17 @@ function Tree(props) {
       node.append("circle")
         // .attr("r", d => 6)
         .attr('r', 2.5)
-        .style("stroke", d => d.data.level)
-        .style("fill", d => d.data.level)
-        .attr('fill', (d) => (d._children ? '#555' : '#999'))
+        .style("stroke", (d: circleObj) => d.data.level)
+        .style("fill", (d: circleObj) => d.data.level)
+        .attr('fill', (d: circleObj) => (d._children ? '#555' : '#999'))
         .attr('stroke-width', 10)
 
 
       node.append("text")
         .attr("dy", "0.31em")
-        .attr("x", (d) => (d._children ? -9 : 9))
-        .attr("text-anchor", (d) => (d._children ? "end" : "start"))
-        .text((d) => d.data.name)
+        .attr("x", (d: circleObj) => (d._children ? -9 : 9))
+        .attr("text-anchor", (d: circleObj) => (d._children ? "end" : "start"))
+        .text((d: circleObj) => d.data.name)
         .clone(true)
         .lower()
         // .attr("fill", "white")
@@ -93,6 +94,7 @@ function Tree(props) {
       // .attr("stroke", "black")
       // .attr("stroke", "rgb(26, 23, 24)")
 
+      // @ts-ignore
       const nodesAndText = d3.selectAll('.node', '.text');
       nodesAndText.raise()
 
@@ -107,7 +109,7 @@ function Tree(props) {
     <div>
       <body>
         <svg
-          ref={ref} class="display" style={{height: cssHeight, width: cssWidth}}
+          ref={ref} className="display" style={{height: cssHeight, width: cssWidth}}
         />
       </body>
     </div>

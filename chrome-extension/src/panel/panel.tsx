@@ -3,11 +3,12 @@ import NoRemix from '../NoRemix/NoRemix.js';
 import List from './component/List';
 import Tree from './component/Tree';
 import './styles/style.css';
+import { windowObjUnderscore, parseObj, windowObj } from '../types.js';
 
 export default () => {
   const [comp, setComp] = useState(<Tree />);
   const [mainComp, setMainComp] = useState();
-  const [content, setContent] = useState();
+  const [content, setContent] = useState<windowObj | null | Record<string, never>>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

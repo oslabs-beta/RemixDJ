@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import '../styles/List.css';
 import remixManifest from '../treeRender/mockData';
 import parseData from '../treeRender/parseDataFunc';
+import { manifestObj, dataType, parseObj } from '../../types';
 
-function List(props) {
-  const [manifest, setManifest] = useState({});
+
+function List() {
+  const [manifest, setManifest] = useState<{routes: manifestObj} | null | Record<string, never>>({});
   useEffect(() => {
     async function fetchData() {
     // getting data from chrome localstorage
@@ -40,9 +42,9 @@ function List(props) {
   //   }
   // };
 
-  const data  = parseData(remixManifest);
+  const data: parseObj = parseData(manifest.routes);
   console.log(data);
-  function renderData(data){
+  function renderData(data: parseObj){
     // recurse through the object and take each name and make it a summary element
     // then recurse through the children and for each element take the name property and make it a child of the parent
 
