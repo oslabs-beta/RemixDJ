@@ -7,13 +7,11 @@
 @tailwind utilities;
 
 button {
-  background-color: rgb(39, 38, 38);
   color: whitesmoke;
   font-size: 1.5em;
 }
 
 .tabs {
-  outline: solid whitesmoke 1px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
