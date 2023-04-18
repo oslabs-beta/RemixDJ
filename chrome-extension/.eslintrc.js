@@ -15,8 +15,39 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true
-    }
+    },
+    // Add TypeScript parser options
+    project: 'chrome-extension/tsconfig.json',
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+      ],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true
+        },
+      },
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'warn',
+        '@typescript-eslint/no-explicit-any': 'off',
+        'react/react-in-jsx-scope': 'off',
+        //no display name
+        'react/display-name': 'off',
+      },
+      settings: {
+        react: {
+          version: 'detect',
+        },
+      }
+    },
+  ],
   rules: {
     'no-console': 'off',
     'no-alert': 'off',
@@ -30,6 +61,11 @@ module.exports = {
       'error',
       'single'
     ],
-    'react/display-name': 'off',
+    'react/display-name': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 };
