@@ -7,18 +7,16 @@ function injectScript(file, node) {
 }
 
 // listen for event from injected script
-console.log('content Script')
 window.addEventListener("getRemixData", (e) => {
 	try {
 		if (!e.detail) {
 			chrome.storage.local.set({ remixManifest: false })
 		} else {
-			console.log('setting storage to:  ', e.detail)
 			chrome.storage.local.set({ remixManifest: e.detail })
 			chrome.runtime.sendMessage(JSON.stringify({ message: 'remixDetected' }))
 		}
 	} catch (e) {
-		console.error('RemixDJ Extention was installed more than once. This window stayed open and must be refreshed')
+		console.error('RemixDJ Extention was installed more than once. This window stayed open and should be refreshed')
 		console.error(e)
 	}
 }, false)
@@ -31,5 +29,4 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 	}
 })
 
-console.log('about to run inject script')
 injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
