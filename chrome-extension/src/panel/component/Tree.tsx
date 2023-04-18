@@ -7,18 +7,30 @@ import '../styles/Tree.css';
 import { useEffect, useRef } from 'react';
 import { circleObj, listObj, manifestObj, nodeObj } from '../../types';
 
-function Tree({ manifest } ) {
+interface TreeProps {
+  treeData: any;
+  type?: string;
+}
+
+// enum ParserType {
+//   URL = 'URL',
+//   LAYOUT = 'LAYOUT',
+//   TREE = 'TREE',
+//   LIST = 'LIST',
+// }
+
+function Tree({ treeData, type } : TreeProps) {
   const [cssHeight, setCssHeight] = useState(1000);
   const [cssWidth, setCssWidth] = useState(1000);
   const ref = useRef();
-
+  console.log(type, treeData);
   // function Tree() {
   useEffect(() => {
     // clear svg before loading a new one
     d3.select('svg').selectAll('*').remove();
+    // parse manifest
 
     // begin tree rendering
-    const treeData = (manifest);
     if (treeData.children.length !== 0){
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
       width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
@@ -87,7 +99,7 @@ function Tree({ manifest } ) {
       setCssHeight(height + 15);
       setCssWidth(width + 150);
     }
-  }, [manifest]);
+  }, [treeData]);
 
   return (
     <div>

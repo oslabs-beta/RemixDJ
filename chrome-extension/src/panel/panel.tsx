@@ -10,8 +10,9 @@ import layoutParse from './treeRender/layoutParse';
 import parseData from './treeRender/parseDataFunc';
 
 
+
 export default () : JSX.Element => {
-  const [comp, setComp] = useState(<Tree manifest={undefined} />);
+  const [comp, setComp] = useState(<NoRemix /> );
   const [mainComp, setMainComp] = useState<JSX.Element | null>(null);
   const [content, setContent] = useState<windowObj | null | Record<string, never>>({});
   const [loading, setLoading] = useState(true);
@@ -59,16 +60,16 @@ export default () : JSX.Element => {
   }, [loading, content, comp]);
 
   const changeURLTree = () => {
-    const URLManifest = URLParse(content.remixManifest.routes);
-    setComp(<Tree manifest={ URLManifest } />);
+    const data = URLParse(content.remixManifest.routes);
+    setComp(<Tree treeData={ data } type="URL" />);
   };
   const changeTree = () => {
     const data = parseData(content.remixManifest.routes);
-    setComp(<Tree manifest={ data } />);
+    setComp(<Tree  treeData={ data } type="TREE" />);
   };
   const changeLayoutTree = () => {
-    const layoutManifest = layoutParse(content.remixManifest.routes);
-    setComp(<Tree manifest={ layoutManifest } />);
+    const data = layoutParse(content.remixManifest.routes);
+    setComp(<Tree treeData={ data } type = "LAYOUT" />);
   };
   const changeList = () => {
     setComp(<List manifest={ content.remixManifest.routes } />);
