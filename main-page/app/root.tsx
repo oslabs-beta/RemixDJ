@@ -10,10 +10,13 @@ import {
 } from "@remix-run/react";
 // @ts-expect-error
 import stylesheet from './styles/tailwind.css';
+import { Team } from './component/team.jsx'
+import { Socials } from './component/socials.jsx'
+import { Intro } from './component/intro'
 
 export const links: LinksFunction = () => {
   return [
-    {rel: 'stylesheet', href: stylesheet}
+    { rel: 'stylesheet', href: stylesheet }
   ]
 }
 
@@ -25,16 +28,11 @@ export default function Root() {
         <Meta />
         <title>Remix DJ</title>
       </head>
-      <body>
-        <h1>Welcome to Remix DJ-THE devtool for RemixJS*</h1>
-        <p>*This will be our permanent header</p>
-        <Link
-        to="/"
-        className="text-xl text-blue-600 underline"
-      >
-        Home
-      </Link>
-        <Outlet />
+      <body >
+        <header>RemixDJ</header>
+        <Intro />
+        <Team />
+        <Socials />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
