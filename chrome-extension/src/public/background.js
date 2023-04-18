@@ -1,24 +1,18 @@
 chrome.runtime.onInstalled.addListener(async () => {
 	for (const cs of chrome.runtime.getManifest().content_scripts) {
-		for (const tab of await chrome.tabs.query({ status: "complete", url: cs.matches })) {
+		for (const tab of await chrome.tabs.query({ 
+			discarded: false, 
+			status: "complete", 
+			url: cs.matches 
+		})) {
 			console.log('adding script from install')
+			console.log(tab)
 			chrome.scripting.executeScript({
 				target: { tabId: tab.id, allFrames: true },
 				files: ['contentscript.js']
+			}).catch((err) => {
+				console.log(err, tab)
 			})
-				// .then(res => {
-				//
-				// 	console.log('adding script')
-				// 	chrome.scripting.executeScript({
-				// 		target: { tabId: tab.id, allFrames: true },
-				// 		func: injectFunc
-				// 	}).catch((err) => {
-				// 		console.log(err, tab)
-				// 	})
-				// })
-				.catch((err) => {
-					console.log(err, tab)
-				})
 		}
 	}
 })
@@ -45,15 +39,9 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 			if (res.length === 1) {
 				chrome.tabs.sendMessage(res[0].id, JSON.stringify({ message: "runScript" }))
 					.catch((err) => {
-						const currentTab = res[0].id;
-						chrome.tabs.reload(res[0].id).then(res => {
-							// chrome.scripting.executeScript({
-							// 	target: { tabId: currentTab },
-							// 	files: ['reloadScript.js']
-							// })
-						})
-					});
-			}
+						//on install no listener is attached, tab must be reloaded
+						chrome.tabs.reload(res[0].id)
+			}); }
 		});
 	}
 })

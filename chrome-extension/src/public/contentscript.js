@@ -6,21 +6,24 @@ function injectScript(file, node) {
 	th.appendChild(s);
 }
 
-// pass it through the chrome runtime API
-// params = (file, node to append to)
 // listen for event from injected script
 console.log('content Script')
 window.addEventListener("getRemixData", (e) => {
-	// const port = chrome.runtime.connect({ name: "remixDJ" });
-	if (!e.detail) {
-		chrome.storage.local.set({ remixManifest: false})
-	} else {
-		console.log('setting storage to:  ', e.detail)
-		chrome.storage.local.set({ remixManifest: e.detail })
-		chrome.runtime.sendMessage(JSON.stringify({ message: 'remixDetected' }))
+	try {
+		if (!e.detail) {
+			chrome.storage.local.set({ remixManifest: false })
+		} else {
+			console.log('setting storage to:  ', e.detail)
+			chrome.storage.local.set({ remixManifest: e.detail })
+			chrome.runtime.sendMessage(JSON.stringify({ message: 'remixDetected' }))
+		}
+	} catch (e) {
+		console.error('RemixDJ Extention was installed more than once. This window stayed open and must be refreshed')
+		console.error(e)
 	}
 }, false)
 
+//listen for event from panel open
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 	const newMessage = JSON.parse(message);
 	if (newMessage.message === 'runScript') {
