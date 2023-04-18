@@ -1,5 +1,6 @@
+
 export default () => {
 	return (
-		<div> POPUP TEST </div>
+		<div>POPUP TEST</div>
 	);
 };
