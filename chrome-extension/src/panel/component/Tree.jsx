@@ -7,7 +7,7 @@ import '../styles/Tree.css';
 import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
 
-function Tree(props) {
+function Tree() {
   const [manifest, setManifest] = useState({});
   const [cssHeight, setCssHeight] = useState(1000);
   const [cssWidth, setCssWidth] = useState(1000);
