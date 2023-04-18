@@ -8,19 +8,21 @@ Intro
 RemixDJ in the Chrome store soon!
 
 Until then:
-- Clone our repo
-- In Chrome's extensions drop-down, navigate to "Manage Extensions"
-- Turn on "Developer mode"
-- In "Load Unpacked" select the remixDJ/chrome-extension/build folder
+- Clone our repo 🧬
+- Navigate to the chrome-extension folder and npm install 📀
+- In Chrome's extensions drop-down, navigate to "Manage Extensions" 🧩
+- Turn on "Developer mode" 🧑‍💻
+- In "Load Unpacked" select the remixDJ/chrome-extension/build folder 📦
 
 ## Using RemixDJ
 
-- Right click and select "Inspect" on any webpage
-- In the nav bar, navigate to RemixDJ
+- Right click and select "Inspect" on any webpage 🔎
+- In the nav bar, navigate to RemixDJ 🗺️
 
 ## Features
 
-- View sites nested layout or URL structure as a tree, list, or raw data
+- Visualize Remix sites as a tree, list, or raw data 🌳 
+- Choose between visualizing layout nesting and URL nesting 📊
 
 ## The Team
 
