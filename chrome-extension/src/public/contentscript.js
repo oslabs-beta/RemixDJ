@@ -24,17 +24,6 @@ window.addEventListener("getRemixData", (e) => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 	const newMessage = JSON.parse(message);
 	if (newMessage.message === 'runScript') {
-		// // declare injectable script as function
-		// function injectScript(file, node) {
-		// 	var th = document.getElementsByTagName(node)[0];
-		// 	var s = document.createElement('script');
-		// 	s.setAttribute('type', 'text/javascript');
-		// 	s.setAttribute('src', file);
-		// 	th.appendChild(s);
-		// }
-
-		// pass it through the chrome runtime API
-		// params = (file, node to append to)
 		injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
 	}
 })

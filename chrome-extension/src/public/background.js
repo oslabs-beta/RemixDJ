@@ -43,15 +43,16 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
 	if (newMessage.message === 'panelOpen') {
 		chrome.tabs.query({ currentWindow: true, active: true }).then(res => {
 			if (res.length === 1) {
-				chrome.tabs.sendMessage(res[0].id, JSON.stringify({ message: "runScript" })).catch((err) => {
-					const currentTab = res[0].id;
-					chrome.tabs.reload(res[0].id).then(res => {
-						// chrome.scripting.executeScript({
-						// 	target: { tabId: currentTab },
-						// 	files: ['reloadScript.js']
-						// })
-					})
-				});
+				chrome.tabs.sendMessage(res[0].id, JSON.stringify({ message: "runScript" }))
+					.catch((err) => {
+						const currentTab = res[0].id;
+						chrome.tabs.reload(res[0].id).then(res => {
+							// chrome.scripting.executeScript({
+							// 	target: { tabId: currentTab },
+							// 	files: ['reloadScript.js']
+							// })
+						})
+					});
 			}
 		});
 	}
