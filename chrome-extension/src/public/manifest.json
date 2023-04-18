@@ -13,7 +13,8 @@
         "<all_urls>"
       ],
       "js": [
-        "./contentscript.js"
+        "./contentscript.js",
+        "./remixListener.js"
       ]
     }
   ],

@@ -1,12 +1,24 @@
 chrome.runtime.onInstalled.addListener(async () => {
 	for (const cs of chrome.runtime.getManifest().content_scripts) {
-		for (const tab of await chrome.tabs.query({ url: cs.matches })) {
+		for (const tab of await chrome.tabs.query({ status: "complete", url: cs.matches })) {
+			console.log('adding script from install')
 			chrome.scripting.executeScript({
-				target: { tabId: tab.id },
-				files: ["reloadScript.js"]
-			}).catch((err) => {
-					console.log(err, tab)
+				target: { tabId: tab.id, allFrames: true },
+				files: ['contentscript.js']
 			})
+				// .then(res => {
+				//
+				// 	console.log('adding script')
+				// 	chrome.scripting.executeScript({
+				// 		target: { tabId: tab.id, allFrames: true },
+				// 		func: injectFunc
+				// 	}).catch((err) => {
+				// 		console.log(err, tab)
+				// 	})
+				// })
+				.catch((err) => {
+					console.log(err, tab)
+				})
 		}
 	}
 })
