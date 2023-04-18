@@ -31,7 +31,7 @@ export default function Root() {
         <title>Remix DJ</title>
       </head>
       <body className='bg-black'>
-        <header className='flex'>
+        <header className='inline-flex flex-row place-items-start'>
           <div className='flex-1'>
             <h1 className='text-7xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-9xl 2xl:text-9xl font-extrabold bg-gradient-to-r from-green via-turquoise to-magenta inline-block text-transparent bg-clip-text'>RemixDJ</h1>
           </div>
