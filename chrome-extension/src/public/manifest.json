@@ -17,6 +17,9 @@
       ]
     }
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "web_accessible_resources": [
     {
       "resources": [
@@ -34,11 +37,13 @@
     "256": "icons/logo256.png"
     },
   "devtools_page": "devtools/devtools.html",
-  "background": {
-    "service_worker": "./background.js"
-  },
   "permissions": [
     "scripting",
-    "storage"
+    "storage",
+    "tabs",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ]
 }

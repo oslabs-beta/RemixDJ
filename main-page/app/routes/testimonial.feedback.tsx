@@ -13,7 +13,8 @@ export const action = async ({request}: ActionArgs) => {
   ) {throw new Error('Fill out the form better')}
   const fields = { name, content };
   const feedback = await db.feedback.create({ data: fields });
-  return redirect('/testimonial')
+  // return redirect('/testimonial')
+  return null;
 }
 
 export default function Feedback() {

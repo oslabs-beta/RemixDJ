@@ -14,9 +14,9 @@ export default function Testimonial() {
   return (
     <div>
       <h1>Fans of our work:</h1>
-        {data.feedback.map((elem) => {
-          return <div><br></br><h2>{elem.name}</h2><h3>{elem.content}</h3></div>
-        })}
+      {data.feedback.map((elem, i) => {
+        return <div key={`unique${i}`} ><br></br><h2>{elem.name}</h2><h3>{elem.content}</h3></div>
+      })}
       <br />
       <Link
         to="feedback"
