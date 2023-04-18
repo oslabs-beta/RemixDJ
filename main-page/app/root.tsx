@@ -39,7 +39,7 @@ export default function Root() {
             <img src={logo} className='max-h-16 sm:max-h-16 md:max-h-24 lg:max-h-32 xl:max-h-32 2xl:max-h-32' />
           </div>
         </header>
-        <Intro />
+        < Intro />
         <Team />
         <Socials />
         <ScrollRestoration />
