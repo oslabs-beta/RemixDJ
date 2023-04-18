@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { manifestObj, parseObj } from '../../types';
 import '../styles/List.css';
-import remixManifest from '../treeRender/mockData';
 import parseData from '../treeRender/parseDataFunc';
-import { manifestObj, dataType, parseObj } from '../../types';
 
 
-function List() {
-  const [manifest, setManifest] = useState<{routes: manifestObj} | null | Record<string, never>>({});
-  useEffect(() => {
-    async function fetchData() {
-    // getting data from chrome localstorage
-      await chrome.storage.local.get(['remixManifest'])
-      .then(res => {
-        setManifest(res.remixManifest);
-      });
-    }
-    fetchData();
-  }, []);
+function List({ manifest } : { manifest: manifestObj }) {
   // recursively render the data in a collapsible list
   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details 
   // const renderData = (data) => {
@@ -42,7 +29,7 @@ function List() {
   //   }
   // };
 
-  const data: parseObj = parseData(manifest.routes);
+  const data: parseObj = parseData(manifest);
   console.log(data);
   function renderData(data: parseObj){
     // recurse through the object and take each name and make it a summary element

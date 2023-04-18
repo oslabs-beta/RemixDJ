@@ -1,4 +1,3 @@
-import { NumberValue } from "d3";
 
 export type dataType = string | boolean | { [key: string]: any };
 
@@ -45,3 +44,10 @@ export type parseObj = {
 export type windowObj = { remixManifest: { routes: manifestObj } };
 
 export type windowObjUnderscore = { __remixManifest: { routes: manifestObj } };
+ 
+export interface TreeJSX extends JSX.Element  {
+    props: {
+        bob: string;
+        manifest?: manifestObj
+    }
+}

@@ -34,7 +34,7 @@ export default function layoutParse(remixManifest) {
         // For keys with escape brackets:
         if (key.includes('[')) {
           // Split by dot to account for potentially non-escaped dots
-          if (key.includes('.')) { }
+          // if (key.includes('.'))
           let splitKeyDot = key.split('.');
           // Re-join with joiner function
           splitKeyDot = joiner(splitKeyDot, '.');

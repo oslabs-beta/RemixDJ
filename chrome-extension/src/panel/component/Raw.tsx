@@ -1,20 +1,17 @@
 import hljs from 'highlight.js/lib/core';
 import json from 'highlight.js/lib/languages/json';
 import 'highlight.js/styles/atom-one-light.css';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/Raw.css';
 
 
-const Raw = () => {
+const Raw = ({ manifest }) => {
+  // state stores the manifest after being highlighted
   const [parsedManifest, setParsedManifest] = useState('');
   useEffect(() => {
     hljs.registerLanguage('json', json);
-    async function fetchData() {
-      const response = await chrome.storage.local.get(['remixManifest']);
-      setParsedManifest(hljs.highlight('json', JSON.stringify(response, null, 2)).value);
-    }
-    fetchData();
-  });
+    setParsedManifest(hljs.highlight('json', JSON.stringify(manifest, null, 2)).value);
+  }, [manifest]);
 
   return (
     <div id='rawCodeBox'>
