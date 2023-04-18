@@ -1,4 +1,4 @@
-import { manifestObj, parseObj } from "../../types";
+import { parseObj } from '../../types';
 
 // This function transforms the data pulled from the window.__remixManifest object into a nested object of parent and child nodes
 export default function parseData(remixManifest: parseObj) {
@@ -36,7 +36,6 @@ export default function parseData(remixManifest: parseObj) {
                 // For keys with escape brackets:
                 if (key.includes('[')) {
                     // Split by dot to account for potentially non-escaped dots
-                    if (key.includes('.')) { }
                     let splitKeyDot = key.split('.');
                     // Re-join with joiner function
                     splitKeyDot = joiner(splitKeyDot, '.');
