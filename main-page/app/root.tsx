@@ -28,8 +28,8 @@ export default function Root() {
         <Meta />
         <title>Remix DJ</title>
       </head>
-      <body >
-        <header>RemixDJ</header>
+      <body className='bg-black'>
+        <h1 className='text-white text-8xl font-extrabold bg-clip-text bg-gradient-to-r from-magenta to-pink'>RemixDJ</h1>
         <Intro />
         <Team />
         <Socials />
@@ -37,6 +37,6 @@ export default function Root() {
         <Scripts />
         <LiveReload />
       </body>
-    </html>
+    </html >
   );
 }
