@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import NoRemix from '../NoRemix/NoRemix.js';
+import NoRemix from '../NoRemix/NoRemix';
 import List from './component/List';
+import Raw from './component/Raw';
 import Tree from './component/Tree';
 import './styles/style.css';
 
@@ -32,6 +33,7 @@ export default () => {
           <div className='tabs'>
             <button onClick={changeTree}>Tree</button>
             <button onClick={changeList}>List</button>
+            <button onClick={changeRaw}>Raw</button>
           </div>
           <div>{comp}</div>
           <div></div>
@@ -51,6 +53,9 @@ export default () => {
   };
   const changeList = () => {
     setComp(<List />);
+  };
+  const changeRaw = () => {
+    setComp(<Raw />);
   };
 
   return <div>{mainComp}</div>;

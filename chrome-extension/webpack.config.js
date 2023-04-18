@@ -33,7 +33,6 @@ module.exports = {
 				// In order to use Tailwindcss, we need to use the 'postcss-loader' to process the css file
 				// postcss-loader will use the 'postcss.config.js' file to process the css file and is configured with tailwindcss
 				test: /\.(css)$/i,
-				exclude: /(node_modules)/,
 				use: ['style-loader', 'css-loader', 'postcss-loader'],
 			},
 			{

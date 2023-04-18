@@ -1,25 +1,28 @@
+import hljs from 'highlight.js/lib/core';
+import json from 'highlight.js/lib/languages/json';
+import 'highlight.js/styles/atom-one-light.css';
 import React, { useEffect, useState } from 'react';
-import Highlight from 'react-highlight';
-import parseData from '../treeRender/parseDataFunc';
+import '../styles/Raw.css';
 
-const Code = () => {
-  const [manifest, setManifest] = useState({});
-  const [parsedManifest, setParsedManifest] = useState({});
+
+const Raw = () => {
+  const [parsedManifest, setParsedManifest] = useState('');
   useEffect(() => {
+    hljs.registerLanguage('json', json);
     async function fetchData() {
-      // getting data from chrome localstorage
       const response = await chrome.storage.local.get(['remixManifest']);
-      setManifest(response.remixManifest);
-      setParsedManifest(parseData(response.remixManifest.routes));
+      setParsedManifest(hljs.highlight('json', JSON.stringify(response, null, 2)).value);
     }
     fetchData();
   });
 
   return (
-    <Highlight className="javascript">
-      { JSON.stringify(manifest) }
-    </Highlight>
+    <div id='rawCodeBox'>
+      <code>
+        <pre dangerouslySetInnerHTML={{ __html: parsedManifest }} />
+      </code>
+    </div>
   );
 };
 
-export default Code;
+export default Raw;
