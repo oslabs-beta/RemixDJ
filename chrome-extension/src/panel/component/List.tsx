@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { manifestObj, parseObj } from '../../types';
 import '../styles/List.css';
-import remixManifest from '../treeRender/mockData';
 import parseData from '../treeRender/parseDataFunc';
-import { manifestObj, dataType, parseObj } from '../../types';
 
 
 function List() {

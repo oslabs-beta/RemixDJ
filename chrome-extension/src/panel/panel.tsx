@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import NoRemix from '../NoRemix/NoRemix';
+import { windowObj } from '../types.js';
 import List from './component/List';
 import Tree from './component/Tree';
 import './styles/style.css';
-import { windowObjUnderscore, parseObj, windowObj } from '../types.js';
 
 export default () : JSX.Element => {
   const [comp, setComp] = useState<JSX.Element>(<Tree />);
@@ -30,19 +30,24 @@ export default () : JSX.Element => {
     ) {
       setMainComp(
         <div>
-          <div className='tabs'>
-            <button onClick={changeTree}>Tree</button>
-            <button onClick={changeList}>List</button>
+          <div className="tabs">
+            <button className="border-2 rounded-md mx-5" onClick={changeTree}>Tree</button>
+            <button className="border-2 rounded-md mx-5" onClick={changeList}>List</button>
           </div>
           <div>{comp}</div>
           <div></div>
         </div>
       );
-    } else {
+    } else if (!loading) {
       setMainComp(
         <div>
           <NoRemix />
         </div>
+      );
+    }
+    else {
+      setMainComp(
+        <div className="bg-black"></div>
       );
     }
   }, [loading, content, comp]);
