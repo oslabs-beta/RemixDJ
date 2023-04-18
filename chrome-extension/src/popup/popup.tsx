@@ -3,6 +3,6 @@ import React from "react";
 export default () => {
 
 	return (
-		<div>POPUP TEST</div>
+		<div>Open DeveloperTools and navigate to RemixDJ tab</div>
 	)
 }
