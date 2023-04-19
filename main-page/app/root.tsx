@@ -1,20 +1,18 @@
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
-  Link,
+  LiveReload,
   Meta,
-  Outlet,
   Scripts,
-  ScrollRestoration,
-  LiveReload
+  ScrollRestoration
 } from "@remix-run/react";
 // @ts-expect-error
+import { Intro } from './component/intro';
+import { Socials } from './component/socials.jsx';
+import { Team } from './component/team.jsx';
 import stylesheet from './styles/tailwind.css';
-import { Team } from './component/team.jsx'
-import { Socials } from './component/socials.jsx'
-import { Intro } from './component/intro'
 // @ts-expect-error
-import logo from './images/croppedlogo.png'
+import logo from './images/croppedlogo.png';
 
 export const links: LinksFunction = () => {
   return [
@@ -29,7 +27,7 @@ export default function Root() {
         <Links />
         <Meta />
         <title>Remix DJ</title>
-        <link rel='icon' href='.favicon.ico'></link>
+        <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body className='bg-black text-white'>
         <header className='inline-flex flex-row place-items-start p-3 m-3'>
