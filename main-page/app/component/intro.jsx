@@ -11,8 +11,8 @@ export function Intro(props) {
                 <Link className='self-center' to='https://github.com/oslabs-beta/remixDJ'><button className='p-4 mt-4 text-xl font-extrabold rounded-2xl w-40 bg-gradient-to-tr active:ring-4 active:ring-magenta from-yellow via-turquoise to-green text-black hover:from-turquoise hover:via-green hover:to-yellow'>Get it now.</button></Link>
 
             </div>
-            <div className='m-3 p-3 aspect-square bg-gradient-to-tr from-magenta via-green to-turquoise hover:from-green hover:via-turquoise hover:to-magenta rounded-2xl'>
-                <img src={treeimg} className='p-5 rounded-3xl'></img>
+            <div className='m-3 p-3 aspect-square bg-gradient-to-tr from-magenta via-green to-turquoise hover:from-green hover:via-turquoise hover:to-magenta rounded-2xl flex place-content-center place-items-center'>
+                <img src={treeimg} className='p-5 rounded-3xl aspect-square'></img>
             </div>
         </div>
     )
