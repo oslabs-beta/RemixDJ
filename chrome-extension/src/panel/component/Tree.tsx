@@ -48,6 +48,8 @@ function Tree() {
         .attr("transform", (d: manifestObj) => "translate(" + d.y + "," +
           d.x + ")")
         .on("click", () => {
+          //open Modal
+          
           console.log('clicked')
         });
 
@@ -70,8 +72,10 @@ function Tree() {
         .style('stroke', (d: circleObj) => d.data.level)
         .style('fill', (d: circleObj) => d.data.level)
         .attr('fill', (d: circleObj) => (d._children ? '#555' : '#999'))
-        .attr('stroke-width', 10);
-
+        .attr('stroke-width', 10)
+        // .append('div')
+        // .attr('class', 'test')
+        // .attr('value', 'test')
 
       node.append('text')
         .attr('dy', '0.31em')
