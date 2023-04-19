@@ -2,10 +2,12 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 module.exports = {
 	entry: { 
-	 'panel' : path.resolve(__dirname, 'src/panel/index.tsx'),
-	 'popup': path.resolve(__dirname, 'src/popup/index.tsx'),
+		'panel' : path.resolve(__dirname, 'src/panel/index.tsx'),
+		'popup': path.resolve(__dirname, 'src/popup/index.tsx'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
@@ -25,6 +27,7 @@ module.exports = {
 					loader: 'babel-loader',
 					options: {
 						presets: ['@babel/preset-env', '@babel/preset-react'],
+						cacheDireactory: true
 					},
 				},
 			},
@@ -55,6 +58,15 @@ module.exports = {
 				],
 			},
 		],
+	},
+	optimization: {
+		splitChunks: {
+			chunks: 'all',
+			name: 'vendor',
+		},
+		minimizer: [
+			new TerserPlugin()
+		]
 	},
 	plugins: [
 		new webpack.ProgressPlugin(),
