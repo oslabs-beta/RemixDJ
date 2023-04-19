@@ -10,6 +10,7 @@ RemixDJ in the Chrome store soon!
 Until then:
 - Clone our repo 🧬
 - Navigate to the chrome-extension folder and npm install 📀
+- Within the chrome-extension folder execute npm run build 🔨
 - In Chrome's extensions drop-down, navigate to "Manage Extensions" 🧩
 - Turn on "Developer mode" 🧑‍💻
 - In "Load Unpacked" select the remixDJ/chrome-extension/build folder 📦
