@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "REMIX DJ",
   "description": "Developer tools for the Remix framework",
-  "version": "1.0",
+  "version": "0.0.1",
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "icons/cropped.logo.png"
