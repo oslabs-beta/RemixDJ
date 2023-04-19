@@ -2,6 +2,11 @@ import React from 'react'
 import { LiveReload } from '@remix-run/react'
 import gitimg from '../images/githublogo.png'
 import linkimg from '../images/linkedinlogo.png'
+import adam from '../images/adam.jpeg'
+import matt from '../images/matt.jpeg'
+import molly from '../images/molly.jpeg'
+import tim from '../images/tim.jpeg'
+import victoria from '../images/victoria.jpeg'
 
 export function Team(props) {
   return (
@@ -10,7 +15,7 @@ export function Team(props) {
       <div className="grid xs:grid-cols-3 gap-2 sm:grid-cols-3 gap-4 m-10 md:grid-cols-5 gap-4 lg:grid-cols-5 gap-4 xl:grid-cols-5 gap-5 2xl:grid-cols-5 gap-6">
         <div>
           <div className='m-2 p-1 bg-gradient-to-tr from-green via-turquoise to-magenta hover:from-magenta hover:via-green hover:to-turquoise rounded-full'>
-            <img className="rounded-full" src="https://media.licdn.com/dms/image/D4E03AQE8Nj0kohzJRw/profile-displayphoto-shrink_200_200/0/1681509623291?e=1687392000&v=beta&t=pqKqk7WfMWPVl2VEMEKsQfW8q13kjV5W4Xz-7Rj9h48"/>
+            <img className="rounded-full" src={adam} />
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Adam Liang</p>
           <div className='grid grid-cols-2 justify-items-center'>
@@ -20,7 +25,7 @@ export function Team(props) {
         </div>
         <div>
           <div className='m-2 p-1 bg-gradient-to-tr from-green via-turquoise to-magenta hover:from-magenta hover:via-green hover:to-turquoise rounded-full'>
-            <img className="rounded-full" src="https://media.licdn.com/dms/image/C5603AQEAbYj4n6wrIQ/profile-displayphoto-shrink_200_200/0/1552801293923?e=1687392000&v=beta&t=HdY1KUePTdSYnXSie_FtMMDjs7zaqX4vDd9B93z8Veo"/>
+            <img className="rounded-full" src={matt}/>
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Matthew Jackson</p>
           <div className='grid grid-cols-2 justify-items-center'>
@@ -30,7 +35,7 @@ export function Team(props) {
         </div>
         <div>
           <div className='m-2 p-1 bg-gradient-to-tr from-green via-turquoise to-magenta hover:from-magenta hover:via-green hover:to-turquoise rounded-full'>
-            <img className="rounded-full" src="https://media.licdn.com/dms/image/C4E03AQHhXal_tDr0_w/profile-displayphoto-shrink_200_200/0/1624919749905?e=1687392000&v=beta&t=SktldJI48mfSizqVHZh_sLnByUjWJ1VEKdb3ux9lqxg"/>
+            <img className="rounded-full" src={molly}/>
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Molly Greene</p>
           <div className='grid grid-cols-2 justify-items-center'>
@@ -40,7 +45,7 @@ export function Team(props) {
         </div>
         <div>
           <div className='m-2 p-1 bg-gradient-to-tr from-green via-turquoise to-magenta hover:from-magenta hover:via-green hover:to-turquoise rounded-full'>
-            <img className="rounded-full" src="https://media.licdn.com/dms/image/C4D03AQHMCgH3RznSuQ/profile-displayphoto-shrink_200_200/0/1594285340475?e=1687392000&v=beta&t=eFvi1DXJ0I2ZRfBwtI_1YZkyub6WzzeuOjrRGbZBBfA"/>
+            <img className="rounded-full" src={tim}/>
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Tim Muller</p>
           <div className='grid grid-cols-2 justify-items-center'>
@@ -50,7 +55,7 @@ export function Team(props) {
         </div>
         <div>
           <div className='m-2 p-1 bg-gradient-to-tr from-green via-turquoise to-magenta hover:from-magenta hover:via-green hover:to-turquoise rounded-full'>
-            <img className="rounded-full" src="https://media.licdn.com/dms/image/C4D03AQGB9p0jLo4OMQ/profile-displayphoto-shrink_200_200/0/1517504038557?e=1687392000&v=beta&t=0U1MeEinfOwheiYfdp8E3Tkd61L7jRaXfTOX5ANQCDw" />
+            <img className="rounded-full" src={victoria} />
           </div>
             <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Victoria Dillman</p>
             <div className='grid grid-cols-2 justify-items-center'>
