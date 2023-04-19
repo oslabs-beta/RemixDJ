@@ -1,4 +1,5 @@
 //Adds the contentscript to all complete, non-discarded tabs on install
+//does not include active tab (the chrome extension store)
 chrome.runtime.onInstalled.addListener(async () => {
 	for (const cs of chrome.runtime.getManifest().content_scripts) {
 		for (const tab of await chrome.tabs.query({

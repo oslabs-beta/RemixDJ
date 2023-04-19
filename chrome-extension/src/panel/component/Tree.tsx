@@ -9,14 +9,14 @@ import parseData from '../treeRender/parseDataFunc';
 import { manifestObj, nodeObj, circleObj, listObj } from '../../types';
 
 function Tree() {
-  const [manifest, setManifest] = useState<{routes: manifestObj} | null | Record<string, never>>({});
+  const [manifest, setManifest] = useState<{ routes: manifestObj } | null | Record<string, never>>({});
   const [cssHeight, setCssHeight] = useState(1000);
   const [cssWidth, setCssWidth] = useState(1000)
 
   useEffect(() => {
     async function fetchData() {
       // getting data from chrome localstorage
-      await chrome.storage.local.get(["remixManifest"]).then(res => {
+      await chrome.storage.local.get(["remixManifest"]).then((res: any) => {
         setManifest(res.remixManifest);
       })
     }
@@ -34,43 +34,46 @@ function Tree() {
     //   .attr("cy", 70)
     //   .attr("r",  50)
 
-    if (treeData.children.length !== 0){
+    if (treeData.children.length !== 0) {
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
-      width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
-      height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
+        width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
+        height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
 
       const treemap = d3.tree().size([height, width]);
       let nodesEarly = d3.hierarchy(treeData, (d: manifestObj) => d.children);
       let nodes: nodeObj = treemap(nodesEarly);
 
       const svg = d3.select(ref.current).append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom),
-      g = svg.append("g")
-      .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom),
+        g = svg.append("g")
+          .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
 
       const node = g.selectAll(".node")
-      .data(nodes.descendants())
-      .enter().append("g")
-      .attr("class", (d: manifestObj) => "node" + (d.children ? " node--internal"
-        : " node--leaf"))
-      .attr("transform", (d: manifestObj) => "translate(" + d.y + "," +
-        d.x + ")");
+        .data(nodes.descendants())
+        .enter().append("g")
+        .attr("class", (d: manifestObj) => "node" + (d.children ? " node--internal"
+          : " node--leaf"))
+        .attr("transform", (d: manifestObj) => "translate(" + d.y + "," +
+          d.x + ")")
+        .on("click", () => {
+          console.log('clicked')
+        });
 
       const link = g.selectAll(".link")
-      .data(nodes.descendants().slice(1))
-      .enter().append("path")
-      .attr("class", "link")
-      .style("stroke", 'white')
-      .style("stroke-width", 1)
-      .style("fill", 'none')
-      .attr("d", (d: listObj) => {
-        return "M" + d.y + "," + d.x
-          + "C" + (d.y + d.parent.y) / 2 + "," + d.x
-          + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
-          + " " + d.parent.y + "," + d.parent.x;
-      });
+        .data(nodes.descendants().slice(1))
+        .enter().append("path")
+        .attr("class", "link")
+        .style("stroke", 'white')
+        .style("stroke-width", 1)
+        .style("fill", 'none')
+        .attr("d", (d: listObj) => {
+          return "M" + d.y + "," + d.x
+            + "C" + (d.y + d.parent.y) / 2 + "," + d.x
+            + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
+            + " " + d.parent.y + "," + d.parent.x;
+        });
 
       node.append("circle")
         // .attr("r", d => 6)
@@ -109,7 +112,7 @@ function Tree() {
     <div>
       <body>
         <svg
-          ref={ref} className="display" style={{height: cssHeight, width: cssWidth}}
+          ref={ref} className="display" style={{ height: cssHeight, width: cssWidth }}
         />
       </body>
     </div>
