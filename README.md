@@ -1,13 +1,15 @@
 # Remix DJ
+
 ![Remix DJ logo: multicolored mixer sliders](croppedlogo.png)
 
 Intro
 
-## Installing RemixDJ 
+## Installing RemixDJ
 
 RemixDJ in the Chrome store soon!
 
 Until then:
+
 - Clone our repo 🧬
 - Navigate to the chrome-extension folder and npm install 📀
 - Within the chrome-extension folder execute npm run build 🔨
@@ -22,26 +24,31 @@ Until then:
 
 ## Features
 
-- Visualize Remix sites as a tree, list, or raw data 🌳 
+- Visualize Remix sites as a tree, list, or raw data 🌳
 - Choose between visualizing layout nesting and URL nesting 📊
 
 ## The Team
 
 Adam Liang
-- https://github.com/adamsherpa
-- https://www.linkedin.com/in/adam-labs/ 
+
+- <https://github.com/adamsherpa>
+- <https://www.linkedin.com/in/adam-labs/>
 
 Matt Jackson
-- https://github.com/Mjax511
+
+- <https://github.com/Mjax511>
 
 Molly Greene
-- https://github.com/mollycgreene
-- https://www.linkedin.com/in/mollycgreene 
+
+- <https://github.com/mollycgreene>
+- <https://www.linkedin.com/in/mollycgreene>
 
 Tim Muller
-- https://github.com/tmuller23
-- https://www.linkedin.com/in/timothy-muller-a0800b155/ 
+
+- <https://github.com/tmuller23>
+- <https://www.linkedin.com/in/timothy-muller-a0800b155/>
 
 Victoria Dillman
-- https://github.com/victoriadillman 
-- https://www.linkedin.com/in/victoria-dillman/ 
+
+- <https://github.com/victoriadillman>
+- <https://www.linkedin.com/in/victoria-dillman/>
