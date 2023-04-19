@@ -1,0 +1,33 @@
+{
+  "name": "remix-dj",
+  "version": "1.0.0",
+  "description": "A devtool for RemixJS",
+  "prisma": {
+    "seed": "node --require esbuild-register prisma/seed.ts"
+  },
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "start": "cross-env NODE_ENV=production remix-serve ./build",
+    "zip": "npm run build && ./scripts/package.sh"
+  },
+  "author": "RemixDJ",
+  "license": "MIT",
+  "dependencies": {
+    "@remix-run/react": "^1.14.3",
+    "@remix-run/serve": "^1.14.3",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.14.3",
+    "autoprefixer": "^10.4.14",
+    "esbuild-register": "^3.4.2",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1"
+  },
+  "optionalDependencies": {
+    "@esbuild/linux-x64": "^0.17.17"
+  }
+}
