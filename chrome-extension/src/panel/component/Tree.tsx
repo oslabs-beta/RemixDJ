@@ -18,18 +18,12 @@ function Tree() {
     }
     fetchData();
   }, []);
-  // function Tree() {
 
   const ref = useRef();
   useEffect(() => {
     const treeData = parseData(manifest.routes);
 
-    // const svgElement = d3.select(ref.current)
-    // svgElement.append("circle")
-    //   .attr("cx", 150)
-    //   .attr("cy", 70)
-    //   .attr("r",  50)
-
+    // Setting up the D3 Graph:
     if (treeData.children.length !== 0){
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
       width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
@@ -69,7 +63,6 @@ function Tree() {
       });
 
       node.append('circle')
-        // .attr("r", d => 6)
         .attr('r', 2.5)
         .style('stroke', (d: circleObj) => d.data.level)
         .style('fill', (d: circleObj) => d.data.level)
@@ -84,16 +77,12 @@ function Tree() {
         .text((d: circleObj) => d.data.name)
         .clone(true)
         .lower()
-        // .attr("fill", "white")
         .attr('stroke-linejoin', 'round')
         .attr('stroke-width', 3);
-      // .attr("stroke", "black")
-      // .attr("stroke", "rgb(26, 23, 24)")
 
       const nodesAndText = d3.selectAll('.node, .text');
       nodesAndText.raise();
 
-      // const cssHeight = height * 10 
       setCssHeight(height + 15);
       setCssWidth(width + 150);
 
