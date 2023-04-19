@@ -6,6 +6,7 @@ main-page/public/build
 **/dist
 .DS_Store
 pnpm-lock.yaml
+*.zip
 
 # Environement secrets
 .env

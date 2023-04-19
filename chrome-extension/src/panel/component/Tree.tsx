@@ -98,11 +98,9 @@ function Tree() {
 
   return (
     <div>
-      <body>
         <svg
           ref={ref} className="display" style={{ height: cssHeight, width: cssWidth }}
         />
-      </body>
     </div>
   );
 }
