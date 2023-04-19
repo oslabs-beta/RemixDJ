@@ -1,5 +1,7 @@
 import React from 'react'
 import { LiveReload } from '@remix-run/react'
+import gitimg from '../images/githublogo.png'
+import linkimg from '../images/linkedinlogo.png'
 
 export function Team(props) {
   return (
