@@ -9,7 +9,7 @@ import twitter from '../images/sociallogos/twittersocial.png'
 
 export function Socials(props) {
   return (
-    <div className='flex flex-row p-3 justify-end'>
+    <div className='flex flex-row p-3 justify-center border-t mx-6 mt-5'>
       <div className='w-12 h-12 m-1.5 flex place-content-center place-items-center hover:bg-turquoise rounded-lg'>
         <Link to='mailto:remixdj.dev@gmail.com'>
           <img src={gmail} className='w-10 h-10 grayscale hover:grayscale-0'></img>
