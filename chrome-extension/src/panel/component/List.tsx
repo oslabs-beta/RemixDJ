@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { manifestObj, parseObj } from '../../types';
 import '../styles/List.css';
-import remixManifest from '../treeRender/mockData';
 import parseData from '../treeRender/parseDataFunc';
-import { manifestObj, dataType, parseObj } from '../../types';
 
 
 function List() {
@@ -17,33 +16,8 @@ function List() {
     }
     fetchData();
   }, []);
-  // recursively render the data in a collapsible list
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details 
-  // const renderData = (data) => {
-  //   if( typeof data === 'string' ) {
-  //     return <li>{data}</li>;
-  //   }
-  //   if( typeof data === 'boolean' ) {
-  //     return <li>{ data ? 'true' : 'false' }</li>;
-  //   }
-  //   if( typeof data === 'object' ) {
-  //     return Object.keys(data).map( (key) => {
-  //       return (
-  //         <li key={key}>
-  //           <details>
-  //             <summary>{key}</summary>
-  //             <ul>
-  //               {renderData(data[key])} 
-  //             </ul>
-  //           </details>
-  //         </li>
-  //       );
-  //     });
-  //   }
-  // };
 
   const data: parseObj = parseData(manifest.routes);
-  console.log(data);
   function renderData(data: parseObj){
     // recurse through the object and take each name and make it a summary element
     // then recurse through the children and for each element take the name property and make it a child of the parent

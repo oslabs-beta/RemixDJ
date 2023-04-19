@@ -1,47 +1,37 @@
-// import logo from './logo.svg';
 import * as d3 from 'd3';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { circleObj, listObj, manifestObj, nodeObj } from '../../types';
 import '../styles/Tree.css';
-// import remixManifest from './test-data';
-// import { render } from 'react-dom';
-import { useEffect, useRef } from 'react';
 import parseData from '../treeRender/parseDataFunc';
-import { manifestObj, nodeObj, circleObj, listObj } from '../../types';
 
 function Tree() {
   const [manifest, setManifest] = useState<{ routes: manifestObj } | null | Record<string, never>>({});
   const [cssHeight, setCssHeight] = useState(1000);
-  const [cssWidth, setCssWidth] = useState(1000)
+  const [cssWidth, setCssWidth] = useState(1000);
 
   useEffect(() => {
     async function fetchData() {
       // getting data from chrome localstorage
-      await chrome.storage.local.get(["remixManifest"]).then((res: any) => {
+      await chrome.storage.local.get(['remixManifest']).then(res => {
         setManifest(res.remixManifest);
-      })
+      });
     }
     fetchData();
-  }, [])
-  // function Tree() {
+  }, []);
 
-  const ref = useRef()
+  const ref = useRef();
   useEffect(() => {
-    const treeData = parseData(manifest.routes)
-
-    // const svgElement = d3.select(ref.current)
-    // svgElement.append("circle")
-    //   .attr("cx", 150)
-    //   .attr("cy", 70)
-    //   .attr("r",  50)
+    const treeData = parseData(manifest.routes);
 
     if (treeData.children.length !== 0) {
+    // Setting up the D3 Graph:
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
         width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
         height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
 
       const treemap = d3.tree().size([height, width]);
-      let nodesEarly = d3.hierarchy(treeData, (d: manifestObj) => d.children);
-      let nodes: nodeObj = treemap(nodesEarly);
+      const nodesEarly = d3.hierarchy(treeData, (d: manifestObj) => d.children);
+      const nodes: nodeObj = treemap(nodesEarly);
 
       const svg = d3.select(ref.current).append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -75,38 +65,32 @@ function Tree() {
             + " " + d.parent.y + "," + d.parent.x;
         });
 
-      node.append("circle")
-        // .attr("r", d => 6)
+      node.append('circle')
         .attr('r', 2.5)
-        .style("stroke", (d: circleObj) => d.data.level)
-        .style("fill", (d: circleObj) => d.data.level)
+        .style('stroke', (d: circleObj) => d.data.level)
+        .style('fill', (d: circleObj) => d.data.level)
         .attr('fill', (d: circleObj) => (d._children ? '#555' : '#999'))
-        .attr('stroke-width', 10)
+        .attr('stroke-width', 10);
 
 
-      node.append("text")
-        .attr("dy", "0.31em")
-        .attr("x", (d: circleObj) => (d._children ? -9 : 9))
-        .attr("text-anchor", (d: circleObj) => (d._children ? "end" : "start"))
+      node.append('text')
+        .attr('dy', '0.31em')
+        .attr('x', (d: circleObj) => (d._children ? -9 : 9))
+        .attr('text-anchor', (d: circleObj) => (d._children ? 'end' : 'start'))
         .text((d: circleObj) => d.data.name)
         .clone(true)
         .lower()
-        // .attr("fill", "white")
-        .attr("stroke-linejoin", "round")
-        .attr("stroke-width", 3)
-      // .attr("stroke", "black")
-      // .attr("stroke", "rgb(26, 23, 24)")
+        .attr('stroke-linejoin', 'round')
+        .attr('stroke-width', 3);
 
-      // @ts-ignore
-      const nodesAndText = d3.selectAll('.node', '.text');
-      nodesAndText.raise()
+      const nodesAndText = d3.selectAll('.node, .text');
+      nodesAndText.raise();
 
-      // const cssHeight = height * 10 
-      setCssHeight(height + 15)
-      setCssWidth(width + 150)
+      setCssHeight(height + 15);
+      setCssWidth(width + 150);
 
     }
-  }, [manifest])
+  }, [manifest]);
 
   return (
     <div>
