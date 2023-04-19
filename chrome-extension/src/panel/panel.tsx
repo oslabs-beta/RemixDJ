@@ -11,6 +11,7 @@ export default () : JSX.Element => {
   const [content, setContent] = useState<windowObj | null | Record<string, never>>({});
   const [loading, setLoading] = useState(true);
 
+  // Retrieving manifest from the chrome storage (via the background page)
   useEffect(() => {
     async function fetchData() {
       await chrome.storage.local.get(['remixManifest']).then((res: windowObj) => {
@@ -21,6 +22,7 @@ export default () : JSX.Element => {
     fetchData();
   }, []);
 
+  // Rendering component based on manifest
   useEffect(() => {
     if (
       !loading &&
