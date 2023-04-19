@@ -12,7 +12,7 @@ export function Team(props) {
   return (
     <div className='text-center'>
       <h1 className='p-3 sm:p-1 text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-4xl font-bold'>Meet the Remix DJs</h1>
-      <div className="grid xs:grid-cols-3 gap-2 sm:grid-cols-3 gap-4 m-10 md:grid-cols-5 gap-4 lg:grid-cols-5 gap-4 xl:grid-cols-5 gap-5 2xl:grid-cols-5 gap-6">
+      <div className="grid xs:grid-cols-2 xs:gap-2 sm:grid-cols-3 sm:gap-1 m-10 md:grid-cols-5 md:gap-5 lg:grid-cols-5 lg:gap-4 xl:grid-cols-5 xl:gap-5 2xl:grid-cols-5 2xl:gap-6">
         <div>
           <div className='m-2 p-1 bg-gradient-to-tr from-green via-turquoise to-magenta hover:from-magenta hover:via-green hover:to-turquoise rounded-full'>
             <img className="rounded-full" src={adam} />
