@@ -1,7 +1,7 @@
 import React from 'react'
 import { LiveReload } from '@remix-run/react'
-import gitimg from '../images/githublogo.png'
-import linkimg from '../images/linkedinlogo.png'
+import gitimg from '../images/sociallogos/github-mark.png'
+import linkimg from '../images/sociallogos/linkedincropped.png'
 import adam from '../images/adam.jpeg'
 import matt from '../images/matt.jpeg'
 import molly from '../images/molly.jpeg'
@@ -19,9 +19,9 @@ export function Team(props) {
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Adam Liang</p>
           <div className='group grid grid-cols-3 gap-0 justify-items-center'>
-            <a href="https://github.com/adamsherpa"><img className='invert max-h-8 mt-2' src={gitimg}/></a>
+            <a href="https://github.com/adamsherpa"><img className='grayscale max-h-8 mt-1' src={gitimg}/></a>
             <div className='mt-2 p-2 invisible group-hover:visible'><p>👨‍🔧</p></div>
-            <a href='https://www.linkedin.com/in/adamvliang/'><img className='invert max-h-12' src={linkimg}/></a>
+            <a href='https://www.linkedin.com/in/adamvliang/'><img className='grayscale max-h-8 mt-1' src={linkimg}/></a>
           </div>
         </div>
         <div>
@@ -30,9 +30,9 @@ export function Team(props) {
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Matthew Jackson</p>
           <div className='group grid grid-cols-3 gap-0 justify-items-center'>
-            <a href="https://github.com/Mjax511"><img className='invert max-h-8 mt-2' src={gitimg}/></a>
+            <a href="https://github.com/Mjax511"><img className='grayscale max-h-8 mt-1' src={gitimg}/></a>
             <div className='mt-2 p-2 invisible group-hover:visible'><p>🐟</p></div>
-            <a href='https://www.linkedin.com/in/matthewjackson0/'><img className='invert max-h-12' src={linkimg}/></a>
+            <a href='https://www.linkedin.com/in/matthewjackson0/'><img className='grayscale max-h-8 mt-1' src={linkimg}/></a>
           </div>
         </div>
         <div>
@@ -41,9 +41,9 @@ export function Team(props) {
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Molly Greene</p>
           <div className='group grid grid-cols-3 gap-0 justify-items-center'>
-            <a href="https://github.com/mollycgreene"><img className='invert max-h-8 mt-2' src={gitimg}/></a>
+            <a href="https://github.com/mollycgreene"><img className='grayscale max-h-8 mt-1' src={gitimg}/></a>
             <div className='mt-2 p-2 invisible group-hover:visible'><p>👨‍🎤</p></div>
-            <a href='https://www.linkedin.com/in/mollycgreene/'><img className='invert max-h-12' src={linkimg}/></a>
+            <a href='https://www.linkedin.com/in/mollycgreene/'><img className='grayscale max-h-8 mt-1' src={linkimg}/></a>
           </div>
         </div>
         <div>
@@ -52,9 +52,9 @@ export function Team(props) {
           </div>
           <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Tim Muller</p>
           <div className='group grid grid-cols-3 gap-0 justify-items-center'>
-            <a href="https://github.com/tmuller23"><img className='invert max-h-8 mt-2' src={gitimg}/></a>
+            <a href="https://github.com/tmuller23"><img className='grayscale max-h-8 mt-1' src={gitimg}/></a>
             <div className='mt-2 p-2 invisible group-hover:visible'><p>&#x1F43F;</p></div>
-            <a href='https://www.linkedin.com/in/timothy-muller-a0800b155/'><img className='invert max-h-12' src={linkimg}/></a>
+            <a href='https://www.linkedin.com/in/timothy-muller-a0800b155/'><img className='grayscale max-h-8 mt-1' src={linkimg}/></a>
           </div>
         </div>
         <div>
@@ -63,9 +63,9 @@ export function Team(props) {
           </div>
             <p className='text-base sm:text-base md:text-base lg:text-lg xl:text-xl 2xl:text-2xl'>Victoria Dillman</p>
             <div className='group grid grid-cols-3 gap-0 justify-items-center'>
-              <a href="https://github.com/victoriadillman"><img className='invert max-h-8 mt-2' src={gitimg}/></a>
+              <a href="https://github.com/victoriadillman"><img className='grayscale max-h-8 mt-1' src={gitimg}/></a>
               <div className='mt-2 p-2 invisible group-hover:visible'><p>&#x1F33B;</p></div>
-              <a href='https://www.linkedin.com/in/victoria-dillman/'><img className='invert max-h-12' src={linkimg}/></a>
+              <a href='https://www.linkedin.com/in/victoria-dillman/'><img className='grayscale max-h-8 mt-1' src={linkimg}/></a>
             </div>
         </div>
       </div>
