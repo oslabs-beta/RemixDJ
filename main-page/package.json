@@ -8,7 +8,8 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
-    "start": "cross-env NODE_ENV=production remix-serve ./build"
+    "start": "cross-env NODE_ENV=production remix-serve ./build",
+    "zip": "npm run build && ./scripts/package.sh"
   },
   "author": "RemixDJ",
   "license": "MIT",
