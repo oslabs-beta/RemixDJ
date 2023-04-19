@@ -29,6 +29,7 @@ export default function Root() {
         <Links />
         <Meta />
         <title>Remix DJ</title>
+        <link rel='icon' href='.favicon.ico'></link>
       </head>
       <body className='bg-black text-white'>
         <header className='inline-flex flex-row place-items-start p-3 m-3'>
