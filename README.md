@@ -2,7 +2,6 @@
 
 ![Remix DJ logo: multicolored mixer sliders](croppedlogo.png)
 
-Intro
 
 ## Installing RemixDJ
 
@@ -15,7 +14,7 @@ Until then:
 - Within the chrome-extension folder execute npm run build 🔨
 - In Chrome's extensions drop-down, navigate to "Manage Extensions" 🧩
 - Turn on "Developer mode" 🧑‍💻
-- In "Load Unpacked" select the remixDJ/chrome-extension/build folder 📦
+- In "Load Unpacked" select the "remixDJ/chrome-extension/build" folder 📦
 
 ## Using RemixDJ
 
@@ -25,7 +24,6 @@ Until then:
 ## Features
 
 - Visualize Remix sites as a tree or list 🌳
-- Choose between visualizing layout nesting and URL nesting 📊
 - Watch the logo change to bright colors if a site is using remix 🎨
 
 🌲
