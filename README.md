@@ -24,31 +24,39 @@ Until then:
 
 ## Features
 
-- Visualize Remix sites as a tree, list, or raw data 🌳
+- Visualize Remix sites as a tree or list 🌳
 - Choose between visualizing layout nesting and URL nesting 📊
+- Watch the logo change to bright colors if a site is using remix 🎨
+
+🌲
+![Remix DJ Tree: example of devtool](example-tree.png)
+📂
+![Remix DJ Tree: example of devtool](example-list.png)
+
+
 
 ## The Team
 
-Adam Liang
+Adam Liang 👨‍🔧
 
 - <https://github.com/adamsherpa>
 - <https://www.linkedin.com/in/adam-labs/>
 
-Matt Jackson
+Matt Jackson 🐟
 
 - <https://github.com/Mjax511>
 
-Molly Greene
+Molly Greene 👨‍🎤
 
 - <https://github.com/mollycgreene>
 - <https://www.linkedin.com/in/mollycgreene>
 
-Tim Muller
+Tim Muller &#x1F43F;
 
 - <https://github.com/tmuller23>
 - <https://www.linkedin.com/in/timothy-muller-a0800b155/>
 
-Victoria Dillman
+Victoria Dillman 🌻
 
 - <https://github.com/victoriadillman>
 - <https://www.linkedin.com/in/victoria-dillman/>
