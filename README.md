@@ -1,4 +1,4 @@
-# Remix DJ
+# Remix DJ - A developer tool built specifically for the Remix framework
 
 ![Remix DJ logo: multicolored mixer sliders](croppedlogo.png)
 
@@ -23,7 +23,7 @@ Until then:
 
 ## Features
 
-- Visualize Remix sites as a tree or list 🌳
+- Visualize Remix unique nested routing and layout structures as a tree or list 🌳
 - Watch the logo change to bright colors if a site is using remix 🎨
 
 🌲
