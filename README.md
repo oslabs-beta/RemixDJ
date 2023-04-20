@@ -2,7 +2,6 @@
 
 ![Remix DJ logo: multicolored mixer sliders](croppedlogo.png)
 
-Intro
 
 ## Installing RemixDJ
 
@@ -15,7 +14,7 @@ Until then:
 - Within the chrome-extension folder execute npm run build 🔨
 - In Chrome's extensions drop-down, navigate to "Manage Extensions" 🧩
 - Turn on "Developer mode" 🧑‍💻
-- In "Load Unpacked" select the remixDJ/chrome-extension/build folder 📦
+- In "Load Unpacked" select the "remixDJ/chrome-extension/build" folder 📦
 
 ## Using RemixDJ
 
@@ -24,31 +23,38 @@ Until then:
 
 ## Features
 
-- Visualize Remix sites as a tree, list, or raw data 🌳
-- Choose between visualizing layout nesting and URL nesting 📊
+- Visualize Remix sites as a tree or list 🌳
+- Watch the logo change to bright colors if a site is using remix 🎨
+
+🌲
+![Remix DJ Tree: example of devtool](example-tree.png)
+📂
+![Remix DJ Tree: example of devtool](example-list.png)
+
+
 
 ## The Team
 
-Adam Liang
+Adam Liang 👨‍🔧
 
 - <https://github.com/adamsherpa>
 - <https://www.linkedin.com/in/adam-labs/>
 
-Matt Jackson
+Matt Jackson 🐟
 
 - <https://github.com/Mjax511>
 
-Molly Greene
+Molly Greene 👨‍🎤
 
 - <https://github.com/mollycgreene>
 - <https://www.linkedin.com/in/mollycgreene>
 
-Tim Muller
+Tim Muller &#x1F43F;
 
 - <https://github.com/tmuller23>
 - <https://www.linkedin.com/in/timothy-muller-a0800b155/>
 
-Victoria Dillman
+Victoria Dillman 🌻
 
 - <https://github.com/victoriadillman>
 - <https://www.linkedin.com/in/victoria-dillman/>
