@@ -25,7 +25,6 @@ Until then:
 ## Features
 
 - Visualize Remix sites as a tree or list 🌳
-- Choose between visualizing layout nesting and URL nesting 📊
 - Watch the logo change to bright colors if a site is using remix 🎨
 
 🌲
