@@ -73,9 +73,6 @@ function Tree() {
         .style('fill', (d: circleObj) => d.data.level)
         .attr('fill', (d: circleObj) => (d._children ? '#555' : '#999'))
         .attr('stroke-width', 10)
-        // .append('div')
-        // .attr('class', 'test')
-        // .attr('value', 'test')
 
       node.append('text')
         .attr('dy', '0.31em')
@@ -86,6 +83,20 @@ function Tree() {
         .lower()
         .attr('stroke-linejoin', 'round')
         .attr('stroke-width', 3);
+
+      node.append('div')
+        .attr('dy', '0.31em')
+        .attr('x', (d: circleObj) => (d._children ? -9 : 9))
+        .attr('text-anchor', (d: circleObj) => (d._children ? 'end' : 'start'))
+        // .text((d: circleObj) => d.data.name)
+        .clone(true)
+        .lower()
+        .attr('stroke-linejoin', 'round')
+        .attr('stroke-width', 3)
+        .attr('class', 'test')
+        .attr('value', 'test')
+        // .style('z-index', 9999)
+        // .attr('style', "height:20px; width:20px; background-color:white")
 
       const nodesAndText = d3.selectAll('.node, .text');
       nodesAndText.raise();
