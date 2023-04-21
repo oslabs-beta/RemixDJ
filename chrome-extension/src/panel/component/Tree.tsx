@@ -79,27 +79,26 @@ function Tree() {
         .attr('x', (d: circleObj) => (d._children ? -9 : 9))
         .attr('text-anchor', (d: circleObj) => (d._children ? 'end' : 'start'))
         .text((d: circleObj) => d.data.name)
-        .clone(true)
-        .lower()
         .attr('stroke-linejoin', 'round')
         .attr('stroke-width', 3);
 
-      node.append('div')
-        .attr('dy', '0.31em')
-        .attr('x', (d: circleObj) => (d._children ? -9 : 9))
-        .attr('text-anchor', (d: circleObj) => (d._children ? 'end' : 'start'))
-        // .text((d: circleObj) => d.data.name)
-        .clone(true)
-        .lower()
-        .attr('stroke-linejoin', 'round')
-        .attr('stroke-width', 3)
+      node.append('rect')
+        // .attr('x', 100)
+        // .attr('y', 50)
+        .attr('height', 100)
+        .attr('width', 200)
         .attr('class', 'test')
-        .attr('value', 'test')
-        // .style('z-index', 9999)
+        .style('bg-color' , 'white')
+        .style('stroke', (d: circleObj) => d.data.level)
+        .style('fill', 'white')
         // .attr('style', "height:20px; width:20px; background-color:white")
 
       const nodesAndText = d3.selectAll('.node, .text');
       nodesAndText.raise();
+
+      const modals = d3.selectAll('.test')
+      console.log(modals);
+      modals.raise();
 
       setCssHeight(height + 15);
       setCssWidth(width + 150);
