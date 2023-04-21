@@ -24,7 +24,7 @@ function Tree() {
     const treeData = parseData(manifest.routes);
 
     if (treeData.children.length !== 0) {
-    // Setting up the D3 Graph:
+      // Setting up the D3 Graph:
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
         width = Math.max(((treeData.widthSet * 600) - margin.right - margin.left), 960),
         height = Math.max(((treeData.max * 70) - margin.top - margin.bottom), 400);
@@ -47,10 +47,11 @@ function Tree() {
           : " node--leaf"))
         .attr("transform", (d: manifestObj) => "translate(" + d.y + "," +
           d.x + ")")
-        .on("click", () => {
-          //open Modal
-          
-          console.log('clicked')
+        .on("click", (el) => {
+          const clicked = d3.select(el.target);
+          clicked.style('display', 'none')
+          console.log(d3.select(el.target));
+          console.log(el.target)
         });
 
       const link = g.selectAll(".link")
@@ -88,17 +89,23 @@ function Tree() {
         .attr('height', 100)
         .attr('width', 200)
         .attr('class', 'test')
-        .style('bg-color' , 'white')
         .style('stroke', (d: circleObj) => d.data.level)
-        .style('fill', 'white')
-        // .attr('style', "height:20px; width:20px; background-color:white")
+        .style('fill', 'grey')
+        .on('click', (el) => {
+          const clicked = d3.select(el.target);
+          clicked.style('display', 'none')
+          console.log(d3.select(el.target));
+          console.log(el.target)
+        })
+
+      // .attr('style', "height:20px; width:20px; background-color:white")
 
       const nodesAndText = d3.selectAll('.node, .text');
       nodesAndText.raise();
 
-      const modals = d3.selectAll('.test')
-      console.log(modals);
-      modals.raise();
+      // const modals = d3.selectAll('.test')
+      // console.log(modals);
+      // modals.raise();
 
       setCssHeight(height + 15);
       setCssWidth(width + 150);
@@ -108,9 +115,9 @@ function Tree() {
 
   return (
     <div>
-        <svg
-          ref={ref} className="display" style={{ height: cssHeight, width: cssWidth }}
-        />
+      <svg
+        ref={ref} className="display" style={{ height: cssHeight, width: cssWidth }}
+      />
     </div>
   );
 }
