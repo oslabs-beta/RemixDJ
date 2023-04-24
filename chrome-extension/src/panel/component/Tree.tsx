@@ -47,23 +47,31 @@ function Tree() {
           : " node--leaf"))
         .attr("transform", (d: manifestObj) => "translate(" + d.y + "," +
           d.x + ")")
-        .on('click', (el) => {
-          console.log('clicked')
-          const name = el.target.nodeName
+        .on('click', (e) => {
+          console.log('clicked', e.target)
+          const name = e.target.nodeName
           if (name === 'rect') {
-            const clicked = d3.select(el.target)
+            const clicked = d3.select(e.target)
+            const clicked2 = d3.select(e.target.nextSibling)
             clicked.style('display', 'none')
+            clicked2.style('display', 'none')
+
           } else if (name === 'circle') {
-            const clicked = d3.select(el.target.nextSibling)
+            const clicked = d3.select(e.target.nextSibling)
+            const clicked2 = d3.select(e.target.nextSibling.nextSibling)
+            console.log(e)
+            const parent = d3.select(e.target)
             clicked.style('display', 'block')
+            clicked2.style('display', 'block')
             // clicked.raise();
+            const circles = d3.selectAll('circle')
+            console.log('lowered', circles)
+            circles.lower();
+            
           }
-          // console.log(el);
-          // let clicked = d3.select(el.target);
-          // console.log(clicked)
-          // clicked = clicked.selectChild('rect.test')
-          // console.log(clicked)
-          // clicked.style('display', 'none')
+        })
+        .on('mouseover', (e) => {
+          // console.log(d3.select(this))
         })
 
       const link = g.selectAll(".link")
@@ -78,7 +86,8 @@ function Tree() {
             + "C" + (d.y + d.parent.y) / 2 + "," + d.x
             + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
             + " " + d.parent.y + "," + d.parent.x;
-        });
+        })
+        .lower();
 
       node.append('circle')
         .attr('r', 2.5)
@@ -86,20 +95,6 @@ function Tree() {
         .style('fill', (d: circleObj) => d.data.level)
         .attr('fill', (d: circleObj) => (d._children ? '#555' : '#999'))
         .attr('stroke-width', 10)
-      // .on('click', (el) => {
-      //   let clicked = d3.select(el.target);
-      //   console.log(clicked.selectAll);
-      //   console.log(this)
-      //   if (flag) {
-      //     clicked.style('display', 'none')
-      //     flag = !flag;
-      //   } else {
-      //     clicked.style('display', 'block')
-      //     flag = !flag;
-      //   }
-      //   console.log('clicked!!')
-      //
-      // })
 
       node.append('rect')
         .attr('x', -5)
@@ -110,19 +105,7 @@ function Tree() {
         .attr('class', 'test')
         .style('stroke', (d: circleObj) => d.data.level)
         .style('fill', 'grey')
-        // .style('display', 'none')
-      // .on('click', (el) => {
-      //   const clicked = d3.select(el.target);
-      //   if (flag) {
-      //     clicked.style('display', 'none')
-      //     flag = !flag;
-      //   } else {
-      //     clicked.style('display', 'block')
-      //     flag = !flag;
-      //   }
-      //   console.log('clicked!!')
-      //
-      // })
+      // .style('display', 'none')
       node.append('text')
         .attr('x', (d) => {
           return 20
@@ -141,8 +124,9 @@ function Tree() {
 
       // .attr('style', "height:20px; width:20px; background-color:white")
 
-      const nodesAndText = d3.selectAll('.node, .text, .circle');
-      nodesAndText.raise();
+      const nodesAndText = d3.selectAll('.node');
+      // const nodesAndText = d3.selectAll('text, circle');
+      // nodesAndText.raise();
 
       // const modals = d3.selectAll('rect')
       // console.log(modals);
