@@ -1,6 +1,6 @@
 # Remix DJ
 
-![Remix DJ logo: multicolored mixer sliders](croppedlogo.png)
+![Remix DJ logo: multicolored mixer sliders](assets/croppedlogo.png)
 
 
 ## Installing RemixDJ
@@ -27,9 +27,9 @@ Until then:
 - Watch the logo change to bright colors if a site is using remix 🎨
 
 🌲
-![Remix DJ Tree: example of devtool](example-tree.png)
+![Remix DJ Tree: example of devtool](assets/example-tree.png)
 📂
-![Remix DJ Tree: example of devtool](example-list.png)
+![Remix DJ Tree: example of devtool](assets/example-list.png)
 
 
 
