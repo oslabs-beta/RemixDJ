@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NoRemix from '../NoRemix/NoRemix';
+import NoRemix from './component/NoRemix';
 import { windowObj } from '../types.js';
 import List from './component/List';
 import Tree from './component/Tree';

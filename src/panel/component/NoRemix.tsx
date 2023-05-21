@@ -1,5 +1,5 @@
 import React from 'react';
-import './NoRemix.css';
+import '../styles/NoRemix.css';
 
 function NoRemix() {
   return <div className='alert'>No Remix Detected Here!</div>;

@@ -11,7 +11,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: '[name]/[name].bundle.js',
+		filename: '[name].bundle.js',
 		publicPath: '/',
 	},
 	devtool: 'inline-source-map',
@@ -73,14 +73,8 @@ module.exports = {
 		// Generates an HTML file based on the template we pass in to serve our webpack files
 		// the chunks are no working properly and we have a hacky solution to our problem. Eventually should fix this
 		new HtmlWebpackPlugin({
-			filename: 'panel/panel.html',
-			template: path.resolve(__dirname, './src/panel/panel.html'),
-			chunks: ['panel']
-		}),
-		new HtmlWebpackPlugin({
-			filename: 'popup/popup.html',
-			template: path.resolve(__dirname, './src/popup/popup.html'),
-			chunks: ['popup']
+			filename: (entryName) => entryName + '.html',
+			template: path.resolve(__dirname, './src/index.html'),
 		}),
 		new CopyPlugin({
 			patterns: [
