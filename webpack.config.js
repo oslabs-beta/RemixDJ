@@ -75,6 +75,7 @@ module.exports = {
 		// the chunks are no working properly and we have a hacky solution to our problem. Eventually should fix this
 		new HtmlWebpackPlugin({
 			filename: (entryName) => entryName + '.html',
+			title: '[name]',
 			template: path.resolve(__dirname, './src/index.html'),
 		}),
 		new CopyPlugin({
