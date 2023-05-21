@@ -2,7 +2,6 @@
 
 ![Remix DJ logo: multicolored mixer sliders](croppedlogo.png)
 
-
 ## Installing RemixDJ
 
 RemixDJ in the Chrome store soon!
@@ -27,11 +26,9 @@ Until then:
 - Watch the logo change to bright colors if a site is using remix 🎨
 
 🌲
-![Remix DJ Tree: example of devtool](example-tree.png)
+![Remix DJ Tree: example of devtool](assets/example-tree.png)
 📂
-![Remix DJ Tree: example of devtool](example-list.png)
-
-
+![Remix DJ Tree: example of devtool](assets/example-list.png)
 
 ## The Team
 
