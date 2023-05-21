@@ -25,8 +25,8 @@ window.addEventListener("getRemixData", (e) => {
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 	const newMessage = JSON.parse(message);
 	if (newMessage.message === 'runScript') {
-		injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
+		injectScript(chrome.runtime.getURL('detectRemix.js'), 'body');
 	}
 })
 
-injectScript(chrome.runtime.getURL('detect_remix.js'), 'body');
+injectScript(chrome.runtime.getURL('detectRemix.js'), 'body');
