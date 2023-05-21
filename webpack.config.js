@@ -8,6 +8,7 @@ module.exports = {
 	entry: { 
 		'panel' : path.resolve(__dirname, 'src/panel/index.tsx'),
 		'popup': path.resolve(__dirname, 'src/popup/index.tsx'),
+		'devtools' : path.resolve(__dirname, 'src/devtools/index.tsx'),
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
