@@ -14,7 +14,8 @@
     "baseUrl": "."
   },
   "include": [
-    "src/"
+    "src/",
+    "@types/types.ts"
   ],
   "exclude": [
     "node_modules/"

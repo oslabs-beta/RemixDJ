@@ -1,0 +1,4 @@
+# Pull Playwright Docker Image
+
+setup-playwright:
+docker pull mcr.microsoft.com/playwright:v1.34.0-jammy
