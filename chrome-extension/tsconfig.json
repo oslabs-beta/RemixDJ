@@ -1,14 +1,22 @@
 {
   "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "target": "ES6",
     "module": "commonjs",
     "noImplicitAny": true,
     "sourceMap": true,
     "esModuleInterop": true,
-    "jsx": "react"
-
-
+    "jsx": "react",
+    "baseUrl": "."
   },
-  "include": ["src/"],
-  "exclude": ["node_modules/"]
+  "include": [
+    "src/"
+  ],
+  "exclude": [
+    "node_modules/"
+  ]
 }

@@ -22,10 +22,16 @@
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
+    "@types/babel__preset-env": "^7.9.2",
+    "@types/chrome": "^0.0.231",
     "@types/d3": "^7.4.0",
+    "@types/eslint": "^8.44.2",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
+    "@types/react-svg-pan-zoom": "^3.3.5",
+    "@types/sass-loader": "^8.0.5",
+    "@types/zip-webpack-plugin": "^3.0.4",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
     "copy-webpack-plugin": "^11.0.0",
@@ -47,7 +53,6 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
-    "@types/chrome": "^0.0.231",
     "crx": "^5.0.1",
     "d3": "^7.8.4",
     "mkdirp": "^3.0.0",
