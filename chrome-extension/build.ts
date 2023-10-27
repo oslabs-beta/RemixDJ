@@ -1,7 +1,6 @@
-// @ts-check
-const esbuild = require('esbuild');
-const path = require('path');
-const fs = require('fs');
+import esbuild from 'esbuild';
+import path from 'path';
+import fs from 'fs';
 
 const extensionEntryPoints = [
   path.join(__dirname, 'src', 'background.ts'),

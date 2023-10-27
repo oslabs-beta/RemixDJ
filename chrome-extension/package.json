@@ -8,6 +8,7 @@
     "build": "npx webpack",
     "watch": "webpack --watch"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oslabs-beta/remixDJ.git"
@@ -19,9 +20,15 @@
   },
   "homepage": "https://github.com/oslabs-beta/remixDJ#readme",
   "devDependencies": {
-    "@playwright/test": "^1.39.0",
-    "@playwrite": "link:@playwrite",
+    "@types/chrome": "^0.0.248",
+    "@types/d3": "^7.4.2",
+    "@types/eslint": "^8.44.6",
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "@types/react-svg-pan-zoom": "^3.3.7",
     "autoprefixer": "^10.4.16",
+    "chrome-types": "^0.1.237",
     "esbuild": "^0.19.5",
     "eslint": "^8.52.0",
     "eslint-config-airbnb-typescript": "^17.1.0",

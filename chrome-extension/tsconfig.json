@@ -2,6 +2,7 @@
   "compilerOptions": {
     "lib": [
       "DOM",
+      "ESNext"
     ],
     "target": "ESNext",
     "module": "CommonJS",
@@ -13,7 +14,17 @@
     "jsxFragmentFactory": "React.Fragment",
     "baseUrl": ".",
     "typeRoots": [
-      "@types"
-    ]
+      "@types",
+      "node_modules/@types"
+    ],
   },
+  "include": [
+    "src/**/*{.ts,.tsx}",
+    "build.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx"
+  ]
 }
