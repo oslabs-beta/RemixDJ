@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test'
+import { test, expect, chromium } from '@playwright/test'
+import path from 'path'
 
-test('basic test', async ({ page }) => {
-  await page.goto('http://google.com')
-  const title = await page.title()
-  expect(title).toBe('Google')
-})
+// example of how to use playwrite to get to the background page of manifest v3
+;(async () => {
+  const pathToExtension = path.join(__dirname, '..', 'dist')
+})()

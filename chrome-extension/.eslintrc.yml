@@ -1,0 +1,19 @@
+env:
+  browser: true
+  es6: true
+  node: true
+
+extends:
+  - airbnb
+  - airbnb/typescript
+  - prettier
+
+parser: '@typescript-eslint/parser'
+
+plugins:
+  - '@typescript-eslint'
+  - jsx-a11y
+
+settings:
+  react:
+    version: detect

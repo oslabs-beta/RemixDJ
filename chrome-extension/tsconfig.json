@@ -1,23 +1,19 @@
 {
   "compilerOptions": {
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "DOM",
     ],
-    "target": "ES6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "CommonJS",
     "noImplicitAny": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "baseUrl": "."
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment",
+    "baseUrl": ".",
+    "typeRoots": [
+      "@types"
+    ]
   },
-  "include": [
-    "src/",
-    "@types/types.ts"
-  ],
-  "exclude": [
-    "node_modules/"
-  ]
 }

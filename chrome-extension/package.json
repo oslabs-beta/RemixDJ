@@ -5,7 +5,7 @@
   "main": "./js/background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "build": "npx webpack",
     "watch": "webpack --watch"
   },
   "repository": {
@@ -19,48 +19,22 @@
   },
   "homepage": "https://github.com/oslabs-beta/remixDJ#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.22.15",
-    "@babel/preset-react": "^7.22.15",
-    "@playwright/test": "^1.38.0",
+    "@playwright/test": "^1.39.0",
     "@playwrite": "link:@playwrite",
-    "@types/babel__preset-env": "^7.9.2",
-    "@types/chrome": "^0.0.246",
-    "@types/d3": "^7.4.0",
-    "@types/eslint": "^8.44.2",
-    "@types/node": "^20.6.0",
-    "@types/react": "^18.2.21",
-    "@types/react-dom": "^18.2.7",
-    "@types/react-svg-pan-zoom": "^3.3.5",
-    "@types/sass-loader": "^8.0.5",
-    "@types/zip-webpack-plugin": "^3.0.4",
-    "autoprefixer": "^10.4.15",
-    "babel-loader": "^9.1.3",
-    "copy-webpack-plugin": "^11.0.0",
-    "crx-webpack-plugin": "^0.1.6",
-    "css-loader": "^6.8.1",
-    "eslint": "^8.49.0",
+    "autoprefixer": "^10.4.16",
+    "esbuild": "^0.19.5",
+    "eslint": "^8.52.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-plugin-react": "^7.33.2",
-    "html-webpack-plugin": "^5.5.3",
-    "postcss-loader": "^7.3.3",
-    "sass-loader": "^13.3.2",
-    "style-loader": "^3.3.3",
-    "tailwindcss": "^3.3.3",
-    "ts-loader": "^9.4.4",
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.3.5",
     "ts-node": "^10.9.1",
-    "tslib": "^2.6.2",
-    "typescript": "^5.2.2",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
-    "crx": "^5.0.1",
     "d3": "^7.8.5",
-    "mkdirp": "^3.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-svg-pan-zoom": "^3.12.1",
-    "terser-webpack-plugin": "^5.3.9",
-    "zip-webpack-plugin": "^4.0.1"
+    "react-svg-pan-zoom": "^3.12.1"
   }
 }
