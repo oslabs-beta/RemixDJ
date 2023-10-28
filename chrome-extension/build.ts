@@ -1,11 +1,14 @@
-import esbuild from 'esbuild';
-import path from 'path';
-import fs from 'fs';
+import * as esbuild from 'esbuild';
+import * as path from 'path';
+import * as fs from 'node:fs';
+import { fileURLToPath } from 'url';
+
+const baseDir = fileURLToPath(new URL('.', import.meta.url));
 
 const extensionEntryPoints = [
-  path.join(__dirname, 'src', 'background.ts'),
-  path.join(__dirname, 'src', 'contentscript.ts'),
-  path.join(__dirname, 'src', 'detect_remix.ts'),
+  path.join(baseDir, 'src', 'background.ts'),
+  path.join(baseDir, 'src', 'contentscript.ts'),
+  path.join(baseDir, 'src', 'detect_remix.ts'),
 ];
 
 // Building core script files
@@ -14,16 +17,16 @@ const extensionEntryPoints = [
     entryPoints: extensionEntryPoints,
     bundle: true,
     minify: true,
-    outdir: path.join(__dirname, 'dist'),
+    outdir: path.join(baseDir, 'dist'),
   });
 })();
 
 // Bundling react pages
 const pages = ['popup', 'panel', 'devtools'];
 
-async function bundleReact(input, output) {
-  const inputPath = path.join(__dirname, 'src', `${input}`);
-  const outputPath = path.join(__dirname, 'dist', `${output}`);
+async function bundleReact(input: string, output: string) {
+  const inputPath = path.join(baseDir, 'src', `${input}`);
+  const outputPath = path.join(baseDir, 'dist', `${output}`);
 
   await esbuild.build({
     entryPoints: [path.join(inputPath, `${input}.tsx`)],
@@ -46,16 +49,11 @@ pages.forEach((page) => {
 });
 
 // Moving manifest.json and public folder to dist
-fs.copyFileSync(
-  path.join(__dirname, 'src', 'manifest.json'),
-  path.join(__dirname, 'dist', 'manifest.json'),
-);
-
-const publicFolder = path.join(__dirname, 'src', 'public');
-const distFolder = path.join(__dirname, 'dist');
 
 (async function copyFolderSync(from, to) {
+  // creates destination folders
   fs.mkdirSync(to, { recursive: true });
+  // copy files and folders recursively
   fs.readdirSync(from).forEach((element) => {
     if (fs.lstatSync(path.join(from, element)).isFile()) {
       fs.copyFileSync(path.join(from, element), path.join(to, element));
@@ -63,4 +61,9 @@ const distFolder = path.join(__dirname, 'dist');
       copyFolderSync(path.join(from, element), path.join(to, element));
     }
   });
-})(publicFolder, path.join(distFolder, 'public'));
+})(path.join(baseDir, 'src', 'public'), path.join(baseDir, 'dist', 'public'));
+
+fs.copyFileSync(
+  path.join(baseDir, 'src', 'manifest.json'),
+  path.join(baseDir, 'dist', 'manifest.json'),
+);

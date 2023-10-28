@@ -1,25 +1,27 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "lib": [
       "DOM",
       "ESNext"
     ],
     "target": "ESNext",
-    "module": "CommonJS",
+    "module": "NodeNext",
+    "moduleResolution": "Node16",
     "noImplicitAny": true,
-    "sourceMap": true,
-    "esModuleInterop": true,
     "jsx": "react",
     "jsxFactory": "React.createElement",
     "jsxFragmentFactory": "React.Fragment",
     "baseUrl": ".",
     "typeRoots": [
       "@types",
-      "node_modules/@types"
-    ],
+      "node_modules/@types",
+      "node_modules/chrome-types"
+    ]
   },
   "include": [
-    "src/**/*{.ts,.tsx}",
+    "src/**/*",
+    "tests/**/*",
     "build.ts"
   ],
   "exclude": [
