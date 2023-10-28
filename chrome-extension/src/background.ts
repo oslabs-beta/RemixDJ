@@ -34,9 +34,9 @@ chrome.runtime.onMessage.addListener(async (message, sender, sendResponse) => {
     chrome.action.setIcon({
       tabId: tabId.id,
       path: {
-        48: 'icons/logo48.png',
-        128: 'icons/logo128.png',
-        256: 'icons/logo256.png',
+        48: 'public/icons/logo48.png',
+        128: 'public/icons/logo128.png',
+        256: 'public/icons/logo256.png',
       },
     });
   }

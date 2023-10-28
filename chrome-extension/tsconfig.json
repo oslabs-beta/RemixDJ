@@ -17,12 +17,18 @@
       "@types",
       "node_modules/@types",
       "node_modules/chrome-types"
+    ],
+    "types": [
+      "chrome",
+      "globalThis",
+      "node"
     ]
   },
   "include": [
     "src/**/*",
     "tests/**/*",
-    "build.ts"
+    "build.ts",
+    "@types/**/*.d.ts"
   ],
   "exclude": [
     "node_modules",
