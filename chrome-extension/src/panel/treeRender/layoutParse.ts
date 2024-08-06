@@ -16,7 +16,7 @@ export default function layoutParse(remixManifest: parseObj) {
     } else return joiner(arrOfStrings, char, (i += 1))
   }
 
-  // This function generates an array of arrays, with each subarray containing routes broken up with '.' or '/' (outside of []'s)
+  // This function generates an array of arrays, each subarray containing routes broken up with '.' or '/' (outside of []'s)
   function keySplitter(remixManifest: parseObj) {
     let myKeys = []
     for (const key in remixManifest) {
@@ -28,7 +28,7 @@ export default function layoutParse(remixManifest: parseObj) {
 
         // For keys with escape brackets:
         if (key.includes('[')) {
-          // Split by dot to account for potentially non-escaped dots
+          // Split by dot to account for potentially non-escaped dots within Remix format
           if (key.includes('.')) {
           }
           let splitKeyDot = key.split('.')

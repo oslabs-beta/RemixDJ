@@ -2,7 +2,7 @@ import * as d3 from 'd3'
 import React, { useEffect, useRef, useState } from 'react'
 import { circleObj, listObj, manifestObj, nodeObj } from '../../../@types/types'
 import '../styles/Tree.css'
-import parseData from '../treeRender/parseDataFunc'
+import parseData from '../treeRender/parseDataFunc.js'
 
 function Tree() {
   const [manifest, setManifest] = useState<
@@ -16,6 +16,7 @@ function Tree() {
       // getting data from chrome localstorage
       await chrome.storage.local.get(['remixManifest']).then((res) => {
         setManifest(res.remixManifest)
+        console.log('Manifest received')
       })
     }
     fetchData()
@@ -27,6 +28,7 @@ function Tree() {
 
     // Setting up the D3 Graph:
     if (treeData.children.length !== 0) {
+      // Updating size of the tree panel based on how many nodes
       const margin = { top: 10, right: 120, bottom: 10, left: 40 },
         width = Math.max(
           treeData.widthSet * 600 - margin.right - margin.left,
@@ -38,6 +40,7 @@ function Tree() {
       const nodesEarly = d3.hierarchy(treeData, (d: manifestObj) => d.children)
       const nodes: nodeObj = treemap(nodesEarly)
 
+      // Appending each node and svg element
       const svg = d3
           .select(ref.current)
           .append('svg')
