@@ -4,6 +4,8 @@
   <img src="croppedlogo.png" alt="Remix DJ logo" width="120" />
 </p>
 
+**Update**: Remix has decided to integrate with Tanstack Router. If you want to read more about this, checkout this blog post by Ryan Florence. https://remix.run/blog/incremental-path-to-react-19
+
 ## Installing RemixDJ
 
 Go to the [Chrome Web Store](https://chromewebstore.google.com/detail/remix-dj/ifjgigpnonjhdejjllpmdmelofjbokgl) and install on your Chrome browser!
